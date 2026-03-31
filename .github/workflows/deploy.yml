@@ -1,0 +1,52 @@
+name: Deploy Next.js Static Export to cPanel
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: cpanel-cicd
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      # Only keep this step if your project still needs it
+      # - name: Export static site
+      #   run: npm run export
+
+      - name: Verify out folder exists
+        run: |
+          test -d out || (echo "out folder not found" && exit 1)
+          ls -la out
+          ls -la out/_next || true
+
+      - name: Deploy to cPanel
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.CPANEL_HOST }}
+          username: ${{ secrets.CPANEL_USERNAME }}
+          password: ${{ secrets.CPANEL_PASSWORD }}
+          port: ${{ secrets.CPANEL_PORT }}
+          protocol: ftps
+          local-dir: ./out/
+          server-dir: ./public_html/
