@@ -23,9 +23,9 @@ import { getReducedMotion } from "../lib/utils"
 const partnerDetails = [
   { id: "A", label: "DLA", value: "KarmaLife" },
   { id: "B", label: "LSP - Company Name", value: "Onionlife Private Limited" },
-  { id: "C", label: "GRO Name", value: "Tanuja" },
+  { id: "C", label: "GRO Name", value: "Lavita Shetty" },
   { id: "D", label: "Designation", value: "Grievance Redressal Officer (GRO)" },
-  { id: "E", label: "Contact Number", value: "+91 9355598772" },
+  { id: "E", label: "Contact Number", value: "+91 88926 94935"},
   {
     id: "F",
     label: "Address",
