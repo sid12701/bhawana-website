@@ -15,10 +15,10 @@ jobs:
     environment: cpanel-cicd
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -27,20 +27,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build site
+      - name: Build project
         run: npm run build
 
-      # Only keep this step if your project still needs it
+      # Uncomment this only if your project still needs a separate export step
       # - name: Export static site
       #   run: npm run export
 
-      - name: Verify out folder exists
+      - name: Verify build output
         run: |
           test -d out || (echo "out folder not found" && exit 1)
+          echo "Contents of out/:"
           ls -la out
-          ls -la out/_next || true
+          echo "Important folders inside out/:"
+          find out -maxdepth 2 -type d | sort
 
-      - name: Deploy to cPanel
+      - name: Deploy ONLY out/ contents to cPanel public_html
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.CPANEL_HOST }}
@@ -50,3 +52,6 @@ jobs:
           protocol: ftps
           local-dir: ./out/
           server-dir: ./public_html/
+          dangerous-clean-slate: true
+          exclude: |
+            .well-known/**
