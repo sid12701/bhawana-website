@@ -158,7 +158,7 @@ export type HeroSlide = {
         children:[
           {label: "Loanfront", href:"/loanfront"},
           {label: "Karmalife", href:"/karmalife"},
-          {label: "LSP Closure — LoanFront", href:"/lsp-closure-loanfront"}
+          {label: "Terminated Vendors", href:"/terminated-vendors"}
         ]
        },
       { label: "Blog", href: "/blog",},
