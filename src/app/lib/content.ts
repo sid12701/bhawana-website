@@ -154,9 +154,8 @@ export type HeroSlide = {
           { label: "Refund/Cancellation Policy", href: "/refund-cancellation-policy" },
         ],
       },
-      { label: "DSA and LSP", href: "#",
+{ label: "DSA and LSP", href: "#",
         children:[
-          {label: "Loanfront", href:"/loanfront"},
           {label: "Karmalife", href:"/karmalife"},
           {label: "Terminated Vendors", href:"/terminated-vendors"}
         ]
