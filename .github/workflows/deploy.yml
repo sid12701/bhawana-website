@@ -13,6 +13,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: cpanel-cicd
 
     env:
       CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
@@ -44,10 +45,17 @@ jobs:
       - name: Build project
         run: npm run build
 
+      # Uncomment only if your project still needs a separate export step
+      # - name: Export static site
+      #   run: npm run export
+
       - name: Verify build output
         run: |
           test -d out || (echo "out folder not found" && exit 1)
+          echo "Contents of out/:"
           ls -la out
+          echo "Important folders inside out/:"
+          find out -maxdepth 2 -type d | sort
 
       - name: Deploy ONLY out/ contents to cPanel public_html
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
