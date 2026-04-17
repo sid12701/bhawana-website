@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 concurrency:
   group: production-deploy
@@ -13,7 +14,21 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    env:
+      CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
+      CPANEL_USERNAME: ${{ secrets.CPANEL_USERNAME }}
+      CPANEL_PASSWORD: ${{ secrets.CPANEL_PASSWORD }}
+      CPANEL_PORT: ${{ secrets.CPANEL_PORT }}
+
     steps:
+      - name: Check required secrets exist
+        run: |
+          [ -n "$CPANEL_HOST" ] || (echo "Missing CPANEL_HOST" && exit 1)
+          [ -n "$CPANEL_USERNAME" ] || (echo "Missing CPANEL_USERNAME" && exit 1)
+          [ -n "$CPANEL_PASSWORD" ] || (echo "Missing CPANEL_PASSWORD" && exit 1)
+          [ -n "$CPANEL_PORT" ] || (echo "Missing CPANEL_PORT" && exit 1)
+          echo "All required secrets are available."
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -29,25 +44,18 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # Uncomment only if your project still needs it
-      # - name: Export static site
-      #   run: npm run export
-
       - name: Verify build output
         run: |
           test -d out || (echo "out folder not found" && exit 1)
-          echo "Contents of out/:"
           ls -la out
-          echo "Important folders inside out/:"
-          find out -maxdepth 2 -type d | sort
 
       - name: Deploy ONLY out/ contents to cPanel public_html
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
-          server: ${{ secrets.CPANEL_HOST }}
-          username: ${{ secrets.CPANEL_USERNAME }}
-          password: ${{ secrets.CPANEL_PASSWORD }}
-          port: ${{ secrets.CPANEL_PORT }}
+          server: ${{ env.CPANEL_HOST }}
+          username: ${{ env.CPANEL_USERNAME }}
+          password: ${{ env.CPANEL_PASSWORD }}
+          port: ${{ env.CPANEL_PORT }}
           protocol: ftp
           local-dir: ./out/
           server-dir: ./public_html/
