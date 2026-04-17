@@ -12,7 +12,6 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: cpanel-cicd
 
     steps:
       - name: Checkout repository
@@ -30,7 +29,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # Uncomment this only if your project still needs a separate export step
+      # Uncomment only if your project still needs it
       # - name: Export static site
       #   run: npm run export
 
@@ -49,9 +48,6 @@ jobs:
           username: ${{ secrets.CPANEL_USERNAME }}
           password: ${{ secrets.CPANEL_PASSWORD }}
           port: ${{ secrets.CPANEL_PORT }}
-          protocol: ftps
+          protocol: ftp
           local-dir: ./out/
           server-dir: ./public_html/
-          dangerous-clean-slate: true
-          exclude: |
-            .well-known/**
