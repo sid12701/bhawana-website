@@ -116,9 +116,10 @@ export type HeroSlide = {
     },
   ]
     
-  export const legal = {
+export const legal = {
     grievancePdf: "/grievance-redressal-policy",
     fpcPdf: "/fair-practice-code",
+    fpcHindiPdf: "/fair-practice-code-hindi",
     termsHref: "/terms-conditions",
     email: "info@bhawanafinance.com",
     phone: "+91-124-6687879",
@@ -143,7 +144,8 @@ export type HeroSlide = {
         label: "Policies & Codes",
         href: "#",
         children: [
-          { label: "Fair Practice Code", href: "/fair-practice-code" },
+          { label: "Fair Practice Code (English)", href: "/fair-practice-code" },
+          { label: "Fair Practice Code (Hindi)", href: "/fair-practice-code-hindi" },
           { label: "Grievance Redressal", href: "/grievance-redressal-policy" },
           { label: "Terms & Conditions", href: "/terms-conditions" },
           { label: "Privacy Policy", href: "/privacy-policy" },

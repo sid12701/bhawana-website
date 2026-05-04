@@ -52,7 +52,16 @@ export default function Footer() {
                   href="/fair-practice-code"
                   className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
                 >
-                  <span>Fair Practice Code</span>
+                  <span>Fair Practice Code (English)</span>
+                  <Download className="h-3 w-3" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/fair-practice-code-hindi"
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                >
+                  <span>Fair Practice Code (Hindi)</span>
                   <Download className="h-3 w-3" />
                 </a>
               </li>
