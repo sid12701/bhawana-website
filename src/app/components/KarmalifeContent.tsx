@@ -25,7 +25,7 @@ const partnerDetails = [
   { id: "B", label: "LSP - Company Name", value: "Onionlife Private Limited" },
   { id: "C", label: "GRO Name", value: "Lavita Shetty" },
   { id: "D", label: "Designation", value: "Grievance Redressal Officer (GRO)" },
-  { id: "E", label: "Contact Number", value: "+91 88926 94935"},
+  { id: "E", label: "Contact Number", value: "080 4736 0383"},
   {
     id: "F",
     label: "Address",
