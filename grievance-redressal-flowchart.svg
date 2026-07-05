@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1720" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,5 L0,10 z" fill="#1a3d7c"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,5 L0,10 z" fill="#1e7d4f"/>
+    </marker>
+    <style>
+      .title{font-size:30px;font-weight:700;fill:#ffffff}
+      .subtitle{font-size:16px;fill:#c7d6f0}
+      .boxhead{font-size:19px;font-weight:700;fill:#ffffff}
+      .lvltag{font-size:13px;font-weight:700;fill:#ffffff;letter-spacing:1px}
+      .body{font-size:14.5px;fill:#1f2d45}
+      .bodyw{font-size:14.5px;fill:#eaf1fb}
+      .small{font-size:12.5px;fill:#5a6a86}
+      .decision{font-size:15px;font-weight:700;fill:#12305f}
+      .yeslabel{font-size:13px;font-weight:700;fill:#1e7d4f}
+      .nolabel{font-size:13px;font-weight:700;fill:#b4441f}
+      .closed{font-size:14px;font-weight:700;fill:#16603c}
+      .foot{font-size:12.5px;fill:#5a6a86}
+    </style>
+  </defs>
+
+  <!-- White background -->
+  <rect x="0" y="0" width="1080" height="1720" fill="#ffffff"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1080" height="112" fill="#12305f"/>
+  <text x="40" y="50" class="title">Customer Grievance Redressal &#8211; Complaint Handling &amp; Escalation</text>
+  <text x="40" y="80" class="subtitle" font-size="15px">Bhawana Capital Private Limited  |  RBI Reg. No. B-14.02856  |  CIN: U65100DL1995PTC071089</text>
+  <text x="40" y="99" class="subtitle" font-size="12.5px" fill="#9db6de">Displayed under RBI Fair Practices Code and directions of the Hon'ble Delhi High Court (W.P.(C) 16659/2022)</text>
+
+  <!-- START -->
+  <rect x="390" y="150" width="300" height="58" rx="29" fill="#2b6fb8"/>
+  <text x="540" y="178" text-anchor="middle" class="boxhead">Customer has a grievance</text>
+  <text x="540" y="197" text-anchor="middle" class="bodyw" font-size="12.5px">against a product or service of the Company</text>
+  <line x1="540" y1="208" x2="540" y2="240" stroke="#1a3d7c" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- CHANNELS -->
+  <rect x="150" y="244" width="780" height="150" rx="10" fill="#eef3fb" stroke="#c3d3ea" stroke-width="1.5"/>
+  <text x="170" y="272" class="decision">Lodge complaint in writing through any channel</text>
+  <text x="170" y="300" class="body">Email:  info@bhawanafinance.com</text>
+  <text x="170" y="324" class="body">Phone (follow-up):  0124-6687879  (09:00 AM &#8211; 08:00 PM, except holidays)</text>
+  <text x="170" y="348" class="body">Post / In person:  Customer Care Dept., Level 18, One Horizon Centre, DLF-5, Gurugram &#8211; 122002</text>
+  <text x="170" y="378" class="small">Required: Full name &#183; Registered mobile &#183; Loan ID &#183; Registered email &#183; Details of complaint with supporting documents</text>
+  <line x1="540" y1="394" x2="540" y2="426" stroke="#1a3d7c" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- LEVEL 1 -->
+  <rect x="150" y="430" width="780" height="132" rx="10" fill="#1a4f8a"/>
+  <rect x="150" y="430" width="150" height="132" rx="10" fill="#12305f"/>
+  <text x="225" y="484" text-anchor="middle" class="lvltag">LEVEL 1</text>
+  <text x="225" y="508" text-anchor="middle" class="bodyw" font-size="12px">First point of</text>
+  <text x="225" y="524" text-anchor="middle" class="bodyw" font-size="12px">contact</text>
+  <text x="320" y="466" class="boxhead">Grievance Redressal Officer &#8211; Customer Care Department</text>
+  <text x="320" y="492" class="bodyw">Acknowledgement within 3 working days &#183; Resolution within 30 working days</text>
+  <text x="320" y="516" class="bodyw">Email: info@bhawanafinance.com&#160;&#160;&#160;Tel: 0124-6687879</text>
+  <text x="320" y="540" class="bodyw" font-size="12.5px" fill="#c7d6f0">Level 18, One Horizon Centre, DLF-5, Gurugram &#8211; 122002</text>
+  <line x1="540" y1="562" x2="540" y2="596" stroke="#1a3d7c" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- DECISION 1 -->
+  <polygon points="540,600 700,682 540,764 380,682" fill="#fff4e6" stroke="#e0a45c" stroke-width="1.8"/>
+  <text x="540" y="672" text-anchor="middle" class="decision">Resolved within</text>
+  <text x="540" y="694" text-anchor="middle" class="decision">30 working days?</text>
+  <!-- YES branch right -->
+  <line x1="700" y1="682" x2="880" y2="682" stroke="#1e7d4f" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="748" y="672" class="yeslabel">YES</text>
+  <rect x="884" y="646" width="176" height="72" rx="10" fill="#e6f5ec" stroke="#7bc19a" stroke-width="1.5"/>
+  <text x="972" y="678" text-anchor="middle" class="closed">Complaint closed</text>
+  <text x="972" y="698" text-anchor="middle" class="body" font-size="12px">&amp; recorded in register</text>
+  <!-- NO branch down -->
+  <line x1="540" y1="764" x2="540" y2="800" stroke="#1a3d7c" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="556" y="788" class="nolabel">NO / not satisfied</text>
+
+  <!-- LEVEL 2 -->
+  <rect x="150" y="804" width="780" height="126" rx="10" fill="#1a4f8a"/>
+  <rect x="150" y="804" width="150" height="126" rx="10" fill="#12305f"/>
+  <text x="225" y="856" text-anchor="middle" class="lvltag">LEVEL 2</text>
+  <text x="225" y="880" text-anchor="middle" class="bodyw" font-size="12px">Escalation</text>
+  <text x="320" y="840" class="boxhead">Nodal Officer &#8211; Mr. Manoj Aggarwal</text>
+  <text x="320" y="866" class="bodyw">Reviews complaints unresolved / escalated from Level 1</text>
+  <text x="320" y="890" class="bodyw">Email: manoj@bhawanafinance.com&#160;&#160;&#160;Tel: 0124-6687879</text>
+  <text x="320" y="914" class="bodyw" font-size="12.5px" fill="#c7d6f0">Level 18, One Horizon Centre, DLF-5, Gurugram &#8211; 122002</text>
+  <line x1="540" y1="930" x2="540" y2="964" stroke="#1a3d7c" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- DECISION 2 -->
+  <polygon points="540,968 700,1050 540,1132 380,1050" fill="#fff4e6" stroke="#e0a45c" stroke-width="1.8"/>
+  <text x="540" y="1040" text-anchor="middle" class="decision">Resolved to the</text>
+  <text x="540" y="1062" text-anchor="middle" class="decision">customer's satisfaction?</text>
+  <line x1="700" y1="1050" x2="880" y2="1050" stroke="#1e7d4f" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="748" y="1040" class="yeslabel">YES</text>
+  <rect x="884" y="1014" width="176" height="72" rx="10" fill="#e6f5ec" stroke="#7bc19a" stroke-width="1.5"/>
+  <text x="972" y="1046" text-anchor="middle" class="closed">Complaint closed</text>
+  <text x="972" y="1066" text-anchor="middle" class="body" font-size="12px">&amp; recorded in register</text>
+  <line x1="540" y1="1132" x2="540" y2="1168" stroke="#1a3d7c" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="556" y="1156" class="nolabel">NO / not satisfied, or no reply within 30 days</text>
+
+  <!-- LEVEL 3 -->
+  <rect x="150" y="1172" width="780" height="150" rx="10" fill="#7a1f2b"/>
+  <rect x="150" y="1172" width="150" height="150" rx="10" fill="#5c141d"/>
+  <text x="225" y="1236" text-anchor="middle" class="lvltag">LEVEL 3</text>
+  <text x="225" y="1260" text-anchor="middle" class="bodyw" font-size="12px">Regulator</text>
+  <text x="320" y="1208" class="boxhead">Reserve Bank of India &#8211; Ombudsman (RB-IOS, 2021)</text>
+  <text x="320" y="1234" class="bodyw">If not resolved within 30 days or the reply is unsatisfactory, the customer may</text>
+  <text x="320" y="1256" class="bodyw">file a complaint with the RBI Ombudsman via the Complaint Management System (CMS).</text>
+  <text x="320" y="1282" class="bodyw">Web: https://cms.rbi.org.in&#160;&#160;&#160;RBI Contact Centre: 14448</text>
+  <text x="320" y="1306" class="bodyw" font-size="12.5px" fill="#f0cdd2">Office-in-Charge, Department of Supervision (NBFC), RBI, New Delhi</text>
+
+  <!-- Note / branch model -->
+  <rect x="150" y="1350" width="780" height="72" rx="10" fill="#f5f7fb" stroke="#d6dfec" stroke-width="1.2"/>
+  <text x="170" y="1380" class="body" font-weight="700" fill="#12305f">Note:</text>
+  <text x="212" y="1380" class="body">Bhawana Capital operates a fully digital, branchless lending model; accordingly there is no</text>
+  <text x="170" y="1402" class="body">Branch Manager tier. All grievances are handled centrally at the Corporate Office, Gurugram.</text>
+
+  <!-- Footer -->
+  <line x1="40" y1="1452" x2="1040" y2="1452" stroke="#d6dfec" stroke-width="1.2"/>
+  <text x="40" y="1478" class="foot" font-weight="700" fill="#12305f">Service standards:</text>
+  <text x="170" y="1478" class="foot">Acknowledgement &#8211; 3 working days  &#183;  Resolution &#8211; 30 working days  &#183;  Escalation to next level if unresolved or customer dissatisfied.</text>
+  <text x="40" y="1500" class="foot">This flowchart forms part of the Grievance Redressal Mechanism of Bhawana Capital Pvt. Ltd., displayed under the Grievance Redressal / Complaints section of the website.</text>
+</svg>

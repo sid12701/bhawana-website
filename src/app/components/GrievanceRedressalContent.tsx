@@ -94,7 +94,7 @@ export default function GrievanceRedressalContent() {
     },
     {
       level: "SECOND LEVEL",
-      title: "Senior Grievance Officer",
+      title: "Nodal Officer",
       contact: "Mr. Manoj Aggarwal",
       address: "Level 18, One Horizon Centre, DLF5, Gurgaon-122002, India",
       phone: "0124-6687879",
@@ -102,11 +102,13 @@ export default function GrievanceRedressalContent() {
     },
     {
       level: "THIRD LEVEL",
-      title: "Reserve Bank of India",
-      contact: "Office-in-Charge, Department of Supervision (NBFC)",
-      address: "6, Sansad Marg, Sansad Marg Area, New Delhi, Delhi 110001",
-      phone: "011-23714456",
-      note: "If complaint not resolved within 30 working days",
+      title: "Reserve Bank of India – Ombudsman (RB-IOS, 2021)",
+      contact: "RBI Ombudsman via Complaint Management System (CMS)",
+      address:
+        "Office-in-Charge, Department of Supervision (NBFC), RBI, New Delhi — 6, Sansad Marg, New Delhi 110001",
+      phone: "RBI Contact Centre: 14448",
+      note:
+        "If the complaint is not resolved within 30 working days, or the reply is unsatisfactory, the customer may file a complaint with the RBI Ombudsman at https://cms.rbi.org.in",
     },
   ]
 
@@ -357,8 +359,48 @@ export default function GrievanceRedressalContent() {
         </div>
       </section>
 
+      {/* Complaint Handling Flowchart */}
+      <section className="py-16 md:py-24 bg-background" id="grievance-flowchart">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <div className="text-center mb-12">
+                <h2 className="font-poppins text-3xl font-bold text-secondary mb-4">
+                  Complaint Handling &amp; Escalation – Flowchart
+                </h2>
+                <p className="text-lg text-neutralText">
+                  Visual overview of complaint lodging, resolution timelines, and three-tier escalation
+                </p>
+              </div>
+
+              <Card>
+                <CardContent className="p-4 sm:p-8">
+                  <figure className="mx-auto w-full max-w-[1080px] overflow-x-auto">
+                    <picture>
+                      <source srcSet="/images/grievance-redressal-flowchart.svg" type="image/svg+xml" />
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="/images/grievance-redressal-flowchart.png"
+                        alt="Bhawana Capital grievance redressal and escalation flowchart showing Level 1 Grievance Redressal Officer, Level 2 Nodal Officer, and Level 3 RBI Ombudsman under RB-IOS 2021"
+                        className="w-full h-auto rounded-lg border border-neutral-200 shadow-sm"
+                        width={1080}
+                        height={1720}
+                      />
+                    </picture>
+                    <figcaption className="sr-only">
+                      Three-tier complaint handling: Level 1 Customer Care, Level 2 Nodal Officer, Level 3 RBI
+                      Ombudsman via CMS.
+                    </figcaption>
+                  </figure>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Escalation Matrix */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-neutralBg">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>

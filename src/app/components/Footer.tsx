@@ -40,7 +40,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/grievance-redressal-policy"
+                  href="/grievance-redressal-policy#grievance-flowchart"
                   className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
                 >
                   <span>Grievance Redressal</span>
