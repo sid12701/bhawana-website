@@ -40,30 +40,33 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/grievance-redressal-policy#grievance-flowchart"
+                  href={legal.grievancePdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
                 >
-                  <span>Grievance Redressal</span>
+                  <span>Grievance Redressal (PDF)</span>
                   <Download className="h-3 w-3" />
                 </a>
               </li>
               <li>
                 <a
-                  href="/fair-practice-code"
+                  href={legal.fpcPdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
                 >
-                  <span>Fair Practice Code (English)</span>
+                  <span>Fair Practice Code (English PDF)</span>
                   <Download className="h-3 w-3" />
                 </a>
               </li>
               <li>
-                <a
-                  href="/fair-practice-code-hindi"
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                <Link
+                  href={legal.fpcHindiPage}
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
-                  <span>Fair Practice Code (Hindi)</span>
-                  <Download className="h-3 w-3" />
-                </a>
+                  Fair Practice Code (Hindi)
+                </Link>
               </li>
             </ul>
           </div>

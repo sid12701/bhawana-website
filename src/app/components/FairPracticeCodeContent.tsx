@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { CheckCircle, FileText, Mail, Phone, Scale, Shield, Users } from "lucide-react"
+import { CheckCircle, Download, FileText, Mail, Phone, Scale, Shield, Users } from "lucide-react"
 
 import { getFairPracticeCodeDocument, type FairPracticeCodeSection } from "@/app/lib/fairPracticeCodeData"
 import { Button } from "./ui/button"
@@ -125,9 +125,23 @@ export function FairPracticeCodeContent({ documentCode }: FairPracticeCodeConten
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">{pageTitle}</h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100">{pageDescription}</p>
-            <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium">
-              <CheckCircle className="w-4 h-4 mr-2" />
-              RBI Compliant and Board Approved
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium">
+                <CheckCircle className="w-4 h-4 mr-2" />
+                RBI Compliant and Board Approved
+              </div>
+              {document.downloadHref && (
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-blue-700 bg-transparent"
+                >
+                  <a href={document.downloadHref} target="_blank" rel="noopener noreferrer">
+                    <Download className="w-4 h-4 mr-2" />
+                    {document.downloadLabel || "Download PDF"}
+                  </a>
+                </Button>
+              )}
             </div>
           </motion.div>
         </div>

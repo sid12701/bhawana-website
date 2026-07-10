@@ -2,14 +2,16 @@
 
 import { useEffect, useState } from "react"
 import { motion, Variants } from "framer-motion"
-import { ExternalLink, MessageSquare, Users } from "lucide-react"
+import { ExternalLink, Download, MessageSquare, Users } from "lucide-react"
 
 import {
   grievanceRedressalSections,
   type GrievanceBlock,
   type GrievanceSection,
 } from "../lib/grievanceRedressalData"
+import { legal } from "../lib/content"
 import { getReducedMotion } from "../lib/utils"
+import { Button } from "./ui/button"
 import { Card, CardContent } from "./ui/card"
 
 function renderBlock(block: GrievanceBlock, index: number) {
@@ -142,6 +144,14 @@ export default function GrievanceRedressalContent() {
               Grievance Redressal Mechanism
             </h1>
             <p className="mt-4 text-lg text-neutralText md:text-xl">Bhawana Capital Private Limited</p>
+            <div className="mt-8">
+              <Button asChild className="bg-primary hover:bg-primary/90">
+                <a href={legal.grievancePdf} target="_blank" rel="noopener noreferrer">
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Grievance Redressal Mechanism (PDF)
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

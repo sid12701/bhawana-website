@@ -117,9 +117,12 @@ export type HeroSlide = {
   ]
     
 export const legal = {
-    grievancePdf: "/grievance-redressal-policy",
-    fpcPdf: "/fair-practice-code",
+    grievancePdf: "/policies/grievance-redressal-mechanism.pdf",
+    fpcPdf: "/policies/fair-practice-code.pdf",
     fpcHindiPdf: "/fair-practice-code-hindi",
+    grievancePage: "/grievance-redressal-policy",
+    fpcPage: "/fair-practice-code",
+    fpcHindiPage: "/fair-practice-code-hindi",
     termsHref: "/terms-conditions",
     email: "info@bhawanafinance.com",
     phone: "+91-124-6687879",

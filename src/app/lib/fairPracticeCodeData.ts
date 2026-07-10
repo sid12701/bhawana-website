@@ -33,6 +33,8 @@ export const fairPracticeCodeDocuments: FairPracticeCodeDocument[] = [
     description:
       "The Board-approved Fair Practice Code in English covering transparency, ethical lending, and customer protection.",
     languageTag: "en",
+    downloadHref: "/policies/fair-practice-code.pdf",
+    downloadLabel: "Download Fair Practice Code (PDF)",
     sections: [
       {
         id: "1",
