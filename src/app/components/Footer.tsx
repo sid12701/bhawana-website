@@ -39,10 +39,19 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link
+                  href={legal.grievancePage}
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                >
+                  Grievance Redressal (Online)
+                </Link>
+              </li>
+              <li>
                 <a
                   href={legal.grievancePdf}
                   target="_blank"
                   rel="noopener noreferrer"
+                  download="grievance-redressal-mechanism.pdf"
                   className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
                 >
                   <span>Grievance Redressal (PDF)</span>
@@ -50,10 +59,19 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <Link
+                  href={legal.fpcPage}
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                >
+                  Fair Practice Code (English, Online)
+                </Link>
+              </li>
+              <li>
                 <a
                   href={legal.fpcPdf}
                   target="_blank"
                   rel="noopener noreferrer"
+                  download="fair-practice-code.pdf"
                   className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
                 >
                   <span>Fair Practice Code (English PDF)</span>

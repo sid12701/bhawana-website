@@ -4,6 +4,8 @@ import { motion } from "framer-motion"
 import { CheckCircle, Download, FileText, Mail, Phone, Scale, Shield, Users } from "lucide-react"
 
 import { getFairPracticeCodeDocument, type FairPracticeCodeSection } from "@/app/lib/fairPracticeCodeData"
+import { legal } from "@/app/lib/content"
+import { PolicyPdfSection } from "./PolicyPdfSection"
 import { Button } from "./ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 
@@ -146,6 +148,15 @@ export function FairPracticeCodeContent({ documentCode }: FairPracticeCodeConten
           </motion.div>
         </div>
       </section>
+
+      {document.code === "en" && document.downloadHref && (
+        <PolicyPdfSection
+          title="Fair Practice Code (PDF)"
+          description="Board-approved Fair Practice Code in English. Download or view the official PDF copy below."
+          pdfHref={document.downloadHref}
+          fileName="fair-practice-code.pdf"
+        />
+      )}
 
       <section className="py-16">
         <div className="container mx-auto px-4">

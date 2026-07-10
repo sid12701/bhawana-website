@@ -7,6 +7,38 @@ import { motion, AnimatePresence } from "framer-motion"
 import { navigation } from "../lib/content"
 import { cn, getReducedMotion } from "../lib/utils"
 
+type NavChild = (typeof navigation.main)[number]["children"] extends (infer T)[] | undefined ? T : never
+
+function NavChildLink({
+  child,
+  className,
+  onClick,
+}: {
+  child: NavChild
+  className: string
+  onClick?: () => void
+}) {
+  if ("external" in child && child.external) {
+    return (
+      <a
+        href={child.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+        onClick={onClick}
+      >
+        {child.label}
+      </a>
+    )
+  }
+
+  return (
+    <Link href={child.href} className={className} onClick={onClick}>
+      {child.label}
+    </Link>
+  )
+}
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -83,13 +115,11 @@ export default function Header() {
                           className="absolute top-full left-0 mt-2 w-64 bg-background border rounded-lg shadow-lg py-2"
                         >
                           {item.children.map((child) => (
-                            <Link
+                            <NavChildLink
                               key={child.label}
-                              href={child.href}
+                              child={child}
                               className="block px-4 py-2 text-sm text-secondary hover:bg-neutralBg hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                            >
-                              {child.label}
-                            </Link>
+                            />
                           ))}
                         </motion.div>
                       )}
@@ -175,14 +205,12 @@ export default function Header() {
                             >
                               <div className="pl-4 pt-2 space-y-2">
                                 {item.children.map((child) => (
-                                  <Link
+                                  <NavChildLink
                                     key={child.label}
-                                    href={child.href}
+                                    child={child}
                                     className="block text-sm text-neutralText hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm py-1"
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                  >
-                                    {child.label}
-                                  </Link>
+                                  />
                                 ))}
                               </div>
                             </motion.div>

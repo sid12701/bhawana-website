@@ -11,6 +11,7 @@ import {
 } from "../lib/grievanceRedressalData"
 import { legal } from "../lib/content"
 import { getReducedMotion } from "../lib/utils"
+import { PolicyPdfSection } from "./PolicyPdfSection"
 import { Button } from "./ui/button"
 import { Card, CardContent } from "./ui/card"
 
@@ -155,6 +156,13 @@ export default function GrievanceRedressalContent() {
           </div>
         </div>
       </section>
+
+      <PolicyPdfSection
+        title="Grievance Redressal Mechanism (PDF)"
+        description="Board-approved Grievance Redressal Mechanism document. Download or view the official PDF copy below."
+        pdfHref={legal.grievancePdf}
+        fileName="grievance-redressal-mechanism.pdf"
+      />
 
       <section className="bg-background py-16 md:py-24">
         <div className="container mx-auto px-4">
