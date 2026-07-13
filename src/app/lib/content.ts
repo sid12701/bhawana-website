@@ -148,11 +148,8 @@ export const legal = {
         href: "#",
         children: [
           { label: "Fair Practice Code (English)", href: legal.fpcPage },
-          { label: "Fair Practice Code (English PDF)", href: legal.fpcPdf, external: true },
           { label: "Fair Practice Code (Hindi)", href: legal.fpcHindiPage },
-          { label: "Fair Practice Code (Hindi PDF)", href: legal.fpcHindiPdf, external: true },
           { label: "Grievance Redressal", href: legal.grievancePage },
-          { label: "Grievance Redressal (PDF)", href: legal.grievancePdf, external: true },
           { label: "Terms & Conditions", href: "/terms-conditions" },
           { label: "Privacy Policy", href: "/privacy-policy" },
           { label: "Interest Rate Policy", href: "/interest-rate-policy" },
