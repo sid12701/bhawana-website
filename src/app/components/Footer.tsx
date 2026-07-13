@@ -83,8 +83,20 @@ export default function Footer() {
                   href={legal.fpcHindiPage}
                   className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
-                  Fair Practice Code (Hindi)
+                  Fair Practice Code (Hindi, Online)
                 </Link>
+              </li>
+              <li>
+                <a
+                  href={legal.fpcHindiPdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="fair-practice-code-hindi.pdf"
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                >
+                  <span>Fair Practice Code (Hindi PDF)</span>
+                  <Download className="h-3 w-3" />
+                </a>
               </li>
             </ul>
           </div>

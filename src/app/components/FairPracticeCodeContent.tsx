@@ -149,12 +149,22 @@ export function FairPracticeCodeContent({ documentCode }: FairPracticeCodeConten
         </div>
       </section>
 
-      {document.code === "en" && document.downloadHref && (
+      {document.downloadHref && (
         <PolicyPdfSection
-          title="Fair Practice Code (PDF)"
-          description="Board-approved Fair Practice Code in English. Download or view the official PDF copy below."
+          title={
+            document.code === "hi"
+              ? "Fair Practice Code (Hindi PDF)"
+              : "Fair Practice Code (PDF)"
+          }
+          description={
+            document.code === "hi"
+              ? "Board-approved Fair Practice Code in Hindi. Download or view the official PDF copy below."
+              : "Board-approved Fair Practice Code in English. Download or view the official PDF copy below."
+          }
           pdfHref={document.downloadHref}
-          fileName="fair-practice-code.pdf"
+          fileName={
+            document.code === "hi" ? "fair-practice-code-hindi.pdf" : "fair-practice-code.pdf"
+          }
         />
       )}
 

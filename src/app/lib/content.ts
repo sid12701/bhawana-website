@@ -119,7 +119,7 @@ export type HeroSlide = {
 export const legal = {
     grievancePdf: "/policies/grievance-redressal-mechanism.pdf",
     fpcPdf: "/policies/fair-practice-code.pdf",
-    fpcHindiPdf: "/fair-practice-code-hindi",
+    fpcHindiPdf: "/policies/fair-practice-code-hindi.pdf",
     grievancePage: "/grievance-redressal-policy",
     fpcPage: "/fair-practice-code",
     fpcHindiPage: "/fair-practice-code-hindi",
@@ -150,6 +150,7 @@ export const legal = {
           { label: "Fair Practice Code (English)", href: legal.fpcPage },
           { label: "Fair Practice Code (English PDF)", href: legal.fpcPdf, external: true },
           { label: "Fair Practice Code (Hindi)", href: legal.fpcHindiPage },
+          { label: "Fair Practice Code (Hindi PDF)", href: legal.fpcHindiPdf, external: true },
           { label: "Grievance Redressal", href: legal.grievancePage },
           { label: "Grievance Redressal (PDF)", href: legal.grievancePdf, external: true },
           { label: "Terms & Conditions", href: "/terms-conditions" },
