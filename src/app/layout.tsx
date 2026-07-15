@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   title: "Bhawana Capital Private Limited - Personal Loans & Salary Advance",
   description:
     "Registered NBFC providing fast, transparent, and reliable personal loans and salary advance solutions. RBI regulated with customer-first policies.",
+  icons: {
+    icon: [{ url: "/favicon.ico", type: "image/x-icon" }],
+    shortcut: "/favicon.ico",
+    apple: "/images/final_logo.ico",
+  },
 }
 
 export default function RootLayout({
@@ -29,10 +34,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <head>
-        {/* Add the favicon here */}
-        <link rel="icon" href="./images/final_logo.ico" />
-      </head>
       <body className="font-inter antialiased">{children}</body>
     </html>
   )
