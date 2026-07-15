@@ -1,273 +1,204 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { motion, Variants } from "framer-motion"
-import { Percent, TrendingUp, Shield, Calculator } from "lucide-react"
-import { Card, CardContent } from "./ui/card"
-import { getReducedMotion } from "../lib/utils"
+import { motion } from "framer-motion"
+import { Calculator, Mail, Percent, Phone, Shield, TrendingUp } from "lucide-react"
 
-const PAGE_VARIANTS: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { duration: 0.3, ease: "easeOut" },
-  },
+import {
+  interestRatePolicyPdfHref,
+  interestRatePolicySections,
+  type InterestRateBlock,
+  type InterestRateSection,
+} from "@/app/lib/interestRatePolicyData"
+import { PolicyPdfSection } from "./PolicyPdfSection"
+import { Button } from "./ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
+
+function renderBlock(block: InterestRateBlock, index: number) {
+  switch (block.type) {
+    case "paragraph":
+      return (
+        <p key={index} className="text-gray-700 leading-relaxed text-justify">
+          {block.text}
+        </p>
+      )
+    case "list":
+      return (
+        <ul key={index} className="list-disc list-outside space-y-2 pl-6">
+          {block.items.map((item, itemIndex) => (
+            <li key={itemIndex} className="text-gray-700 leading-relaxed text-justify">
+              {item}
+            </li>
+          ))}
+        </ul>
+      )
+    case "table":
+      return (
+        <div key={index} className="overflow-x-auto rounded-lg border border-slate-200">
+          <table className="min-w-full text-sm">
+            <thead className="bg-slate-50">
+              <tr>
+                {block.headers.map((header) => (
+                  <th
+                    key={header}
+                    className="border-b border-slate-200 px-4 py-3 text-left font-semibold text-secondary"
+                  >
+                    {header}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {block.rows.map((row, rowIndex) => (
+                <tr key={rowIndex} className="border-b border-slate-100 last:border-b-0">
+                  {row.map((cell, cellIndex) => (
+                    <td key={cellIndex} className="px-4 py-3 align-top text-gray-700">
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )
+  }
 }
 
-const SECTION_VARIANTS: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.4, ease: "easeOut" },
-  },
+function PolicySectionCard({ section, index }: { section: InterestRateSection; index: number }) {
+  const cardClasses = index % 2 === 0 ? "bg-white border-blue-100" : "bg-slate-50/80 border-slate-200"
+
+  return (
+    <Card className={`shadow-md ${cardClasses}`}>
+      <CardHeader>
+        <CardTitle className="flex items-center gap-3 text-blue-700 text-xl">
+          {section.id === "version-control" ? (
+            <Calculator className="w-6 h-6" />
+          ) : section.id === "model" || section.id === "disclosure" ? (
+            <Percent className="w-6 h-6" />
+          ) : section.id === "gradation" ? (
+            <TrendingUp className="w-6 h-6" />
+          ) : (
+            <Shield className="w-6 h-6" />
+          )}
+          {section.title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-4">{section.blocks.map(renderBlock)}</CardContent>
+    </Card>
+  )
 }
 
 export default function InterestRatePolicyContent() {
-  const [reducedMotion, setReducedMotion] = useState(false)
-
-  useEffect(() => {
-    setReducedMotion(getReducedMotion())
-  }, [])
-
-  const pageVariants: Variants | undefined = reducedMotion ? undefined : PAGE_VARIANTS
-
-  const sectionVariants: Variants | undefined = reducedMotion ? undefined : SECTION_VARIANTS
-
   return (
-    <motion.div variants={pageVariants} initial="hidden" animate="visible">
-      {/* Hero Banner */}
-      <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+    <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 min-h-screen">
+      <section className="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-4xl mx-auto"
+          >
             <div className="flex items-center justify-center mb-6">
-              <Percent className="h-12 w-12 text-primary mr-4" />
-              <TrendingUp className="h-12 w-12 text-secondary" />
+              <Percent className="w-12 h-12 text-white mr-4" />
+              <TrendingUp className="w-12 h-12 text-white" />
             </div>
-            <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-6">
-              Interest Rate Policy
-            </h1>
-            <p className="text-lg md:text-xl text-neutralText mb-8">
-              Transparent and fair interest rate determination in compliance with RBI guidelines
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Interest Rate Policy</h1>
+            <p className="text-xl md:text-2xl mb-8 text-blue-100">
+              Board-approved Interest Rate Policy covering the interest-rate model, risk
+              gradation, charges, and borrower disclosures.
             </p>
-            <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full text-sm text-primary font-medium">
-              <Shield className="h-4 w-4 mr-2" />
-              RBI Compliant Policy
+            <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium">
+              <Shield className="w-4 h-4 mr-2" />
+              RBI Compliant · Version 1.3
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Content */}
-      <section className="py-16 md:py-24 bg-background">
+      <PolicyPdfSection
+        title="Interest Rate Policy (PDF)"
+        description="Board-approved Interest Rate Policy. Download or view the official PDF copy below."
+        pdfHref={interestRatePolicyPdfHref}
+        fileName="interest-rate-policy.pdf"
+      />
+
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            {/* Preamble */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <Card className="mb-12">
-                <CardContent className="p-8">
-                  <h2 className="font-poppins text-2xl font-bold text-secondary mb-6 flex items-center">
-                    <Shield className="h-6 w-6 mr-3 text-primary" />
-                    Preamble
-                  </h2>
-                  <p className="text-lg text-neutralText leading-relaxed mb-6">
-                    Reserve Bank of India through notification No. DNBS. 204 / CGM (ASR)-2009 dated January 2, 2009 and
-                    vide its Guidelines on FPC for NBFCs DNBS.CC.PD.No.266/03.10.01/2011-12 dated March 26, 2012 have
-                    directed all NBFCs to:
-                  </p>
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-                      <p className="text-neutralText leading-relaxed">
-                        Communicate the annualised rate of interest to the borrower along with the approach for
-                        gradation of risk and rationale for charging different rates of interest to different categories
-                        of borrowers.
-                      </p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-                      <p className="text-neutralText leading-relaxed">
-                        Make available the rates of interest and the approach for gradation of risks on the web-site of
-                        the companies.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Rate of Interest */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <Card className="mb-8">
-                <CardContent className="p-8">
-                  <h2 className="font-poppins text-2xl font-bold text-secondary mb-6 flex items-center">
-                    <Percent className="h-6 w-6 mr-3 text-primary" />
-                    Rate of Interest
-                  </h2>
-
-                  <div className="space-y-6">
-                    <p className="text-neutralText leading-relaxed">
-                      The Company, at the time sanction of loan, intimates in writing the following with the borrower:
-                    </p>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                      {[
-                        "Loan amount",
-                        "Rate of interest",
-                        "Other fees including processing fee charged or to be charged by our partner",
-                        "Loan amount sanctioned",
-                        "Tenure of the Loan",
-                        "Due dates of the monthly instalments",
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-center space-x-3 p-3 bg-neutralBg rounded-lg">
-                          <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
-                            {index + 1}
-                          </div>
-                          <span className="text-neutralText">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="bg-gradient-to-r from-primary/5 to-secondary/5 p-6 rounded-lg">
-                      <h3 className="font-poppins text-lg font-semibold text-secondary mb-3 flex items-center">
-                        <Calculator className="h-5 w-5 mr-2" />
-                        Interest Rate Calculation
-                      </h3>
-                      <p className="text-neutralText leading-relaxed mb-4">
-                        The rate of interest is arrived at based on the following components:
-                      </p>
-                      <div className="grid sm:grid-cols-2 gap-3">
-                        {[
-                          "Weighted average cost of funds",
-                          "Average customer acquisition cost",
-                          "Administrative and operational costs",
-                          "Risk premium and profit margin",
-                        ].map((component, index) => (
-                          <div key={index} className="flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-primary rounded-full"></div>
-                            <span className="text-sm text-neutralText">{component}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="border-l-4 border-accent pl-6">
-                      <p className="text-neutralText leading-relaxed">
-                        <strong>Important Note:</strong> The rates of interest are subject to change as the situation
-                        warrants and are subject to the discretion of the management and/or changes to extraneous cost
-                        factors which has a say in the setting up of the interest rate.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Risk Gradation */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <Card className="mb-8">
-                <CardContent className="p-8">
-                  <h2 className="font-poppins text-2xl font-bold text-secondary mb-6 flex items-center">
-                    <TrendingUp className="h-6 w-6 mr-3 text-primary" />
-                    Approach for Risk Gradation
-                  </h2>
-
-                  <div className="space-y-6">
-                    <p className="text-neutralText leading-relaxed">
-                      Bhawana Capital Private Limited grants credit facilities only to those customers who have both the
-                      intention and the ability to discharge their obligations. To execute a smooth underwriting process
-                      the Company carries out different processes as per Know Your Customer guidelines and allocates
-                      credit grade for each customer.
-                    </p>
-
-                    <div className="bg-neutralBg p-6 rounded-lg">
-                      <h3 className="font-poppins text-lg font-semibold text-secondary mb-4">
-                        Credit Assessment Focus Areas
-                      </h3>
-                      <div className="grid sm:grid-cols-2 gap-4">
-                        {[
-                          "History of the Company or Borrower",
-                          "Financial Leverage",
-                          "Liquidity and Sources of Cash",
-                          "Profitability of Operations",
-                          "Collateral being provided",
-                        ].map((area, index) => (
-                          <div key={index} className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-neutralText text-sm">{area}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-4 gap-4">
-                      {[
-                        {
-                          title: "Character",
-                          description: "Borrower's integrity and willingness to repay",
-                          icon: "👤",
-                        },
-                        {
-                          title: "Capacity",
-                          description: "Ability to repay based on income and cash flow",
-                          icon: "💪",
-                        },
-                        { title: "Capital", description: "Financial resources and net worth", icon: "💰" },
-                        { title: "Collateral", description: "Security provided against the loan", icon: "🏠" },
-                      ].map((item, index) => (
-                        <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-200">
-                          <CardContent className="p-6">
-                            <div className="text-3xl mb-3">{item.icon}</div>
-                            <h4 className="font-poppins font-semibold text-secondary mb-2">{item.title}</h4>
-                            <p className="text-sm text-neutralText">{item.description}</p>
-                          </CardContent>
-                        </Card>
-                      ))}
-                    </div>
-
-                    <div className="border-l-4 border-primary pl-6">
-                      <p className="text-neutralText leading-relaxed">
-                        The determination of a customer's credit grading is generally distinguished by the asset type
-                        and its use and is mostly based on four general categories:{" "}
-                        <strong>Character, Capacity, Capital and Collateral</strong>.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Contact Information Card */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <Card className="bg-gradient-to-br from-primary/5 to-secondary/5">
-                <CardContent className="p-8 text-center">
-                  <h3 className="font-poppins text-xl font-bold text-secondary mb-4">
-                    Questions About Our Interest Rates?
-                  </h3>
-                  <p className="text-neutralText mb-6">
-                    Our team is available to explain our interest rate policy and help you understand how rates are
-                    determined for your specific situation.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a
-                      href="mailto:info@bhawanafinance.com"
-                      className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      Email Us
-                    </a>
-                    <a
-                      href="tel:+91-124-6687879"
-                      className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      Call Us
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
+          <div className="max-w-6xl mx-auto space-y-6">
+            {interestRatePolicySections.map((section, index) => (
+              <motion.div
+                key={section.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: Math.min(index * 0.05, 0.2) }}
+                viewport={{ once: true }}
+              >
+                <PolicySectionCard section={section} index={index} />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
-    </motion.div>
+
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">Questions About Our Interest Rates?</h2>
+            <p className="text-lg text-blue-100 mb-8">
+              Our team is available to explain our interest rate policy and help you understand how
+              rates are determined for your specific situation.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+              <Card className="shadow-lg hover:shadow-xl transition-shadow bg-white/10 backdrop-blur-sm border-white/20">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Phone className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-white">Call Us</h3>
+                  <a href="tel:01246687879" className="text-blue-200 hover:text-white font-semibold transition-colors">
+                    0124-6687879
+                  </a>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-lg hover:shadow-xl transition-shadow bg-white/10 backdrop-blur-sm border-white/20">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Mail className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-white">Email Us</h3>
+                  <a
+                    href="mailto:info@bhawanafinance.com"
+                    className="text-blue-200 hover:text-white font-semibold transition-colors"
+                  >
+                    info@bhawanafinance.com
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="mt-12">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-blue-600 font-semibold px-8 py-3 bg-transparent"
+                asChild
+              >
+                <a href="/fair-practice-code">View Fair Practice Code</a>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
   )
 }

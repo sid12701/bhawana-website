@@ -5,19 +5,17 @@ import BoardPolicyContent from "../components/BoardPolicyContent"
 import { getBoardPolicy } from "../lib/policies"
 
 export const metadata: Metadata = {
-  title: "Fair Practice Code (Hindi) | Bhawana Capital Private Limited",
+  title: "RBI Ombudsman Salient Features | Bhawana Capital Private Limited",
   description:
-    "Hindi version of the Fair Practice Code of Bhawana Capital Private Limited.",
-  keywords:
-    "fair practice code hindi, निष्पक्ष आचरण संहिता, NBFC guidelines, Bhawana Capital",
+    "Salient features of RBI complaint escalation and the Reserve Bank – Integrated Ombudsman Scheme, 2021.",
 }
 
-export default function FairPracticeCodeHindiPage() {
+export default function RbiOmbudsmanSalientFeaturesPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
       <main className="pt-20">
-        <BoardPolicyContent document={getBoardPolicy("fair-practice-code-hindi")} />
+        <BoardPolicyContent document={getBoardPolicy("rbi-ombudsman-salient-features")} />
       </main>
       <Footer />
     </div>

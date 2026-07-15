@@ -47,7 +47,6 @@ export function PersonalLoanContent() {
     { specification: "Tenure", details: "3 Months - 12 Months" },
     { specification: "Interest Rates (per annum)", details: "17.95% - 35.95%" },
     { specification: "Processing Fees", details: "1% - 7.5% (₹ 100 - ₹ 2,000 Max)" },
-    { specification: "Life-Time Registration Fees", details: "₹ 100 to ₹ 750" },
     { specification: "Repayment Frequency", details: "Monthly" },
     { specification: "APR Range", details: "30% - 87%" },
   ]

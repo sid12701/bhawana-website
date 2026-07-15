@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
-import  Header  from "../components/Header"
-import  Footer  from "../components/Footer"
-import  {FairPracticeCodeContent}  from "../components/FairPracticeCodeContent"
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+import BoardPolicyContent from "../components/BoardPolicyContent"
+import { getBoardPolicy } from "../lib/policies"
 
 export const metadata: Metadata = {
   title: "Fair Practice Code (English) | Bhawana Capital Private Limited",
@@ -16,7 +17,7 @@ export default function FairPracticeCodePage() {
     <div className="min-h-screen bg-white">
       <Header />
       <main className="pt-20">
-        <FairPracticeCodeContent documentCode="en" />
+        <BoardPolicyContent document={getBoardPolicy("fair-practice-code")} />
       </main>
       <Footer />
     </div>

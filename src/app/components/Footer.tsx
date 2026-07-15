@@ -98,6 +98,26 @@ export default function Footer() {
                   <Download className="h-3 w-3" />
                 </a>
               </li>
+              <li>
+                <Link
+                  href={legal.interestRatePage}
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                >
+                  Interest Rate Policy (Online)
+                </Link>
+              </li>
+              <li>
+                <a
+                  href={legal.interestRatePdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="interest-rate-policy.pdf"
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                >
+                  <span>Interest Rate Policy (PDF)</span>
+                  <Download className="h-3 w-3" />
+                </a>
+              </li>
             </ul>
           </div>
 

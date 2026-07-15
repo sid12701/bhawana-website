@@ -26,6 +26,7 @@
 out.zip
 *.docx
 *.doc
+/tmp-policy-extracts/
 
 # debug
 npm-debug.log*

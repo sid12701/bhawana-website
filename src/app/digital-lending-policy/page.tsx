@@ -5,19 +5,17 @@ import BoardPolicyContent from "../components/BoardPolicyContent"
 import { getBoardPolicy } from "../lib/policies"
 
 export const metadata: Metadata = {
-  title: "Fair Practice Code (Hindi) | Bhawana Capital Private Limited",
+  title: "Digital Lending Policy | Bhawana Capital Private Limited",
   description:
-    "Hindi version of the Fair Practice Code of Bhawana Capital Private Limited.",
-  keywords:
-    "fair practice code hindi, निष्पक्ष आचरण संहिता, NBFC guidelines, Bhawana Capital",
+    "Board-approved Digital Lending Policy of Bhawana Capital Private Limited covering LSPs, disclosures, fund flows, and data privacy.",
 }
 
-export default function FairPracticeCodeHindiPage() {
+export default function DigitalLendingPolicyPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
       <main className="pt-20">
-        <BoardPolicyContent document={getBoardPolicy("fair-practice-code-hindi")} />
+        <BoardPolicyContent document={getBoardPolicy("digital-lending-policy")} />
       </main>
       <Footer />
     </div>

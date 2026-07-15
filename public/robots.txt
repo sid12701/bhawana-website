@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Allow Google to crawl /loanfront/ so it can honour the page noindex signal
+# and drop the retired LoanFront partner URL from search results.
+Allow: /loanfront/
+Allow: /loanfront

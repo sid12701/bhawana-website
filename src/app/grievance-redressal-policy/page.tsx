@@ -1,34 +1,30 @@
 import type { Metadata } from "next"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-import GrievanceRedressalContent from "../components/GrievanceRedressalContent";
+import BoardPolicyContent from "../components/BoardPolicyContent"
+import { getBoardPolicy } from "../lib/policies"
 
 export const metadata: Metadata = {
   title: "Grievance Redressal Mechanism | Bhawana Capital Private Limited",
   description:
-    "Comprehensive grievance redressal mechanism of Bhawana Capital Private Limited - Learn about our customer complaint handling process, escalation procedures, and RBI compliance.",
+    "Grievance Redressal Mechanism of Bhawana Capital Private Limited — how to raise complaints and escalate to RBI.",
   keywords: [
     "grievance redressal",
-    "customer complaints",
-    "RBI guidelines",
-    "complaint resolution",
-    "customer service",
+    "complaint",
+    "NBFC grievance",
+    "RBI CMS",
+    "Bhawana Capital",
   ],
-  openGraph: {
-    title: "Grievance Redressal Mechanism | Bhawana Capital Private Limited",
-    description: "Customer complaint handling process and escalation procedures of Bhawana Capital Private Limited",
-    type: "article",
-  },
 }
 
-export default function GrievanceRedressalPage() {
+export default function GrievanceRedressalPolicyPage() {
   return (
-    <>
+    <div className="min-h-screen bg-white">
       <Header />
-      <main>
-        <GrievanceRedressalContent />
+      <main className="pt-20">
+        <BoardPolicyContent document={getBoardPolicy("grievance-redressal-mechanism")} />
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
