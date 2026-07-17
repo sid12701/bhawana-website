@@ -112,7 +112,7 @@ export default function Header() {
                       {openDropdown === item.label && (
                         <motion.div
                           {...animationProps}
-                          className="absolute top-full left-0 mt-2 w-64 bg-background border rounded-lg shadow-lg py-2"
+                          className="absolute top-full left-0 mt-2 max-h-[calc(100vh-5rem)] w-72 overflow-y-auto overscroll-contain rounded-lg border bg-background py-2 shadow-lg"
                         >
                           {item.children.map((child) => (
                             <NavChildLink
