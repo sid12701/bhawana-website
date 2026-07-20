@@ -39,10 +39,10 @@
 
   <!-- CHANNELS -->
   <rect x="150" y="244" width="780" height="150" rx="10" fill="#eef3fb" stroke="#c3d3ea" stroke-width="1.5"/>
-  <text x="170" y="272" class="decision">Lodge complaint in writing through any channel</text>
+  <text x="170" y="272" class="decision">Lodge complaint through any of the available channels</text>
   <text x="170" y="300" class="body">Email:  info@bhawanafinance.com</text>
-  <text x="170" y="324" class="body">Phone (follow-up):  0124-6687879  (09:00 AM &#8211; 08:00 PM, except holidays)</text>
-  <text x="170" y="348" class="body">Post / In person:  Customer Care Dept., Level 18, One Horizon Centre, DLF-5, Gurugram &#8211; 122002</text>
+  <text x="170" y="324" class="body">Post:  Customer Care Dept., Level 18, One Horizon Centre, DLF-5, Gurugram &#8211; 122002</text>
+  <text x="170" y="348" class="body">Phone:  0124-6687879  (Monday to Friday, 10:00 A.M. &#8211; 5:00 P.M., except National &amp; Public Holidays)</text>
   <text x="170" y="378" class="small">Required: Full name &#183; Registered mobile &#183; Loan ID &#183; Registered email &#183; Details of complaint with supporting documents</text>
   <line x1="540" y1="394" x2="540" y2="426" stroke="#1a3d7c" stroke-width="2.5" marker-end="url(#arrow)"/>
 
@@ -52,10 +52,10 @@
   <text x="225" y="484" text-anchor="middle" class="lvltag">LEVEL 1</text>
   <text x="225" y="508" text-anchor="middle" class="bodyw" font-size="12px">First point of</text>
   <text x="225" y="524" text-anchor="middle" class="bodyw" font-size="12px">contact</text>
-  <text x="320" y="466" class="boxhead">Grievance Redressal Officer &#8211; Customer Care Department</text>
-  <text x="320" y="492" class="bodyw">Acknowledgement within 3 working days &#183; Resolution within 30 working days</text>
-  <text x="320" y="516" class="bodyw">Email: info@bhawanafinance.com&#160;&#160;&#160;Tel: 0124-6687879</text>
-  <text x="320" y="540" class="bodyw" font-size="12.5px" fill="#c7d6f0">Level 18, One Horizon Centre, DLF-5, Gurugram &#8211; 122002</text>
+  <text x="320" y="466" class="boxhead">Ms. Rupa Vanne &#8211; Customer Care Department</text>
+  <text x="320" y="492" class="bodyw">Bhawana Capital Private Limited</text>
+  <text x="320" y="516" class="bodyw">Phone: 0124-6687879 (Monday to Friday, 10:00 A.M. &#8211; 5:00 P.M.)</text>
+  <text x="320" y="540" class="bodyw" font-size="12.5px" fill="#c7d6f0">Email: info@bhawanafinance.com</text>
   <line x1="540" y1="562" x2="540" y2="596" stroke="#1a3d7c" stroke-width="2.5" marker-end="url(#arrow)"/>
 
   <!-- DECISION 1 -->
@@ -77,7 +77,7 @@
   <rect x="150" y="804" width="150" height="126" rx="10" fill="#12305f"/>
   <text x="225" y="856" text-anchor="middle" class="lvltag">LEVEL 2</text>
   <text x="225" y="880" text-anchor="middle" class="bodyw" font-size="12px">Escalation</text>
-  <text x="320" y="840" class="boxhead">Nodal Officer &#8211; Mr. Manoj Aggarwal</text>
+  <text x="320" y="840" class="boxhead">Mr. Manoj Aggarwal &#8211; Grievance Redressal Officer</text>
   <text x="320" y="866" class="bodyw">Reviews complaints unresolved / escalated from Level 1</text>
   <text x="320" y="890" class="bodyw">Email: manoj@bhawanafinance.com&#160;&#160;&#160;Tel: 0124-6687879</text>
   <text x="320" y="914" class="bodyw" font-size="12.5px" fill="#c7d6f0">Level 18, One Horizon Centre, DLF-5, Gurugram &#8211; 122002</text>
