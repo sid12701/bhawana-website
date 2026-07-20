@@ -165,6 +165,13 @@ const doc: BoardPolicyDocument = {
     ],
   },
   {
+    id: "15-reliance-on-third-parties-lsp-and-service-provider-arrangements",
+    title: "15. Reliance on Third Parties; LSP and Service-Provider Arrangements",
+    blocks: [
+
+    ],
+  },
+  {
     id: "15-1-statutory-reliance",
     title: "15.1 Statutory reliance",
     blocks: [

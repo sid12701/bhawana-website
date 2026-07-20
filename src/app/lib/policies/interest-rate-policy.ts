@@ -35,7 +35,7 @@ const doc: BoardPolicyDocument = {
             "the loan amount sanctioned",
             "the annualised rate of interest and the method of its application",
             "all fees and charges, whether levied by the Company or payable to a third party through the Company",
-            "the tenure of the loan, the repayment frequency and the due dates of the instalments",
+            "the tenure of the loan, the repayment frequency and the due dates of the instalments; and",
             "the Annual Percentage Rate (APR), including all charges levied by the Company.",
           ] },
         { type: "paragraph", text: "The borrower’s acceptance of these terms and conditions is kept on the Company’s record. No fee or charge that is not mentioned in the KFS is charged to the borrower at any stage during the term of the loan, without the explicit consent of the borrower." }
@@ -50,7 +50,7 @@ const doc: BoardPolicyDocument = {
             "cost of funds, including the cost of capital deployed",
             "customer-acquisition and servicing costs, including fees payable to any LSP, which are borne by the Company",
             "administrative and operational costs",
-            "credit-risk premium, reflecting the borrower’s risk profile and expected losses",
+            "credit-risk premium, reflecting the borrower’s risk profile and expected losses; and",
             "the tenor of the loan, prevailing market conditions and a reasonable margin.",
           ] },
         { type: "paragraph", text: "Interest is computed on a reducing-balance basis and expressed as an annualised rate. Where a processing fee is deducted upfront from the loan amount at disbursal, the full sanctioned loan amount is booked as principal and is disclosed as such in the KFS. Rates of interest may change as warranted by movements in these components; any revision is effected under the Board-adopted interest rate model, is disclosed to the borrower before loan acceptance and, in respect of existing loans, is applied only prospectively." }

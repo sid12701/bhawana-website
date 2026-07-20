@@ -41,6 +41,13 @@ const doc: BoardPolicyDocument = {
     ],
   },
   {
+    id: "how-to-raise-complaints",
+    title: "How to raise complaints?",
+    blocks: [
+
+    ],
+  },
+  {
     id: "3-1-channels-of-raising-a-complaint",
     title: "3.1 Channels of raising a complaint",
     blocks: [
@@ -62,6 +69,13 @@ const doc: BoardPolicyDocument = {
         { type: "paragraph", text: "Loan ID allotted by the Company regarding the complaint" },
         { type: "paragraph", text: "Specific details of the complaint/issue & supporting documents" },
         { type: "paragraph", text: "Registered E-mail address" }
+    ],
+  },
+  {
+    id: "mechanism-to-handle-customer-complaints-grievances",
+    title: "Mechanism to handle customer complaints/ grievances",
+    blocks: [
+
     ],
   },
   {
@@ -112,6 +126,13 @@ const doc: BoardPolicyDocument = {
         { type: "paragraph", text: "Complaint should be resolved maximum within 30 working days from the date of receipt." },
         { type: "paragraph", text: "Some complaints might be complex in nature and might need additional time beyond 30 days, in such cases the Company shall inform the customer in the interim the reasons of delay in resolution within the timelines specified above and provide expected timelines for resolution of the complaint. However, every effort would be made to resolve the complaint within the time frame given." },
         { type: "paragraph", text: "Time matrix for dealing complaint redress process with escalation matrix for various natures of complaints has been given in Annexure-Escalation Grid. Departments/officials dealing with the customer complaints are required to strictly adhere to the same" }
+    ],
+  },
+  {
+    id: "7-review-mechanism",
+    title: "7. Review Mechanism",
+    blocks: [
+
     ],
   },
   {

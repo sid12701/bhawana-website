@@ -315,9 +315,7 @@ def parse_sections(paras: list[str], tables: list[list[list[str]]], mode: str) -
             )
         ):
             item = text
-            if item.endswith("; and"):
-                item = item[:-5]
-            elif item.endswith(";"):
+            if item.endswith(";"):
                 item = item[:-1]
             pending_list.append(item)
             i += 1
@@ -369,7 +367,6 @@ def parse_sections(paras: list[str], tables: list[list[list[str]]], mode: str) -
             sections.append({"id": "tables", "title": "Tables", "blocks": []})
         sections[-1]["blocks"].append({"type": "table", "headers": tbl[0], "rows": tbl[1:]})
 
-    sections = [s for s in sections if s["blocks"]]
     return sections
 
 
