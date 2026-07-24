@@ -17,11 +17,37 @@ export default function Footer() {
                 <strong>CIN:</strong> {legal.cin}
               </p>
               <p>
-                <strong>RBI Registration No:</strong> {legal.rbiRegNo}
+                <strong>RBI CoR:</strong> {legal.rbiRegNo}
               </p>
               <div className="space-y-2">
                 <p>{legal.registeredOffice}</p>
                 <p>{legal.corporateOffice}</p>
+              </div>
+              <div className="space-y-2 pt-2 border-t border-gray-700">
+                <p>
+                  To report an unauthorised or suspicious digital lending app, use the{" "}
+                  <a
+                    href={legal.rbiSachetUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white underline hover:text-gray-200 transition-colors"
+                  >
+                    RBI Sachet portal
+                  </a>
+                  .
+                </p>
+                <p>
+                  To lodge a complaint with the RBI Ombudsman, use the{" "}
+                  <a
+                    href={legal.rbiCmsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white underline hover:text-gray-200 transition-colors"
+                  >
+                    RBI Complaint Management System
+                  </a>
+                  .
+                </p>
               </div>
             </div>
           </div>
@@ -36,6 +62,22 @@ export default function Footer() {
                   className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
                   Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={legal.privacyPolicyPage}
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={legal.karmalifePage}
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                >
+                  DSA/LSP Partnership (KarmaLife)
                 </Link>
               </li>
               <li>
@@ -95,6 +137,46 @@ export default function Footer() {
                   className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
                 >
                   <span>Fair Practice Code (Hindi PDF)</span>
+                  <Download className="h-3 w-3" />
+                </a>
+              </li>
+              <li>
+                <Link
+                  href={legal.rbiOmbudsmanPage}
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                >
+                  RBI Ombudsman Salient Features (English, Online)
+                </Link>
+              </li>
+              <li>
+                <a
+                  href={legal.rbiOmbudsmanPdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="rbi-ombudsman-salient-features.pdf"
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                >
+                  <span>RBI Ombudsman Salient Features (English PDF)</span>
+                  <Download className="h-3 w-3" />
+                </a>
+              </li>
+              <li>
+                <Link
+                  href={legal.rbiOmbudsmanHindiPage}
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                >
+                  RBI Ombudsman Salient Features (Hindi, Online)
+                </Link>
+              </li>
+              <li>
+                <a
+                  href={legal.rbiOmbudsmanHindiPdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="rbi-ombudsman-salient-features-hindi.pdf"
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                >
+                  <span>RBI Ombudsman Salient Features (Hindi PDF)</span>
                   <Download className="h-3 w-3" />
                 </a>
               </li>

@@ -110,8 +110,9 @@ export default function TermsAndConditionsContent() {
                 </CardHeader>
                 <CardContent className="text-neutralText leading-relaxed">
                   Bhawana Capital Private Limited, a company incorporated under the laws of India and having its
-                  registered office at F-6, 711, 7th Floor, Pearls Omaxe Netaji Subhash Place, New Delhi North West DL
-                  110034 India, is the sole and absolute owner of this Website and all content published from this URL.
+                  registered office at Unit No. 111, Aggarwal City Square, Plot No. 10, District Centre, Manglam Place,
+                  Sector-3, Rohini, New Delhi – 110085 (for correspondence only; not a walk-in customer location), is
+                  the sole and absolute owner of this Website and all content published from this URL.
                 </CardContent>
               </Card>
             </motion.div>
@@ -333,7 +334,7 @@ export default function TermsAndConditionsContent() {
                   <div className="grid sm:grid-cols-2 gap-4 text-sm text-neutralText">
                     <div className="flex items-start gap-3">
                       <MapPin className="h-4 w-4 text-primary mt-0.5" />
-                      <span>Corporate Office: Level 18, One Horizon Centre, DLF5, Gurgaon-122002, India</span>
+                      <span>Corporate Office: Level 18, One Horizon Centre, DLF Phase 5, Gurugram – 122002</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <Globe className="h-4 w-4 text-primary mt-0.5" />

@@ -147,9 +147,9 @@ export default function ContactSection() {
                   <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-medium text-secondary mb-2">Offices</p>
-                    <div className="space-y-2 text-sm text-neutralText">
+                    <div className="space-y-3 text-sm text-neutralText">
                       <p>{legal.registeredOffice}</p>
-                      <p>{legal.corporateOffice}</p>
+                      <p>{legal.corporateOfficeVisitNote}</p>
                     </div>
                   </div>
                 </div>
@@ -165,7 +165,7 @@ export default function ContactSection() {
                   <strong>CIN:</strong> {legal.cin}
                 </p>
                 <p>
-                  <strong>RBI Registration No:</strong> {legal.rbiRegNo}
+                  <strong>RBI CoR:</strong> {legal.rbiRegNo}
                 </p>
                 <p className="pt-2 text-xs">
                   Bhawana Capital Private Limited is a Registered Non-Banking Financial Company (NBFC) regulated by the
@@ -179,6 +179,32 @@ export default function ContactSection() {
                     View our complaint handling &amp; escalation flowchart
                   </a>
                 </p>
+                <div className="pt-2 space-y-2 text-xs">
+                  <p>
+                    To report an unauthorised or suspicious digital lending app, use the{" "}
+                    <a
+                      href={legal.rbiSachetUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary/80 font-medium underline"
+                    >
+                      RBI Sachet portal
+                    </a>
+                    .
+                  </p>
+                  <p>
+                    To lodge a complaint with the RBI Ombudsman, use the{" "}
+                    <a
+                      href={legal.rbiCmsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary/80 font-medium underline"
+                    >
+                      RBI Complaint Management System
+                    </a>
+                    .
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>

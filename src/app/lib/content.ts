@@ -125,6 +125,7 @@ export const legal = {
     loanTransferPdf: "/policies/loan-transfer-policy.pdf",
     interestRatesChargesPdf: "/policies/interest-rates-and-service-charges.pdf",
     rbiOmbudsmanPdf: "/policies/rbi-ombudsman-salient-features.pdf",
+    rbiOmbudsmanHindiPdf: "/policies/rbi-ombudsman-salient-features-hindi.pdf",
     digitalLendingPdf: "/policies/digital-lending-policy.pdf",
     collectionRecoveryPdf: "/policies/collection-and-recovery-policy.pdf",
     interestRatePage: "/interest-rate-policy",
@@ -135,15 +136,28 @@ export const legal = {
     loanTransferPage: "/loan-transfer-policy",
     interestRatesChargesPage: "/interest-rates-and-service-charges",
     rbiOmbudsmanPage: "/rbi-ombudsman-salient-features",
+    rbiOmbudsmanHindiPage: "/rbi-ombudsman-salient-features-hindi",
     digitalLendingPage: "/digital-lending-policy",
     collectionRecoveryPage: "/collection-and-recovery-policy",
     termsHref: "/terms-conditions",
+    privacyPolicyPage: "/privacy-policy",
+    karmalifePage: "/karmalife",
     email: "info@bhawanafinance.com",
     phone: "+91-124-6687879",
     cin: "U65100DL1995PTC071089",
-    rbiRegNo: " B-14.02856.",
-    registeredOffice: "Registered Office: Unit No. 111, Aggarwal City Square, Plot No. 10, District Centre Manglam Place, Sector-3, Rohini, New Delhi-110085, Delhi, Delhi, India - 110085",
-    corporateOffice: "Corporate Office: The Executive Centre Level 18, One Horizon Centre, DLF5, Gurgaon-122002, India",
+    rbiRegNo: "B-14.02856",
+    rbiSachetUrl: "https://sachet.rbi.org.in",
+    rbiCmsUrl: "https://cms.rbi.org.in",
+    registeredOfficeAddress:
+      "Unit No. 111, Aggarwal City Square, Plot No. 10, District Centre, Manglam Place, Sector-3, Rohini, New Delhi – 110085.",
+    corporateOfficeAddress: "Level 18, One Horizon Centre, DLF Phase 5, Gurugram – 122002",
+    registeredOffice:
+      "Registered Office (for correspondence only; not a walk-in customer location): Unit No. 111, Aggarwal City Square, Plot No. 10, District Centre, Manglam Place, Sector-3, Rohini, New Delhi – 110085.",
+    corporateOffice: "Corporate Office: Level 18, One Horizon Centre, DLF Phase 5, Gurugram – 122002",
+    corporateOfficeVisitNote:
+      "For any in-person visit, please come to our Corporate Office: Level 18, One Horizon Centre, DLF Phase 5, Gurugram – 122002. Kindly do not visit the Registered Office; all customer interactions are handled at the Corporate Office.",
+    nodalDigitalLendingGro:
+      "Nodal Grievance Redressal Officer (Digital Lending): Mr. Manoj Aggarwal, Bhawana Capital Private Limited — Email: manoj@bhawanafinance.com; Phone: 0124-6687879.",
   }
   
   export const navigation = {
@@ -169,10 +183,11 @@ export const legal = {
           { label: "Loan Transfer Policy", href: legal.loanTransferPage },
           { label: "Interest Rates and Service Charges", href: legal.interestRatesChargesPage },
           { label: "RBI Ombudsman Salient Features", href: legal.rbiOmbudsmanPage },
+          { label: "RBI Ombudsman Salient Features (Hindi)", href: legal.rbiOmbudsmanHindiPage },
           { label: "Digital Lending Policy", href: legal.digitalLendingPage },
           { label: "Collection and Recovery Policy", href: legal.collectionRecoveryPage },
-          { label: "Terms & Conditions", href: "/terms-conditions" },
-          { label: "Privacy Policy", href: "/privacy-policy" },
+          { label: "Terms & Conditions", href: legal.termsHref },
+          { label: "Privacy Policy", href: legal.privacyPolicyPage },
           { label: "Return Policy", href: "/return-policy" },
           { label: "Shipping Policy", href: "/shipping-policy" },
           { label: "Refund/Cancellation Policy", href: "/refund-cancellation-policy" },
@@ -180,7 +195,7 @@ export const legal = {
       },
 { label: "DSA and LSP", href: "#",
         children:[
-          {label: "Karmalife", href:"/karmalife"},
+          { label: "Karmalife", href: legal.karmalifePage },
           {label: "Terminated Vendors", href:"/terminated-vendors"}
         ]
        },

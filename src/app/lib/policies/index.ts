@@ -8,6 +8,7 @@ import grievanceRedressalMechanism from "./grievance-redressal-mechanism"
 import loanTransferPolicy from "./loan-transfer-policy"
 import interestRatesAndServiceCharges from "./interest-rates-and-service-charges"
 import rbiOmbudsmanSalientFeatures from "./rbi-ombudsman-salient-features"
+import rbiOmbudsmanSalientFeaturesHindi from "./rbi-ombudsman-salient-features-hindi"
 import digitalLendingPolicy from "./digital-lending-policy"
 import collectionAndRecoveryPolicy from "./collection-and-recovery-policy"
 
@@ -20,6 +21,7 @@ export const boardPolicies: Record<string, BoardPolicyDocument> = {
   "loan-transfer-policy": loanTransferPolicy,
   "interest-rates-and-service-charges": interestRatesAndServiceCharges,
   "rbi-ombudsman-salient-features": rbiOmbudsmanSalientFeatures,
+  "rbi-ombudsman-salient-features-hindi": rbiOmbudsmanSalientFeaturesHindi,
   "digital-lending-policy": digitalLendingPolicy,
   "collection-and-recovery-policy": collectionAndRecoveryPolicy,
 }

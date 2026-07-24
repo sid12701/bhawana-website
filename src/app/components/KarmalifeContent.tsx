@@ -18,6 +18,7 @@ import {
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { Button } from "./ui/button"
+import { legal } from "../lib/content"
 import { getReducedMotion } from "../lib/utils"
 
 const partnerDetails = [
@@ -199,6 +200,51 @@ export function KarmalifeContent() {
                       </div>
                     </motion.div>
                   ))}
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Bhawana Nodal GRO for Digital Lending */}
+      <section className="py-12">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <Card className="shadow-lg border-0 bg-white/80 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-blue-600 text-xl">
+                  <Shield className="w-6 h-6" />
+                  Bhawana Capital — Digital Lending Grievance Contact
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6 md:p-8">
+                <p className="text-gray-700 leading-relaxed">{legal.nodalDigitalLendingGro}</p>
+                <div className="mt-6 space-y-3 text-sm text-gray-700">
+                  <p>
+                    To report an unauthorised or suspicious digital lending app, use the{" "}
+                    <a
+                      href={legal.rbiSachetUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-700 hover:text-blue-900 underline"
+                    >
+                      RBI Sachet portal
+                    </a>
+                    .
+                  </p>
+                  <p>
+                    To lodge a complaint with the RBI Ombudsman, use the{" "}
+                    <a
+                      href={legal.rbiCmsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-700 hover:text-blue-900 underline"
+                    >
+                      RBI Complaint Management System
+                    </a>
+                    .
+                  </p>
                 </div>
               </CardContent>
             </Card>

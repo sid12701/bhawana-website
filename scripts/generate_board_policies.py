@@ -108,6 +108,16 @@ POLICIES = [
         "mode": "numbered",
     },
     {
+        "slug": "rbi-ombudsman-salient-features-hindi",
+        "title": "RBI Ombudsman — Salient Features (Hindi)",
+        "subtitle": "भारतीय रिज़र्व बैंक – एकीकृत लोकपाल योजना, 2021 की मुख्य विशेषताएँ और शिकायत निवारण की त्रि-स्तरीय प्रक्रिया।",
+        "pdfFile": "rbi-ombudsman-salient-features-hindi.pdf",
+        "badge": "हिन्दी · RB-IOS 2021",
+        "ctaTitle": "शिकायत निवारण में सहायता चाहिए?",
+        "ctaBody": "कृपया पहले हमारे शिकायत निवारण तंत्र का उपयोग करें; यदि समाधान न हो, तो RBI के समक्ष शिकायत दर्ज करें।",
+        "mode": "numbered",
+    },
+    {
         "slug": "digital-lending-policy",
         "title": "Digital Lending Policy",
         "subtitle": "Board-approved Digital Lending Policy covering LSPs, disclosures, fund flows, and data privacy.",

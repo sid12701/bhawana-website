@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-# Allow Google to crawl the retired LoanFront URL and observe its 404 response.
-Allow: /loanfront/
-Allow: /loanfront
+Sitemap: https://www.bhawanafinance.com/sitemap.xml

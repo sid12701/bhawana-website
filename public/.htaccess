@@ -1,0 +1,5 @@
+# Bhawana Capital — Apache/cPanel rules (copied to site root on deploy)
+
+# Retired LoanFront DSA/LSP page — return 410 Gone so search engines de-index faster
+Redirect gone /loanfront
+Redirect gone /loanfront/

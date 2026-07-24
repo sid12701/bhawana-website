@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     "Learn about our partnership with KarmaLife, our authorized Digital Lending Application partner for seamless loan services.",
   keywords: "DSA, LSP, KarmaLife, Digital Lending, Loan Service Provider, Bhawana Capital",
+  robots: { index: true, follow: true },
   openGraph: {
     title: "DSA/LSP Partnership - KarmaLife",
     description:

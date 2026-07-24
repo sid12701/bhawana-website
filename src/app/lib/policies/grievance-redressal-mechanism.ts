@@ -54,7 +54,7 @@ const doc: BoardPolicyDocument = {
         { type: "paragraph", text: "The customer has a right to lodge/register his complaint if he/she is not satisfied with the services provided by the company or has a genuine ground for such complaint as indicated in para 2 above There are following four ways to lodge a complaint:" },
         { type: "table", headers: ["Sl. No.", "Method of lodging a complaint", "Information of contact"], rows: [
             ["1.", "Email", "info@bhawanafinance.com"],
-            ["2.", "Postal (through writing letter)", "Customer Care Department\nBhawana Capital Private Limited \nCorporate Office: Level 18, One Horizon Centre, DLF5, Gurgaon-122002, India"],
+            ["2.", "Postal (through writing letter)", "Customer Care Department\nBhawana Capital Private Limited \nCorporate Office: Level 18, One Horizon Centre, DLF Phase 5, Gurugram – 122002"],
             ["3.", "Call us", "0124-6687879 (Monday to Friday, 10:00 A.M. to 5:00 P.M., except National & Public Holidays)"],
           ] }
     ],
@@ -164,6 +164,23 @@ const doc: BoardPolicyDocument = {
             ["SECOND LEVEL", "Mr. Manoj Aggarwal, Grievance Redressal Officer\nBhawana Capital Private Limited\nPhone: 0124-6687879 (Monday to Friday) | E-mail: manoj@bhawanafinance.com"],
             ["THIRD LEVEL", "If the complaint is not redressed satisfactorily within 30 working days across all escalation as mentioned aforesaid, customer may directly write to Reserve Bank of India, as detailed below:\n\nRBI Ombudsman \nunder the Reserve Bank – Integrated Ombudsman Scheme (RB-IOS), 2021\nComplaint Management System (CMS): https://cms.rbi.org.in\nCentralised Receipt and Processing Centre, Reserve Bank of India, Chandigarh 160017\nToll-free: 14448"],
           ] }
+    ],
+  },
+  {
+    id: "nodal-grievance-redressal-officer-digital-lending",
+    title: "Nodal Grievance Redressal Officer (Digital Lending)",
+    blocks: [
+        { type: "paragraph", text: "Nodal Grievance Redressal Officer (Digital Lending): Mr. Manoj Aggarwal, Bhawana Capital Private Limited — Email: manoj@bhawanafinance.com; Phone: 0124-6687879." }
+    ],
+  },
+  {
+    id: "rbi-regulatory-portals",
+    title: "RBI Regulatory Portals",
+    blocks: [
+        { type: "paragraph", text: "To report an unauthorised or suspicious digital lending app, use the RBI Sachet portal:" },
+        { type: "link", text: "https://sachet.rbi.org.in", href: "https://sachet.rbi.org.in" },
+        { type: "paragraph", text: "To lodge a complaint with the RBI Ombudsman, use the RBI Complaint Management System:" },
+        { type: "link", text: "https://cms.rbi.org.in", href: "https://cms.rbi.org.in" }
     ],
   },
   {
