@@ -24,7 +24,7 @@ const doc: BoardPolicyDocument = {
     blocks: [
         { type: "table", headers: ["Particulars", "Details"], rows: [
             ["Products", "Small-ticket unsecured personal loans and instalment products, offered through a fully digital process"],
-            ["Rate of interest (per annum)", "17.95% – 35.95%, fixed, computed on a reducing-balance basis and expressed as an annualised rate"],
+            ["Rate of interest (per annum)", "17.95% – 36.00%, fixed, computed on a reducing-balance basis and expressed as an annualised rate"],
             ["Annual Percentage Rate (APR)", "As disclosed in the KFS for each loan; the APR includes the interest and all charges levied by the Company, computed on the net disbursed amount"],
             ["Approach for gradation of risk", "Each borrower is allotted a credit grade through a system-driven credit assessment based on, among other factors, the credit-bureau record and repayment history, income source and repayment capacity, existing indebtedness, and the product type and tenor. The rate of interest is differentiated by credit grade; borrowers with stronger credit profiles are offered lower rates"],
           ] }
@@ -35,8 +35,8 @@ const doc: BoardPolicyDocument = {
     title: "2. Service Charges",
     blocks: [
         { type: "table", headers: ["Charge", "Amount"], rows: [
-            ["Processing fee", "1% – 7.5% of the sanctioned amount (minimum ₹100, maximum ₹2,000), as disclosed in the KFS"],
-            ["Penal charge for late payment", "₹10 per delayed instalment, levied on the amount under default, as disclosed in the KFS"],
+            ["Processing fee", "Up to 8% of the loan amount, plus applicable GST, as disclosed in the KFS"],
+            ["Penal charge for late payment", "Levied per overdue instalment (EMI/EWI) on the amount under default, as per the Schedule of Penal Charges at Section 3 below, subject to a per-instalment cap and an overall cap per loan, and as disclosed in the KFS"],
             ["Foreclosure / pre-payment charges", "NIL"],
             ["Convenience charge for repayment", "NIL"],
             ["Any other charge", "No fee or charge of any description, other than as stated above and disclosed in the KFS, is levied on or collected from the borrower, whether by the Company or by any Loan Service Provider"],
@@ -44,9 +44,16 @@ const doc: BoardPolicyDocument = {
     ],
   },
   {
-    id: "3-penal-charges-principles",
-    title: "3. Penal Charges — Principles",
+    id: "3-penal-charges-schedule-and-principles",
+    title: "3. Penal Charges – Schedule and Principles",
     blocks: [
+        { type: "paragraph", text: "Penal charges for late payment are levied per overdue instalment (EMI/EWI) in accordance with the following schedule:" },
+        { type: "table", headers: ["Instalment (EMI/EWI) amount in default", "Penal charge", "Cap per overdue EMI/EWI"], rows: [
+            ["EMI/EWI up to ₹2,000", "₹10 per overdue EMI/EWI", "₹250"],
+            ["EMI/EWI above ₹2,000", "₹20 per overdue EMI/EWI", "₹500"],
+          ] },
+        { type: "paragraph", text: "In addition to the per-instalment caps above, the total penal charges levied over the entire loan shall not exceed ₹3,000 per loan." },
+        { type: "paragraph", text: "These penal charges are governed by the following principles:" },
         { type: "paragraph", text: "Penal charges are levied as charges and not in the form of penal interest added to the rate of interest; no additional component is added to the rate of interest." },
         { type: "paragraph", text: "Penal charges are levied only on the amount under default, are reasonable and commensurate with the non-compliance, and are applied in a non-discriminatory manner within a product category." },
         { type: "paragraph", text: "Penal charges are not capitalised — no further interest is computed on such charges, and no fresh penal charge is levied on outstanding penal charges." },
