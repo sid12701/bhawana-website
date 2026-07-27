@@ -45,8 +45,8 @@ export function PersonalLoanContent() {
   const loanSpecifications = [
     { specification: "Principal", details: "₹ 1,500 - ₹ 30,000" },
     { specification: "Tenure", details: "3 Months - 12 Months" },
-    { specification: "Interest Rates (per annum)", details: "17.95% - 35.95%" },
-    { specification: "Processing Fees", details: "1% - 7.5% (₹ 100 - ₹ 2,000 Max)" },
+    { specification: "Interest Rates (per annum)", details: "17.95% – 36.00%" },
+    { specification: "Processing Fees", details: "Up to 8% of loan amount (plus GST), as per KFS" },
     { specification: "Repayment Frequency", details: "Monthly" },
     { specification: "APR Range", details: "30% - 87%" },
   ]

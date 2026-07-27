@@ -1,5 +1,20 @@
 # Bhawana Capital — Apache/cPanel rules (copied to site root on deploy)
 
+RewriteEngine On
+
+# Gmail and other trackers sometimes append &query= to the path (e.g. /page/&source=gmail).
+# Send those requests to the real policy page so borrowers do not see a 404.
+RewriteRule ^(.+)/&.+$ /$1/ [R=301,L]
+
 # Retired LoanFront DSA/LSP page — return 410 Gone so search engines de-index faster
 Redirect gone /loanfront
 Redirect gone /loanfront/
+
+<IfModule mod_headers.c>
+  # Avoid stale HTML after compliance updates (PDFs and assets may still be cached by CDN)
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>

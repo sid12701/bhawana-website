@@ -188,6 +188,8 @@ export const legal = {
           { label: "Collection and Recovery Policy", href: legal.collectionRecoveryPage },
           { label: "Terms & Conditions", href: legal.termsHref },
           { label: "Privacy Policy", href: legal.privacyPolicyPage },
+          { label: "RBI Sachet Portal", href: legal.rbiSachetUrl, external: true },
+          { label: "RBI Complaint Management System (CMS)", href: legal.rbiCmsUrl, external: true },
           { label: "Return Policy", href: "/return-policy" },
           { label: "Shipping Policy", href: "/shipping-policy" },
           { label: "Refund/Cancellation Policy", href: "/refund-cancellation-policy" },

@@ -73,6 +73,46 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <a
+                  href={legal.rbiSachetUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                >
+                  RBI Sachet Portal
+                </a>
+              </li>
+              <li>
+                <a
+                  href={legal.rbiCmsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                >
+                  RBI Complaint Management System (CMS)
+                </a>
+              </li>
+              <li>
+                <Link
+                  href={legal.interestRatesChargesPage}
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                >
+                  Interest Rates and Service Charges (Online)
+                </Link>
+              </li>
+              <li>
+                <a
+                  href={legal.interestRatesChargesPdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="interest-rates-and-service-charges.pdf"
+                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                >
+                  <span>Interest Rates and Service Charges (PDF)</span>
+                  <Download className="h-3 w-3" />
+                </a>
+              </li>
+              <li>
                 <Link
                   href={legal.karmalifePage}
                   className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
