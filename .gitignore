@@ -26,6 +26,10 @@
 out.zip
 *.docx
 *.doc
+!policy-files/**/*.docx
+!policy-files/**/*.doc
+!backups/**/*.docx
+!backups/**/*.doc
 /tmp-policy-extracts/
 
 # debug
