@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       "Board-approved KYC, AML and CFT Policy aligned with RBI Master Directions and PMLA.",
     type: "article",
   },
+  alternates: { canonical: "/kyc-aml-cft-policy/" },
 }
 
 export default function KycAmlCftPolicyPage() {

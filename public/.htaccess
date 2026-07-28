@@ -5,6 +5,16 @@ Options -MultiViews
 
 RewriteEngine On
 
+# Canonical host: apex → www (preserve path + query)
+RewriteCond %{HTTP_HOST} ^bhawanafinance\.com$ [NC]
+RewriteRule ^(.*)$ https://www.bhawanafinance.com/$1 [R=301,L]
+
+# Legacy KYC URL → current policy (HTTP 301, not client-side)
+RewriteRule ^kyc-aml-policy/?$ /kyc-aml-cft-policy/ [R=301,L]
+
+# Broken/legacy refund URL → real policy page
+RewriteRule ^refund-policy/?$ /refund-cancellation-policy/ [R=301,L]
+
 # Gmail and other trackers sometimes append &query= to the path (e.g. /page/&source=gmail).
 # Send those requests to the real policy page so borrowers do not see a 404.
 RewriteRule ^(.+)/&.+$ /$1/ [R=301,L]

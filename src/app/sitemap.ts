@@ -15,6 +15,21 @@ const routes: Array<{
   { path: "/karmalife/", changeFrequency: "monthly", priority: 0.9 },
   { path: "/terminated-vendors/", changeFrequency: "monthly", priority: 0.7 },
   { path: "/blog/", changeFrequency: "weekly", priority: 0.7 },
+  {
+    path: "/blog/why-taking-a-personal-loan-is-beneficial/",
+    changeFrequency: "monthly",
+    priority: 0.6,
+  },
+  {
+    path: "/blog/how-do-i-unite-my-daily-work-and-small-side-business/",
+    changeFrequency: "monthly",
+    priority: 0.6,
+  },
+  {
+    path: "/blog/what-are-the-early-indicators-that-my-financial-situation-is-worsening/",
+    changeFrequency: "monthly",
+    priority: 0.6,
+  },
   { path: "/interest-rate-policy/", changeFrequency: "monthly", priority: 0.6 },
   { path: "/kyc-aml-cft-policy/", changeFrequency: "monthly", priority: 0.6 },
   { path: "/fair-practice-code/", changeFrequency: "monthly", priority: 0.6 },

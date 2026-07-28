@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       "List of terminated vendors including LSPs, DSAs, and service providers whose agreements with Bhawana Capital Private Limited have been terminated.",
     type: "article",
   },
-  alternates: { canonical: "/terminated-vendors" },
+  alternates: { canonical: "/terminated-vendors/" },
 }
 
 export default function TerminatedVendorsPage() {

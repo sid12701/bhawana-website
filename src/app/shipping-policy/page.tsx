@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "Our commitment to prompt and transparent loan disbursement timelines and status tracking.",
     type: "article",
   },
-  alternates: { canonical: "/shipping-policy" },
+  alternates: { canonical: "/shipping-policy/" },
 }
 
 export default function ShippingPolicyPage() {

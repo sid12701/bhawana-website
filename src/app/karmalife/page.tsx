@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       "Learn about our partnership with KarmaLife, our authorized Digital Lending Application partner for seamless loan services.",
     type: "article",
   },
-  alternates: { canonical: "/karmalife" },
+  alternates: { canonical: "/karmalife/" },
 }
 
 export default function KarmaLife() {

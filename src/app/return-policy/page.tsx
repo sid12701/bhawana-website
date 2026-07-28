@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "Understand Bhawana Capital’s Return Policy, including the 2-day return window for loans mistakenly applied and how to initiate a return.",
     type: "article",
   },
-  alternates: { canonical: "/return-policy" }, // adjust if you keep the route as /returnpolicy
+  alternates: { canonical: "/return-policy/" },
 }
 
 export default function ReturnPolicyPage() {

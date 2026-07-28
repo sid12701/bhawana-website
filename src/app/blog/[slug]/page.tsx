@@ -43,12 +43,12 @@ export async function generateMetadata({
   return {
     title: `${mod.meta.title} | Bhawana Capital`,
     description: mod.meta.description,
-    alternates: { canonical: `/blog/${slug}` },
+    alternates: { canonical: `/blog/${slug}/` },
     openGraph: {
       title: mod.meta.title,
       description: mod.meta.description,
       type: "article",
-      url: `/blog/${slug}`,
+      url: `/blog/${slug}/`,
       images: mod.meta.coverImage ? [mod.meta.coverImage] : undefined,
     },
   }

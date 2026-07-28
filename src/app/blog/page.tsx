@@ -10,6 +10,7 @@ import { meta as worseningMeta } from "@/content/blog/what-are-the-early-indicat
 export const metadata = {
   title: "Blog | Bhawana Capital",
   description: "Insights on personal loans, salary advances, and responsible borrowing from Bhawana Capital.",
+  alternates: { canonical: "/blog/" },
 }
 
 type BlogListItem = {

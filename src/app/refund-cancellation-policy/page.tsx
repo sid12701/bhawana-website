@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "Our customer-friendly approach to refunds and cancellations when delays are beyond your control.",
     type: "article",
   },
-  alternates: { canonical: "/refund-policy" },
+  alternates: { canonical: "/refund-cancellation-policy/" },
 }
 
 export default function RefundCancellationPolicyPage() {

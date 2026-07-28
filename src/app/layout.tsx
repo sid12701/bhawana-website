@@ -17,6 +17,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.bhawanafinance.com"),
   title: "Bhawana Capital Private Limited - Personal Loans & Salary Advance",
   description:
     "Registered NBFC providing fast, transparent, and reliable personal loans and salary advance solutions. RBI regulated with customer-first policies.",
