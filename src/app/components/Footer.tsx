@@ -287,7 +287,7 @@ export default function Footer() {
             "@type": "FinancialService",
             name: "Bhawana Capital Private Limited",
             description: "Registered NBFC providing personal loans and salary advance solutions",
-            url: "https://bhawanafinance.com",
+            url: "https://www.bhawanafinance.com",
             telephone: legal.phone,
             email: legal.email,
             address: {

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Digital Lending Policy | Bhawana Capital Private Limited",
   description:
     "Board-approved Digital Lending Policy of Bhawana Capital Private Limited covering LSPs, disclosures, fund flows, and data privacy.",
+  alternates: { canonical: "/digital-lending-policy/" },
 }
 
 export default function DigitalLendingPolicyPage() {

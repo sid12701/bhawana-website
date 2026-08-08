@@ -205,7 +205,7 @@ export default function ReturnPolicyContent() {
                 <a href={`mailto:${legal.email}`}>Email Support</a>
               </Button>
               <Button className="bg-white text-blue-700 hover:bg-white/90" asChild>
-                <Link href="/grievance-redressal">
+                <Link href="/grievance-redressal-policy/">
                   View Grievance Redressal Policy <ExternalLink className="w-4 h-4 ml-2" />
                 </Link>
               </Button>

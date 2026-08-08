@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     "Hindi version of RBI Ombudsman salient features and the three-tier complaint redressal process for Bhawana Capital Private Limited.",
   keywords:
     "RBI ombudsman hindi, लोकपाल योजना, शिकायत निवारण, NBFC, Bhawana Capital",
+  alternates: { canonical: "/rbi-ombudsman-salient-features-hindi/" },
 }
 
 export default function RbiOmbudsmanSalientFeaturesHindiPage() {

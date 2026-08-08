@@ -98,21 +98,21 @@ export type HeroSlide = {
       title: "Why Taking a Personal Loan Is Beneficial",
       excerpt:
         "Personal loans can be a helpful option for salaried individuals when unavoidable, unpredictable expenses arise. They are typically unsecured—no collateral required—and offered by many banks and financial institutions, making them accessible for planned or urgent needs.",
-      href: "/why-taking-a-personal-loan-is-beneficial",
+      href: "/blog/why-taking-a-personal-loan-is-beneficial/",
     },
     {
       id: "b2",
       title: "How do I unite my daily work and small side business?",
       excerpt:
         "An additional income stream can boost monthly flexibility, help you build new skills, and improve personal routines. The challenge is balance—without clear boundaries, one job can bleed into the other and increase burnout risk.",
-      href: "/how-to-unite-daily-work-and-side-business",
+      href: "/blog/how-do-i-unite-my-daily-work-and-small-side-business/",
     },
     {
       id: "b3",
       title: "What are the early indicators that my financial situation is worsening?",
       excerpt:
         "We all manage money differently, but comfort isn’t always the best strategy. Watching for telltale warning signs—and acting early—can improve both financial health and overall well-being.",
-      href: "/early-indicators-that-my-financial-situation-is-worsening",
+      href: "/blog/what-are-the-early-indicators-that-my-financial-situation-is-worsening/",
     },
   ]
     

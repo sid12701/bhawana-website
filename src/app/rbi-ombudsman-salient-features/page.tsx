@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "RBI Ombudsman Salient Features | Bhawana Capital Private Limited",
   description:
     "Salient features of RBI complaint escalation and the Reserve Bank – Integrated Ombudsman Scheme, 2021.",
+  alternates: { canonical: "/rbi-ombudsman-salient-features/" },
 }
 
 export default function RbiOmbudsmanSalientFeaturesPage() {

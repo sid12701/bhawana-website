@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     "Get instant salary advance loans from ₹5,000 to ₹50,000 with flexible tenure of 7-90 days. Quick approval, minimal documentation, and transparent terms.",
   keywords: "salary advance, instant loans, quick cash, emergency funds, short term loans, Bhawana Capital",
+  alternates: { canonical: "/salary-advance/" },
 }
 
 export default function SalaryAdvancePage() {

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: "Privacy Policy and Data Protection principles of Bhawana Capital Private Limited",
     type: "article",
   },
+  alternates: { canonical: "/privacy-policy/" },
 }
 
 export default function PrivacyPolicyPage() {

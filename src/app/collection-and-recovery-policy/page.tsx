@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Collection and Recovery Policy | Bhawana Capital Private Limited",
   description:
     "Collection and Recovery Policy of Bhawana Capital Private Limited covering fair collection practices and agent conduct.",
+  alternates: { canonical: "/collection-and-recovery-policy/" },
 }
 
 export default function CollectionAndRecoveryPolicyPage() {

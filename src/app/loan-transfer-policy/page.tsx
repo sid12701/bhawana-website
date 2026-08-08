@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Loan Transfer Policy | Bhawana Capital Private Limited",
   description:
     "Policy on transfer and acquisition of loan exposures of Bhawana Capital Private Limited.",
+  alternates: { canonical: "/loan-transfer-policy/" },
 }
 
 export default function LoanTransferPolicyPage() {

@@ -5,8 +5,9 @@ Options -MultiViews
 
 RewriteEngine On
 
-# Canonical host: apex → www (preserve path + query)
-RewriteCond %{HTTP_HOST} ^bhawanafinance\.com$ [NC]
+# Single-hop canonical host + HTTPS → https://www.bhawanafinance.com/...
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\.bhawanafinance\.com$ [NC]
 RewriteRule ^(.*)$ https://www.bhawanafinance.com/$1 [R=301,L]
 
 # Legacy KYC URL → current policy (HTTP 301, not client-side)
@@ -15,11 +16,31 @@ RewriteRule ^kyc-aml-policy/?$ /kyc-aml-cft-policy/ [R=301,L]
 # Broken/legacy refund URL → real policy page
 RewriteRule ^refund-policy/?$ /refund-cancellation-policy/ [R=301,L]
 
+# Mistyped internal paths that previously 404'd
+RewriteRule ^grievance-redressal/?$ /grievance-redressal-policy/ [R=301,L]
+RewriteRule ^terms-and-conditions/?$ /terms-conditions/ [R=301,L]
+
+# Old homepage blog card URLs (missing /blog/ and wrong slugs) → live posts
+RewriteRule ^why-taking-a-personal-loan-is-beneficial/?$ /blog/why-taking-a-personal-loan-is-beneficial/ [R=301,L]
+RewriteRule ^how-to-unite-daily-work-and-side-business/?$ /blog/how-do-i-unite-my-daily-work-and-small-side-business/ [R=301,L]
+RewriteRule ^early-indicators-that-my-financial-situation-is-worsening/?$ /blog/what-are-the-early-indicators-that-my-financial-situation-is-worsening/ [R=301,L]
+RewriteRule ^blog/how-to-unite-daily-work-and-side-business/?$ /blog/how-do-i-unite-my-daily-work-and-small-side-business/ [R=301,L]
+
 # Gmail and other trackers sometimes append &query= to the path (e.g. /page/&source=gmail).
 # Send those requests to the real policy page so borrowers do not see a 404.
 RewriteRule ^(.+)/&.+$ /$1/ [R=301,L]
 
-# Hindi RBI Ombudsman — serve published flat HTML (postbuild copy) at the canonical URL
+# Never index /index.html variants — always use clean trailing-slash URLs
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+(.+)/index\.html[\s?] [NC]
+RewriteRule ^(.+)/index\.html$ /$1/ [R=301,L]
+
+# Hindi RBI Ombudsman — flat .html is a host fallback only; never index it as a second URL.
+# Match THE_REQUEST so the internal rewrite below does not create a redirect loop.
+RewriteCond %{THE_REQUEST} \s/+rbi-ombudsman-salient-features-hindi\.html[\s?] [NC]
+RewriteRule ^rbi-ombudsman-salient-features-hindi\.html$ /rbi-ombudsman-salient-features-hindi/ [R=301,L]
+# Serve the published flat HTML internally when the clean trailing-slash URL is requested
 RewriteRule ^rbi-ombudsman-salient-features-hindi/?$ /rbi-ombudsman-salient-features-hindi.html [L]
 
 # Next.js static export: map clean URLs to folder index.html when present

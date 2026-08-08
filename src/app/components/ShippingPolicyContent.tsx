@@ -123,7 +123,7 @@ export default function ShippingPolicyContent() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button asChild variant="outline" className="border-blue-200 text-blue-700 bg-white">
-                    <Link href="/grievance-redressal">Grievance Redressal</Link>
+                    <Link href="/grievance-redressal-policy/">Grievance Redressal</Link>
                   </Button>
                   <Button asChild variant="secondary" className="bg-white text-blue-700 hover:bg-gray-100">
                     <Link href="/#contact">Contact Support</Link>
@@ -159,7 +159,7 @@ export default function ShippingPolicyContent() {
                 </a>
               </Button>
               <Button className="bg-white text-blue-700 hover:bg-white/90" asChild>
-                <Link href="/grievance-redressal">
+                <Link href="/grievance-redressal-policy/">
                   View Grievance Redressal Policy <ExternalLink className="w-4 h-4 ml-2" />
                 </Link>
               </Button>

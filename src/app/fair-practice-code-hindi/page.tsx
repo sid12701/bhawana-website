@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     "Hindi version of the Fair Practice Code of Bhawana Capital Private Limited.",
   keywords:
     "fair practice code hindi, निष्पक्ष आचरण संहिता, NBFC guidelines, Bhawana Capital",
+  alternates: { canonical: "/fair-practice-code-hindi/" },
 }
 
 export default function FairPracticeCodeHindiPage() {

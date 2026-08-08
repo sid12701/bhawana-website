@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "RBI CMS",
     "Bhawana Capital",
   ],
+  alternates: { canonical: "/grievance-redressal-policy/" },
 }
 
 export default function GrievanceRedressalPolicyPage() {

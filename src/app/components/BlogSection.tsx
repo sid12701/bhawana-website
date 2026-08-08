@@ -45,7 +45,7 @@ export default function BlogSection() {
 
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" asChild>
-            <a href="/blog">View all posts</a>
+            <a href="/blog/">View all posts</a>
           </Button>
         </div>
       </div>

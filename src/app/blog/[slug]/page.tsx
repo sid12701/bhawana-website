@@ -101,7 +101,7 @@ export default async function BlogPostPage({
           <Post />
           <div className="mt-10">
             <Button asChild variant="outline">
-              <Link href="/blog">← Back to blog</Link>
+              <Link href="/blog/">← Back to blog</Link>
             </Button>
           </div>
         </article>

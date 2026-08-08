@@ -183,7 +183,7 @@ export default function RefundCancellationPolicyContent() {
                       <Link href="/privacy-policy">Privacy Policy</Link>
                     </Button>
                     <Button asChild variant="outline" className="bg-white">
-                      <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
+                      <Link href="/terms-conditions/">Terms &amp; Conditions</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -214,7 +214,7 @@ export default function RefundCancellationPolicyContent() {
                 </a>
               </Button>
               <Button className="bg-white text-blue-700 hover:bg-white/90" asChild>
-                <Link href="/grievance-redressal">
+                <Link href="/grievance-redressal-policy/">
                   View Grievance Redressal Policy <ExternalLink className="w-4 h-4 ml-2" />
                 </Link>
               </Button>

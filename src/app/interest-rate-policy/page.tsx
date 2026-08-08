@@ -24,6 +24,7 @@ export const metadata: Metadata = {
       "Board-approved Interest Rate Policy covering interest-rate model, risk gradation, and borrower disclosures.",
     type: "article",
   },
+  alternates: { canonical: "/interest-rate-policy/" },
 }
 
 export default function InterestRatePolicyPage() {

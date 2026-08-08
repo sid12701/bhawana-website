@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     "Get instant personal loans from ₹1,500 to ₹30,000 with flexible tenure of 3-12 months. 100% digital process with quick approval.",
   keywords:
     "personal loans, instant loans, digital lending, unsecured loans, Bhawana Capital, NBFC",
+  alternates: { canonical: "/personal-loan/" },
 }
 
 export default function PersonalLoanPage() {

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Interest Rates and Service Charges | Bhawana Capital Private Limited",
   description:
     "Website schedule of interest rates and service charges of Bhawana Capital Private Limited under RBI RBC Directions, 2025.",
+  alternates: { canonical: "/interest-rates-and-service-charges/" },
 }
 
 export default function InterestRatesAndServiceChargesPage() {
