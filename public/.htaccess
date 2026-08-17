@@ -7,6 +7,7 @@ RewriteEngine On
 
 # cPanel "Account Suspended" placeholder must never return 200
 RewriteRule ^cgi-sys/suspendedpage\.cgi$ / [R=301,L]
+Redirect 301 /cgi-sys/suspendedpage.cgi https://www.bhawanafinance.com/
 
 # Legacy PHP URL from the previous site
 RewriteRule ^personal-loan\.php$ /personal-loan/ [R=301,L]
