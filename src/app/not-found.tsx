@@ -34,7 +34,7 @@ export default function NotFound() {
               Return home
             </Link>
             <Link
-              href="/terminated-vendors"
+              href="/terminated-vendors/"
               className="rounded-md border border-secondary px-6 py-3 font-semibold text-secondary transition-colors hover:bg-secondary hover:text-white"
             >
               View terminated vendors

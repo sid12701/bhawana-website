@@ -174,13 +174,13 @@ export default function RefundCancellationPolicyContent() {
                 <CardContent className="text-gray-700 leading-relaxed">
                   <div className="flex flex-wrap gap-3">
                     <Button asChild variant="outline" className="bg-white">
-                      <Link href="/return-policy">Return Policy</Link>
+                      <Link href="/return-policy/">Return Policy</Link>
                     </Button>
                     <Button asChild variant="outline" className="bg-white">
-                      <Link href="/shipping-policy">Shipping Policy</Link>
+                      <Link href="/shipping-policy/">Shipping Policy</Link>
                     </Button>
                     <Button asChild variant="outline" className="bg-white">
-                      <Link href="/privacy-policy">Privacy Policy</Link>
+                      <Link href="/privacy-policy/">Privacy Policy</Link>
                     </Button>
                     <Button asChild variant="outline" className="bg-white">
                       <Link href="/terms-conditions/">Terms &amp; Conditions</Link>

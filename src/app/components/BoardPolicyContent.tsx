@@ -242,7 +242,7 @@ export default function BoardPolicyContent({ document }: BoardPolicyContentProps
                 className="border-white bg-transparent px-8 py-3 font-semibold text-white hover:bg-white hover:text-blue-600"
                 asChild
               >
-                <a href="/grievance-redressal-policy">Grievance Redressal</a>
+                <a href="/grievance-redressal-policy/">Grievance Redressal</a>
               </Button>
             </div>
           </motion.div>

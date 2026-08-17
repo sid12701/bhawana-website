@@ -173,7 +173,7 @@ export default function ContactSection() {
                 </p>
                 <p className="text-xs">
                   <a
-                    href="/grievance-redressal-policy#grievance-flowchart"
+                    href="/grievance-redressal-policy/#grievance-flowchart"
                     className="text-primary hover:text-primary/80 font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                   >
                     View our complaint handling &amp; escalation flowchart

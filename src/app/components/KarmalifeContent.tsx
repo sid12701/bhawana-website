@@ -364,7 +364,7 @@ export function KarmalifeContent() {
                 </a>
               </Button>
               <Button variant="outline" className="border-white  hover:bg-white text-blue-600" asChild>
-                <a href="/grievance-redressal-policy">View Grievance Redressal Policy</a>
+                <a href="/grievance-redressal-policy/">View Grievance Redressal Policy</a>
               </Button>
             </div>
           </motion.div>

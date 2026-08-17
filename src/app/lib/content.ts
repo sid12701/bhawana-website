@@ -13,13 +13,13 @@ export type HeroSlide = {
         id: "s1",
         title: "Fast, Transparent, Reliable Loans",
         description: "Personalized finance solutions tailored to your needs.",
-        ctas: [{ label: "Explore Personal Loans", href: "/personal-loan" }],
+        ctas: [{ label: "Explore Personal Loans", href: "/personal-loan/" }],
       },
       {
         id: "s2",
         title: "Salary Advance Made Simple",
         description: "Get quick access to your salary when you need it most.",
-        ctas: [{ label: "Learn More", href: "/salary-advance" }],
+        ctas: [{ label: "Learn More", href: "/salary-advance/" }],
       },
       {
         id: "s3",
@@ -43,8 +43,8 @@ export type HeroSlide = {
   }
   
   export const products: ProductCard[] = [
-    { name: "Personal Loan", href: "/personal-loan" },
-    { name: "Salary Advance", href: "/salary-advance" },
+    { name: "Personal Loan", href: "/personal-loan/" },
+    { name: "Salary Advance", href: "/salary-advance/" },
   ]
   
   export type Director = {
@@ -167,8 +167,8 @@ export const legal = {
         label: "Our Loan Products",
         href: "#",
         children: [
-          { label: "Personal Loan", href: "/personal-loan" },
-          { label: "Salary Advance", href: "/salary-advance" },
+          { label: "Personal Loan", href: "/personal-loan/" },
+          { label: "Salary Advance", href: "/salary-advance/" },
         ],
       },
       {
@@ -190,18 +190,18 @@ export const legal = {
           { label: "Privacy Policy", href: legal.privacyPolicyPage },
           { label: "RBI Sachet Portal", href: legal.rbiSachetUrl, external: true },
           { label: "RBI Complaint Management System (CMS)", href: legal.rbiCmsUrl, external: true },
-          { label: "Return Policy", href: "/return-policy" },
-          { label: "Shipping Policy", href: "/shipping-policy" },
-          { label: "Refund/Cancellation Policy", href: "/refund-cancellation-policy" },
+          { label: "Return Policy", href: "/return-policy/" },
+          { label: "Shipping Policy", href: "/shipping-policy/" },
+          { label: "Refund/Cancellation Policy", href: "/refund-cancellation-policy/" },
         ],
       },
 { label: "DSA and LSP", href: "#",
         children:[
           { label: "Karmalife", href: legal.karmalifePage },
-          {label: "Terminated Vendors", href:"/terminated-vendors"}
+          {label: "Terminated Vendors", href:"/terminated-vendors/"}
         ]
        },
-      { label: "Blog", href: "/blog",},
+      { label: "Blog", href: "/blog/" },
       { label: "Contact", href: "#contact" },
     ],
   }

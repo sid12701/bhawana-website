@@ -193,7 +193,7 @@ export default function InterestRatePolicyContent() {
                 className="border-white text-white hover:bg-white hover:text-blue-600 font-semibold px-8 py-3 bg-transparent"
                 asChild
               >
-                <a href="/fair-practice-code">View Fair Practice Code</a>
+                <a href="/fair-practice-code/">View Fair Practice Code</a>
               </Button>
             </div>
           </motion.div>

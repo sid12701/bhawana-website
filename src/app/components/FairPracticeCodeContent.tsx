@@ -238,7 +238,7 @@ export function FairPracticeCodeContent({ documentCode }: FairPracticeCodeConten
                 className="border-white text-white hover:bg-white hover:text-blue-600 font-semibold px-8 py-3 bg-transparent"
                 asChild
               >
-                <a href="/grievance-redressal-policy">View Grievance Redressal Policy</a>
+                <a href="/grievance-redressal-policy/">View Grievance Redressal Policy</a>
               </Button>
             </div>
           </motion.div>

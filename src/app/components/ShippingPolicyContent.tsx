@@ -23,7 +23,7 @@ export default function ShippingPolicyContent() {
   return (
     <motion.div
       variants={pageVariants}
-      initial="hidden"
+      initial={false}
       animate="visible"
       className="bg-gradient-to-br from-blue-50 via-white to-indigo-50"
     >
@@ -32,9 +32,8 @@ export default function ShippingPolicyContent() {
         <div className="absolute inset-0 bg-black/20" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 28 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
             <div className="flex items-center justify-center mb-6">
@@ -56,7 +55,7 @@ export default function ShippingPolicyContent() {
       {/* About / Intro */}
       <section className="py-12">
         <div className="container mx-auto px-4 max-w-6xl">
-          <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <motion.div variants={sectionVariants} initial={false} whileInView="visible" viewport={{ once: true }}>
             <Card className="shadow-lg border-0 bg-white/80 backdrop-blur-sm">
               <CardHeader className="pb-3">
                 <CardTitle className="flex items-center gap-3 text-blue-600 text-xl">
@@ -78,7 +77,7 @@ export default function ShippingPolicyContent() {
       {/* Shipping (Disbursement) Policy */}
       <section className="pb-6">
         <div className="container mx-auto px-4 max-w-6xl">
-          <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <motion.div variants={sectionVariants} initial={false} whileInView="visible" viewport={{ once: true }}>
             <Card className="shadow-lg border-0">
               <CardHeader className="pb-3">
                 <CardTitle className="flex items-center gap-3 text-blue-600 text-xl">
@@ -109,7 +108,7 @@ export default function ShippingPolicyContent() {
       {/* Help / Contacts */}
       <section className="pb-10">
         <div className="container mx-auto px-4 max-w-6xl">
-          <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <motion.div variants={sectionVariants} initial={false} whileInView="visible" viewport={{ once: true }}>
             <Card className="shadow-lg border-0 bg-white/80 backdrop-blur-sm">
               <CardHeader className="pb-3">
                 <CardTitle className="flex items-center gap-3 text-blue-600 text-xl">
@@ -143,7 +142,7 @@ export default function ShippingPolicyContent() {
         <div className="container mx-auto px-4">
           <motion.div
             variants={sectionVariants}
-            initial="hidden"
+            initial={false}
             whileInView="visible"
             viewport={{ once: true }}
             className="text-center max-w-4xl mx-auto"

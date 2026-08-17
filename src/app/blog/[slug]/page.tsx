@@ -78,7 +78,7 @@ export default async function BlogPostPage({
                 Home
               </Link>
               <span className="px-2">{"/"}</span>
-              <Link href="/blog" className="hover:underline">
+              <Link href="/blog/" className="hover:underline">
                 Blog
               </Link>
               <span className="px-2">{"/"}</span>
