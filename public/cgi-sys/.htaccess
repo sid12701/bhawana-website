@@ -1,2 +1,2 @@
-DirectoryIndex index.html
-Options -Indexes
+# Intentionally empty: AllowOverride on this host 500s on Options in this folder.
+# /cgi-sys/suspendedpage.cgi is still served by cPanel ScriptAlias.
