@@ -1,10 +1,5 @@
-# cPanel ScriptAlias still serves *.cgi from /usr/local/cpanel/cgi-sys/.
-# This directory exists so non-CGI /cgi-sys/ requests are not a 200 "Account Suspended" page.
+# Non-CGI /cgi-sys/ requests hit this folder. Use absolute redirects;
+# a substitution of "/" here can loop as /cgi-sys/ again.
 RewriteEngine On
-RewriteRule ^$ / [R=301,L]
-RewriteRule ^suspendedpage\.cgi$ / [R=301,L]
-
-<IfModule mod_mime.c>
-  RemoveHandler cgi-script .cgi
-  ForceType text/html
-</IfModule>
+RewriteRule ^$ https://www.bhawanafinance.com/ [R=301,L]
+RewriteRule ^suspendedpage\.cgi$ https://www.bhawanafinance.com/ [R=301,L]
