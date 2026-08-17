@@ -5,9 +5,9 @@ Options -MultiViews
 
 RewriteEngine On
 
-# cPanel "Account Suspended" placeholder must never return 200
+# cPanel "Account Suspended" CGI is served by a server-level ScriptAlias, so
+# .htaccess often cannot intercept it. robots.txt disallows /cgi-sys/.
 RewriteRule ^cgi-sys/suspendedpage\.cgi$ / [R=301,L]
-Redirect 301 /cgi-sys/suspendedpage.cgi https://www.bhawanafinance.com/
 
 # Legacy PHP URL from the previous site
 RewriteRule ^personal-loan\.php$ /personal-loan/ [R=301,L]

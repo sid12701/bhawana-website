@@ -1,5 +1,2 @@
-# Non-CGI /cgi-sys/ requests hit this folder. Use absolute redirects;
-# a substitution of "/" here can loop as /cgi-sys/ again.
-RewriteEngine On
-RewriteRule ^$ https://www.bhawanafinance.com/ [R=301,L]
-RewriteRule ^suspendedpage\.cgi$ https://www.bhawanafinance.com/ [R=301,L]
+DirectoryIndex index.html
+Options -Indexes
