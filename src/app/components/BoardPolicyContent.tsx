@@ -118,9 +118,8 @@ export default function BoardPolicyContent({ document }: BoardPolicyContentProps
         <div className="absolute inset-0 bg-black/20" />
         <div className="container relative z-10 mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
             className="mx-auto max-w-4xl text-center"
           >
             <div className="mb-6 flex items-center justify-center">
@@ -150,9 +149,8 @@ export default function BoardPolicyContent({ document }: BoardPolicyContentProps
             {document.sections.map((section, index) => (
               <motion.div
                 key={section.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={false}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: Math.min(index * 0.05, 0.2) }}
                 viewport={{ once: true }}
               >
                 <PolicySectionCard section={section} index={index} />
@@ -194,9 +192,8 @@ export default function BoardPolicyContent({ document }: BoardPolicyContentProps
       <section className="bg-gradient-to-r from-blue-600 to-indigo-700 py-16 text-white">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="mx-auto max-w-4xl text-center"
           >

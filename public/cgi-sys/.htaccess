@@ -1,0 +1,4 @@
+# Shadow cPanel's ScriptAlias so /cgi-sys/suspendedpage.cgi is not a 200 "Account Suspended" page.
+RewriteEngine On
+RewriteRule ^suspendedpage\.cgi$ / [R=301,L]
+RewriteRule ^ - [R=301,L]

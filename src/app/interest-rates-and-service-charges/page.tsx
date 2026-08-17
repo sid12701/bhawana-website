@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   title: "Interest Rates and Service Charges | Bhawana Capital Private Limited",
   description:
     "Website schedule of interest rates and service charges of Bhawana Capital Private Limited under RBI RBC Directions, 2025.",
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: "Interest Rates and Service Charges | Bhawana Capital Private Limited",
+    description:
+      "Website schedule of interest rates and service charges of Bhawana Capital Private Limited under RBI RBC Directions, 2025.",
+    type: "article",
+    url: "/interest-rates-and-service-charges/",
+  },
   alternates: { canonical: "/interest-rates-and-service-charges/" },
 }
 

@@ -97,7 +97,7 @@ export function KarmalifeContent() {
   return (
     <motion.div
       variants={pageVariants}
-      initial="hidden"
+      initial={false}
       animate="visible"
       className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 min-h-screen"
     >
@@ -106,9 +106,8 @@ export function KarmalifeContent() {
         <div className="absolute inset-0 bg-black/20" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 28 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
             <div className="flex items-center justify-center mb-6">
@@ -130,7 +129,7 @@ export function KarmalifeContent() {
       {/* Title + Logo row */}
       <section className="py-12">
         <div className="container mx-auto px-4 max-w-6xl">
-          <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <motion.div variants={sectionVariants} initial={false} whileInView="visible" viewport={{ once: true }}>
             <Card className="shadow-lg border-0 bg-white/80 backdrop-blur-sm">
               <CardContent className="p-6 md:p-8">
                 <div className="flex items-center gap-4">
@@ -158,7 +157,7 @@ export function KarmalifeContent() {
       {/* Partner Information */}
       <section>
         <div className="container mx-auto px-4 max-w-6xl">
-          <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <motion.div variants={sectionVariants} initial={false} whileInView="visible" viewport={{ once: true }}>
             <Card className="shadow-lg border-0">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-blue-600 text-xl">
@@ -168,12 +167,11 @@ export function KarmalifeContent() {
               </CardHeader>
               <CardContent className="p-6 md:p-8">
                 <div className="grid gap-4">
-                  {partnerDetails.map((detail, index) => (
+                  {partnerDetails.map((detail) => (
                     <motion.div
                       key={detail.id}
-                      initial={{ opacity: 0, x: -16 }}
+                      initial={false}
                       whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: index * 0.04 }}
                       viewport={{ once: true }}
                       className="flex items-start gap-4 p-4 rounded-lg hover:bg-blue-50/60 transition-colors"
                     >
@@ -210,7 +208,7 @@ export function KarmalifeContent() {
       {/* Bhawana Nodal GRO for Digital Lending */}
       <section className="py-12">
         <div className="container mx-auto px-4 max-w-6xl">
-          <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <motion.div variants={sectionVariants} initial={false} whileInView="visible" viewport={{ once: true }}>
             <Card className="shadow-lg border-0 bg-white/80 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-blue-600 text-xl">
@@ -257,7 +255,7 @@ export function KarmalifeContent() {
         <div className="container mx-auto px-4">
           <motion.div
             variants={sectionVariants}
-            initial="hidden"
+            initial={false}
             whileInView="visible"
             viewport={{ once: true }}
             className="max-w-5xl mx-auto"
@@ -290,7 +288,7 @@ export function KarmalifeContent() {
         <div className="container mx-auto px-4">
           <motion.div
             variants={sectionVariants}
-            initial="hidden"
+            initial={false}
             whileInView="visible"
             viewport={{ once: true }}
             className="max-w-4xl mx-auto text-center"
@@ -345,7 +343,7 @@ export function KarmalifeContent() {
         <div className="container mx-auto px-4">
           <motion.div
             variants={sectionVariants}
-            initial="hidden"
+            initial={false}
             whileInView="visible"
             viewport={{ once: true }}
             className="text-center max-w-4xl mx-auto"

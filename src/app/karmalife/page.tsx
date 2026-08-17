@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description:
       "Learn about our partnership with KarmaLife, our authorized Digital Lending Application partner for seamless loan services.",
     type: "article",
+    url: "/karmalife/",
   },
   alternates: { canonical: "/karmalife/" },
 }

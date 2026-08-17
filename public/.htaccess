@@ -5,6 +5,15 @@ Options -MultiViews
 
 RewriteEngine On
 
+# cPanel "Account Suspended" placeholder must never return 200
+RewriteRule ^cgi-sys/suspendedpage\.cgi$ / [R=301,L]
+
+# Legacy PHP URL from the previous site
+RewriteRule ^personal-loan\.php$ /personal-loan/ [R=301,L]
+
+# Retired LoanFront DSA/LSP page → public terminated-vendors disclosure
+RewriteRule ^loanfront/?$ /terminated-vendors/ [R=301,L]
+
 # Single-hop canonical host + HTTPS → https://www.bhawanafinance.com/...
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} !^www\.bhawanafinance\.com$ [NC]
@@ -49,15 +58,15 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}/index.html -f
 RewriteRule ^(.+?)/?$ $1/index.html [L]
 
-# Retired LoanFront DSA/LSP page — return 410 Gone so search engines de-index faster
-Redirect gone /loanfront
-Redirect gone /loanfront/
-
 <IfModule mod_headers.c>
   # Avoid stale HTML after compliance updates (PDFs and assets may still be cached by CDN)
   <FilesMatch "\.(html|htm)$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"
     Header set Expires "0"
+  </FilesMatch>
+  # Keep HTML policy pages as the indexable canonical; PDFs are downloads only
+  <FilesMatch "\.pdf$">
+    Header set X-Robots-Tag "noindex, follow"
   </FilesMatch>
 </IfModule>

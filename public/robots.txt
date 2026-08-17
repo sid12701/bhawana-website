@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /cgi-sys/
 
 Sitemap: https://www.bhawanafinance.com/sitemap.xml
