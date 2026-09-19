@@ -138,7 +138,10 @@ export default function BoardPolicyContent({ document }: BoardPolicyContentProps
 
       <PolicyPdfSection
         title={`${document.title} (PDF)`}
-        description="Official board-approved document. Download or view the PDF below."
+        description={
+          document.pdfDescription ??
+          "Official board-approved document. Download or view the PDF below."
+        }
         pdfHref={document.pdfHref}
         fileName={document.pdfFileName}
       />

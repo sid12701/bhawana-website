@@ -21,6 +21,7 @@ export type BoardPolicyDocument = {
   badge: string
   ctaTitle: string
   ctaBody: string
+  pdfDescription?: string
   showFlowchart?: boolean
   sections: BoardPolicySection[]
 }

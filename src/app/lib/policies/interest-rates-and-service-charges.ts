@@ -9,6 +9,7 @@ const doc: BoardPolicyDocument = {
   badge: "Updated with rates & charges",
   ctaTitle: "Questions About Rates or Charges?",
   ctaBody: "All loan-specific rates and charges are also disclosed in your Key Fact Statement.",
+  pdfDescription: "Download or view the PDF below.",
   showFlowchart: false,
   sections: [
   {
@@ -36,7 +37,7 @@ const doc: BoardPolicyDocument = {
     blocks: [
         { type: "table", headers: ["Charge", "Amount"], rows: [
             ["Processing fee", "Up to 8% of the loan amount, plus applicable GST, as disclosed in the KFS"],
-            ["Penal charge for late payment", "Levied per overdue instalment (EMI/EWI) on the amount under default, as per the Schedule of Penal Charges at Section 3 below, subject to a per-instalment cap and an overall cap per loan, and as disclosed in the KFS"],
+            ["Penal charge for late payment", "Levied per day on each overdue instalment (EMI/EWI) on the amount under default, as per the Schedule of Penal Charges at Section 3 below, subject to a per-instalment cap and an overall cap per loan, plus applicable GST, and as disclosed in the KFS"],
             ["Foreclosure / pre-payment charges", "NIL"],
             ["Convenience charge for repayment", "NIL"],
             ["Any other charge", "No fee or charge of any description, other than as stated above and disclosed in the KFS, is levied on or collected from the borrower, whether by the Company or by any Loan Service Provider"],
@@ -47,24 +48,26 @@ const doc: BoardPolicyDocument = {
     id: "3-penal-charges-schedule-and-principles",
     title: "3. Penal Charges – Schedule and Principles",
     blocks: [
-        { type: "paragraph", text: "Penal charges for late payment are levied per overdue instalment (EMI/EWI) in accordance with the following schedule:" },
+        { type: "paragraph", text: "Penal charges for late payment accrue for each day an instalment (EMI/EWI) remains overdue, until the instalment is paid or the cap for that instalment is reached, whichever is earlier, in accordance with the following schedule:" },
         { type: "table", headers: ["Instalment (EMI/EWI) amount in default", "Penal charge", "Cap per overdue EMI/EWI"], rows: [
-            ["EMI/EWI up to ₹2,000", "₹10 per overdue EMI/EWI", "₹250"],
-            ["EMI/EWI above ₹2,000", "₹20 per overdue EMI/EWI", "₹500"],
+            ["EMI/EWI up to ₹2,000", "₹10 per day on each overdue EMI/EWI", "₹250"],
+            ["EMI/EWI above ₹2,000", "₹20 per day on each overdue EMI/EWI", "₹500"],
           ] },
-        { type: "paragraph", text: "In addition to the per-instalment caps above, the total penal charges levied over the entire loan shall not exceed ₹3,000 per loan." },
+        { type: "paragraph", text: "In addition to the per-instalment caps above, the total penal charges levied over the entire loan shall not exceed ₹3,000 per loan. Applicable GST is levied in addition to the penal charges." },
+        { type: "paragraph", text: "Illustration: an EWI of ₹1,700 that remains unpaid for 30 days accrues a penal charge of ₹10 per day, which would amount to ₹300, but is capped at ₹250 for that instalment. If the EWI is paid on the 12th day, the penal charge is ₹120." },
         { type: "paragraph", text: "These penal charges are governed by the following principles:" },
         { type: "paragraph", text: "Penal charges are levied as charges and not in the form of penal interest added to the rate of interest; no additional component is added to the rate of interest." },
         { type: "paragraph", text: "Penal charges are levied only on the amount under default, are reasonable and commensurate with the non-compliance, and are applied in a non-discriminatory manner within a product category." },
-        { type: "paragraph", text: "Penal charges are not capitalised — no further interest is computed on such charges, and no fresh penal charge is levied on outstanding penal charges." },
-        { type: "paragraph", text: "The quantum and reason for penal charges are disclosed upfront in the loan agreement (in bold) and in the KFS, and are stated in reminders sent for non-compliance." }
+        { type: "paragraph", text: "Penal charges are not capitalised — no further interest is computed on such charges, and no fresh penal charge is levied on outstanding penal charges. Interest at the contracted rate continues to accrue on the amount outstanding as contractual interest." },
+        { type: "paragraph", text: "The quantum and reason for penal charges are disclosed upfront in the loan agreement (in bold) and in the KFS, and are stated in reminders sent for non-compliance. Any levy of penal charges, and the reason for it, is communicated to the borrower." }
     ],
   },
   {
     id: "4-general",
     title: "4. General",
     blocks: [
-        { type: "paragraph", text: "The interest rate applicable to each loan is communicated in the application form, the KFS and the sanction letter. Any change in interest rates or charges applies prospectively only. This page is read with the Company’s Interest Rate Policy and Fair Practice Code, available on this website." }
+        { type: "paragraph", text: "The interest rate applicable to each loan is communicated in the application form, the KFS and the sanction letter. Any change in interest rates or charges applies prospectively only; the per-day basis of penal charges in Section 3 applies to loans sanctioned on or after the effective date below, and loans sanctioned earlier continue to be governed by the KFS issued to the borrower. This page is read with the Company’s Interest Rate Policy and Fair Practice Code, available on this website." },
+        { type: "paragraph", text: "Effective date: 16th September 2026. Revised on 16 September 2026 (basis of penal charges changed from per overdue instalment to per day on each overdue instalment); approved. Previous version: 15 July 2026." }
     ],
   }
   ],
