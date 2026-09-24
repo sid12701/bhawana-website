@@ -21,7 +21,7 @@ export default function KycAmlCftPolicyPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="pt-20">
+      <main>
         <BoardPolicyContent document={getBoardPolicy("kyc-aml-cft-policy")} />
       </main>
       <Footer />

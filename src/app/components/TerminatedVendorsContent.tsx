@@ -1,8 +1,6 @@
-"use client"
-
-import { motion } from "framer-motion"
 import { AlertTriangle, FileText, List } from "lucide-react"
 import { Card, CardContent } from "./ui/card"
+import Reveal from "./Reveal"
 
 const terminatedVendors = [
   {
@@ -16,68 +14,51 @@ const terminatedVendors = [
 
 export function TerminatedVendorsContent() {
   return (
-    <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 min-h-screen">
+    <div className="bg-background min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <div className="flex items-center justify-center mb-6">
-              <List className="w-12 h-12 text-white mr-4" />
-              <AlertTriangle className="w-12 h-12 text-white" />
+      <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="mb-4 flex items-center justify-center md:mb-6">
+              <List className="h-10 w-10 md:h-12 md:w-12 text-primary mr-4" />
+              <AlertTriangle className="h-10 w-10 md:h-12 md:w-12 text-secondary" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-4 md:mb-6">
               Directory of Terminated Vendors
             </h1>
-            <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium">
+            <div className="inline-flex items-center rounded-full border border-primary/20 bg-background px-5 py-2 text-sm font-medium text-secondary">
               <FileText className="w-4 h-4 mr-2" />
               Public Disclosure
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Subtitle / Description */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <h2 className="text-xl md:text-2xl font-bold text-gray-900">
+          <Reveal className="text-center max-w-4xl mx-auto">
+            <h2 className="text-xl md:text-2xl font-bold text-secondary">
               List of Terminated Vendors as on 31<sup>st</sup> March 2026
             </h2>
-            <p className="text-gray-600 mt-2">
+            <p className="text-neutralText mt-2">
               (Including the terminated cases on mutually agreed terms before expiry of contract period)
             </p>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
 
       {/* Table */}
-      <section className="pb-20">
+      <section className="pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <Card className="shadow-lg border-0 bg-white/80 backdrop-blur-sm overflow-hidden">
+            <Reveal>
+              <Card className="overflow-hidden">
                 <CardContent className="p-0">
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm text-left">
                       <thead>
-                        <tr className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+                        <tr className="bg-primary text-white">
                           <th className="px-5 py-4 font-semibold whitespace-nowrap">Region</th>
                           <th className="px-5 py-4 font-semibold whitespace-nowrap">Vendor Name</th>
                           <th className="px-5 py-4 font-semibold whitespace-nowrap">Type of Activity</th>
@@ -89,15 +70,15 @@ export function TerminatedVendorsContent() {
                         {terminatedVendors.map((vendor, index) => (
                           <tr
                             key={index}
-                            className={`border-b border-gray-200 transition-colors hover:bg-blue-50/60 ${
-                              index % 2 === 0 ? "bg-white" : "bg-gray-50/50"
+                            className={`border-b border-neutralDivider transition-colors hover:bg-primary/5 ${
+                              index % 2 === 0 ? "bg-white" : "bg-neutralBg"
                             }`}
                           >
-                            <td className="px-5 py-4 text-gray-700">{vendor.region}</td>
-                            <td className="px-5 py-4 text-gray-900 font-medium">{vendor.vendorName}</td>
-                            <td className="px-5 py-4 text-gray-700">{vendor.activity}</td>
-                            <td className="px-5 py-4 text-gray-700 whitespace-nowrap">{vendor.date}</td>
-                            <td className="px-5 py-4 text-gray-700">{vendor.reason}</td>
+                            <td className="px-5 py-4 text-neutralText">{vendor.region}</td>
+                            <td className="px-5 py-4 text-secondary font-medium">{vendor.vendorName}</td>
+                            <td className="px-5 py-4 text-neutralText">{vendor.activity}</td>
+                            <td className="px-5 py-4 text-neutralText whitespace-nowrap">{vendor.date}</td>
+                            <td className="px-5 py-4 text-neutralText">{vendor.reason}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -105,7 +86,7 @@ export function TerminatedVendorsContent() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </Reveal>
           </div>
         </div>
       </section>

@@ -16,7 +16,7 @@ export default function BlogSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {blogPosts.map((post) => (
-            <Card key={post.id} className="group hover:shadow-lg transition-shadow duration-160">
+            <Card key={post.id} className="group relative flex flex-col hover:shadow-lg transition-shadow duration-160 focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
               <CardHeader className="pb-4">
                 <div className="aspect-video bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg mb-4 flex items-center justify-center">
                   <Calendar className="h-8 w-8 text-primary/50" />
@@ -25,15 +25,15 @@ export default function BlogSection() {
                   {post.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="flex flex-1 flex-col space-y-4">
                 <p className="text-neutralText text-sm line-clamp-3">{post.excerpt}</p>
 
                 <Button
                   variant="ghost"
-                  className="group/btn p-0 h-auto font-medium text-primary hover:text-primary/80"
+                  className="group/btn mt-auto self-start p-0 py-2 h-auto font-medium text-primary hover:bg-transparent hover:text-primary/80"
                   asChild
                 >
-                  <a href={post.href} className="flex items-center space-x-2">
+                  <a href={post.href} className="flex items-center space-x-2 focus-visible:ring-0 after:absolute after:inset-0 after:rounded-lg after:content-['']">
                     <span>Read more</span>
                     <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                   </a>

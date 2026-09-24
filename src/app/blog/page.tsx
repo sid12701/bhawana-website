@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card"  
 import SectionHeading from "../components/SectionHeading"
+import BlogCoverImage from "../components/BlogCoverImage"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import { meta as personalLoanMeta } from "@/content/blog/why-taking-a-personal-loan-is-beneficial"
@@ -51,31 +52,31 @@ export default function BlogIndexPage() {
       <Header />
       <main className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <SectionHeading title="Our Blog" subtitle="Guides and insights to help you borrow responsibly" centered />
+          <SectionHeading as="h1" title="Our Blog" subtitle="Guides and insights to help you borrow responsibly" centered />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {posts.map((post) => (
-              <Card key={post.slug} className="group hover:shadow-lg transition-shadow duration-150">
+              <Card key={post.slug} className="group relative flex flex-col hover:shadow-lg transition-shadow duration-150 focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
                 <CardHeader className="pb-3">
-                  {post.coverImage ? (
-                    <div className="aspect-video overflow-hidden rounded-md bg-neutral-100">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={post.coverImage || "/placeholder.svg?height=360&width=640&query=blog%20cover"}
+                  {/* The frame always renders so a post without a cover keeps the same card shape */}
+                  <div className="aspect-video overflow-hidden rounded-md bg-neutralBg">
+                    {post.coverImage ? (
+                      <BlogCoverImage
+                        src={post.coverImage}
                         alt={`${post.title} cover`}
                         className="h-full w-full object-cover transition-transform group-hover:scale-[1.02]"
                         loading="lazy"
                       />
-                    </div>
-                  ) : null}
+                    ) : null}
+                  </div>
                 </CardHeader>
-                <CardContent>
-                  <CardTitle className="font-poppins text-lg text-secondary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+                <CardContent className="flex flex-1 flex-col">
+                  <CardTitle as="h2" className="font-poppins text-lg text-secondary group-hover:text-primary transition-colors line-clamp-2 mb-2">
                     {post.title}
                   </CardTitle>
-                  <p className="text-neutral-700 text-sm line-clamp-3">{post.description}</p>
-                  <div className="mt-4">
-                    <Link className="text-primary hover:text-primary/80 font-medium" href={`/blog/${post.slug}`}>
+                  <p className="text-neutralText text-sm line-clamp-3">{post.description}</p>
+                  <div className="mt-auto pt-4">
+                    <Link className="inline-block py-2 text-primary hover:text-primary/80 font-medium focus-visible:outline-none after:absolute after:inset-0 after:rounded-lg after:content-['']" href={`/blog/${post.slug}`}>
                       Read more →
                     </Link>
                   </div>

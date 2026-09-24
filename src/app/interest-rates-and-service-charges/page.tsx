@@ -23,7 +23,7 @@ export default function InterestRatesAndServiceChargesPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="pt-20">
+      <main>
         <BoardPolicyContent document={getBoardPolicy("interest-rates-and-service-charges")} />
       </main>
       <Footer />

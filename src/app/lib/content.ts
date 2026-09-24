@@ -4,7 +4,7 @@ export type HeroSlide = {
     id: string
     title: string
     description: string
-    ctas?: { label: string; href: string; variant?: "default" | "outline" }[]
+    ctas?: { label: string; href?: string; action?: "openPolicies"; variant?: "default" | "outline" }[]
   }
   
   export const hero = {
@@ -25,7 +25,7 @@ export type HeroSlide = {
         id: "s3",
         title: "Customer-First Policies",
         description: "We operate with fairness and transparency. Read our codes and policies.",
-        ctas: [{ label: "View Policies", href: "/#" }],
+        ctas: [{ label: "View Policies", action: "openPolicies" }],
       },
     ] as HeroSlide[],
   }
@@ -142,8 +142,17 @@ export const legal = {
     termsHref: "/terms-conditions/",
     privacyPolicyPage: "/privacy-policy/",
     karmalifePage: "/karmalife/",
+    karmalifeAppUrl: "https://play.google.com/store/apps/details?id=in.onionlife.karmalife&hl=en_IN&pli=1",
     email: "info@bhawanafinance.com",
     phone: "+91-124-6687879",
+    // Same number in the local format some pages display, and the one target every tel: link uses
+    phoneLocal: "0124-6687879",
+    phoneTel: "+911246687879",
+    // KarmaLife's GRO is published with two different numbers (partner table vs "Call Us" card).
+    // Both are kept exactly as live until the owner confirms which is correct.
+    karmalifeGroPhone: "+91 9355598772",
+    karmalifeGroPhoneTel: "+919355598772",
+    karmalifeGroContactNumber: "080 4736 0383",
     cin: "U65100DL1995PTC071089",
     rbiRegNo: "B-14.02856",
     rbiSachetUrl: "https://sachet.rbi.org.in",
@@ -202,7 +211,7 @@ export const legal = {
         ]
        },
       { label: "Blog", href: "/blog/" },
-      { label: "Contact", href: "#contact" },
+      { label: "Contact", href: "/#contact" },
     ],
   }
   

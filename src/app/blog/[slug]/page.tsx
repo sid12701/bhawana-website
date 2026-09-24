@@ -72,24 +72,25 @@ export default async function BlogPostPage({
     <>
       <Header />
       <main className="bg-white">
-        <header className="bg-neutral-50 border-b">
-          <div className="container mx-auto px-4 py-6 md:py-10">
-            <nav aria-label="Breadcrumb" className="text-sm text-neutral-600 mb-3">
-              <Link href="/" className="hover:underline">
+        <header className="bg-neutralBg border-b">
+          {/* Same column as the article below, so the title and the body text share a left edge */}
+          <div className="container mx-auto max-w-3xl px-4 py-6 md:py-10">
+            <nav aria-label="Breadcrumb" className="text-sm text-neutralText mb-3">
+              <Link href="/" className="inline-flex min-h-6 items-center underline-offset-2 transition-colors hover:text-primary hover:underline">
                 Home
               </Link>
               <span className="px-2">{"/"}</span>
-              <Link href="/blog/" className="hover:underline">
+              <Link href="/blog/" className="inline-flex min-h-6 items-center underline-offset-2 transition-colors hover:text-primary hover:underline">
                 Blog
               </Link>
               <span className="px-2">{"/"}</span>
-              <span aria-current="page" className="text-neutral-900">
+              <span aria-current="page" className="text-secondary">
                 {title}
               </span>
             </nav>
-            <h1 className="text-2xl md:text-4xl font-semibold text-secondary">{title}</h1>
+            <h1 className="font-poppins text-2xl md:text-4xl font-bold text-secondary">{title}</h1>
             {(date || readingTime) && (
-              <p className="mt-2 text-sm text-neutral-600">
+              <p className="mt-2 text-sm text-neutralText">
                 {date ? new Date(date).toLocaleDateString() : null}
                 {date && readingTime ? " • " : ""}
                 {readingTime ?? null}
@@ -98,7 +99,7 @@ export default async function BlogPostPage({
           </div>
         </header>
 
-        <article className="container mx-auto px-4 py-8 md:py-12 prose prose-neutral max-w-3xl">
+        <article className="container mx-auto px-4 py-8 md:py-12 prose max-w-3xl">
           <Post />
           <div className="mt-10">
             <Button asChild variant="outline">

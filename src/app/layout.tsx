@@ -9,6 +9,10 @@ const inter = Inter({
   display: "swap",
 })
 
+// The generated CSS carries every unicode-range Google serves, Devanagari included, so Hindi text uses this
+// same family and the browser fetches the Devanagari files only on pages that contain Hindi.
+// `subsets` only decides what gets preloaded. A second Poppins() for Devanagari re-declared the Latin faces
+// under the same family name, which made browsers ignore the preloads and download those fonts twice.
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -23,7 +27,6 @@ export const metadata: Metadata = {
     "Registered NBFC providing fast, transparent, and reliable personal loans and salary advance solutions. RBI regulated with customer-first policies.",
   icons: {
     icon: [{ url: "/favicon.ico", type: "image/x-icon" }],
-    shortcut: "/favicon.ico",
     apple: "/images/final_logo.ico",
   },
 }

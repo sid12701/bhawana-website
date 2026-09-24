@@ -17,7 +17,7 @@ export default function FairPracticeCodeHindiPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="pt-20">
+      <main>
         <BoardPolicyContent document={getBoardPolicy("fair-practice-code-hindi")} />
       </main>
       <Footer />

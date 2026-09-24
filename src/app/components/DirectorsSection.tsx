@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, User } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -46,17 +46,19 @@ export default function DirectorsSection() {
         />
 
         {/* Desktop Layout */}
-        <div className="hidden md:grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {directors.map((director) => (
-            <Card
-              key={director.id}
-              className="group hover:shadow-lg transition-shadow duration-160"
-            >
+            <Card key={director.id}>
               <CardHeader className="text-center pb-4">
-                <div className="w-20 h-20 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <div className="w-20 h-20 mx-auto mb-4 overflow-hidden rounded-full bg-primary/10 ring-2 ring-primary/10 ring-offset-2">
                   <img
                     src={director.image}
-                    alt={director.name}
+                    // The name is the heading right below; repeating it as alt text would read it twice
+                    alt=""
+                    width={80}
+                    height={80}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -86,34 +88,43 @@ export default function DirectorsSection() {
         <div className="md:hidden space-y-4 max-w-2xl mx-auto">
           {directors.map((director) => (
             <Card key={director.id} className="overflow-hidden">
-              <button
-                onClick={() => toggleDirector(director.id)}
-                className="w-full text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                aria-expanded={expandedDirector === director.id}
-                aria-controls={`director-${director.id}-content`}
-              >
-                <CardHeader className="flex flex-row items-center space-y-0 pb-4">
-                  <div className="flex items-center space-x-4 flex-1">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <User className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <CardTitle className="font-poppins text-lg text-secondary text-left">
-                        {director.name}
-                      </CardTitle>
-                      <p className="text-sm text-primary font-medium">
-                        {director.role}
-                      </p>
-                    </div>
-                  </div>
+              {/* Heading wraps the button (not the other way round) so screen readers still list each director as a heading */}
+              <h3>
+                <button
+                  type="button"
+                  onClick={() => toggleDirector(director.id)}
+                  className="flex w-full items-center gap-4 p-6 pb-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  aria-expanded={expandedDirector === director.id}
+                  aria-controls={`director-${director.id}-content`}
+                >
+                  <span className="w-12 h-12 overflow-hidden rounded-full bg-primary/10 flex-shrink-0">
+                    <img
+                      src={director.image}
+                      alt=""
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover"
+                    />
+                  </span>
+                  <span className="flex-1">
+                    <span className="block font-poppins text-lg font-semibold leading-none tracking-tight text-secondary">
+                      {director.name}
+                    </span>{" "}
+                    <span className="mt-1.5 block text-sm font-medium text-primary">
+                      {director.role}
+                    </span>
+                  </span>
                   <ChevronDown
+                    aria-hidden="true"
                     className={cn(
-                      "h-5 w-5 text-neutralText transition-transform",
+                      "h-5 w-5 flex-shrink-0 text-neutralText transition-transform",
                       expandedDirector === director.id && "rotate-180"
                     )}
                   />
-                </CardHeader>
-              </button>
+                </button>
+              </h3>
 
               <AnimatePresence>
                 {expandedDirector === director.id && (

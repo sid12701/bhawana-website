@@ -1,4 +1,4 @@
-import blogImage from "../../../public/images/how-do-i-unite-my-daily-work.png"
+import blogImage from "../../../public/images/how-do-i-unite-my-daily-work.webp"
 export const meta = {
   slug: "how-do-i-unite-my-daily-work-and-small-side-business",
   title: "How Do I Unite My Daily Work and Small Side Business?",
@@ -20,7 +20,7 @@ export default function Post() {
           alt="Illustration of balancing a full-time job and side business with calendar and laptop"
           className="w-full rounded-md border object-cover"
         />
-        <figcaption className="mt-2 text-sm text-neutral-600">
+        <figcaption className="mt-2 text-sm text-neutralText">
           Finding balance between your primary job and a growing side business.
         </figcaption>
       </figure>

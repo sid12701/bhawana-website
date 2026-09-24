@@ -22,7 +22,7 @@ export default function GrievanceRedressalPolicyPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="pt-20">
+      <main>
         <BoardPolicyContent document={getBoardPolicy("grievance-redressal-mechanism")} />
       </main>
       <Footer />

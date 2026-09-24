@@ -9,7 +9,7 @@ export const meta = {
   
   export default function Post() {
     return (
-      <div className="text-[15.5px] leading-7 text-neutral-800">
+      <div>
         {/* Lead image */}
         <figure className="mb-6">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -66,20 +66,20 @@ export const meta = {
   
         <p>Once you’ve reflected on these, let’s explore the advantages of personal loans.</p>
   
-        <h3 className="mt-8 text-xl font-semibold">It Fulfills Your Unpredictable Expenses</h3>
+        <h2 className="mt-8 text-xl font-semibold">It Fulfills Your Unpredictable Expenses</h2>
         <p>
           Unpredictable expenses can occur anytime. Sometimes you can absorb them, but not always — and your partner,
           family, or friends may not be able to help. Asking for money can feel humiliating, too. Thanks to personal loans
           being 100% unsecured, you can often access funds quickly — in some cases within 24 hours.
         </p>
   
-        <h3 className="mt-8 text-xl font-semibold">It Is a 100% Unsecured Loan</h3>
+        <h2 className="mt-8 text-xl font-semibold">It Is a 100% Unsecured Loan</h2>
         <p>
           Personal loans don’t require collateral. They’re handy and, with planning, repaying them isn’t difficult. This
           makes them accessible to a broad range of salaried borrowers.
         </p>
   
-        <h3 className="mt-8 text-xl font-semibold">It Is Ideal for Many Purposes</h3>
+        <h2 className="mt-8 text-xl font-semibold">It Is Ideal for Many Purposes</h2>
         <p>
           While personal loans are frequently used for urgent cash needs, they can also support travel, medical expenses,
           or shopping. In simpler words, if you require instant cash without pledging collateral, personal loans are a
@@ -89,14 +89,14 @@ export const meta = {
           </strong>
         </p>
   
-        <h3 className="mt-8 text-xl font-semibold">It Can Boost Your Credit Score</h3>
+        <h2 className="mt-8 text-xl font-semibold">It Can Boost Your Credit Score</h2>
         <p>
           Paying EMIs on time — for any loan — supports your credit score. Since personal loans are typically smaller than
           home or education loans, they can be a manageable way to build positive repayment history, improving access to
           larger loans later.
         </p>
   
-        <h3 className="mt-8 text-xl font-semibold">Get Instant Cash with Fewer Worries</h3>
+        <h2 className="mt-8 text-xl font-semibold">Get Instant Cash with Fewer Worries</h2>
         <p>
           With no collateral or guarantor required, personal loans may let you avoid borrowing from friends or dipping
           into savings. If your income is stable, they can be a convenient financing option for short-term needs.
@@ -107,14 +107,14 @@ export const meta = {
           Amounts can range from as low as ₹1,000 up to ₹1 lakh, depending on eligibility and need.
         </p>
   
-        <h3 className="mt-8 text-xl font-semibold">Instant Disbursal of Funds</h3>
+        <h2 className="mt-8 text-xl font-semibold">Instant Disbursal of Funds</h2>
         <p>
           Banks and NBFCs across India offer personal loans. While eligibility, process, interest rate, and repayment
           terms vary by lender, the application process is usually quick and repayment is flexible. Disbursals can occur
           within 24 hours of approval in many cases.
         </p>
   
-        <h3 className="mt-8 text-xl font-semibold">Wrapping Up</h3>
+        <h2 className="mt-8 text-xl font-semibold">Wrapping Up</h2>
         <p>
           Personal loans can be very useful in unfortunate circumstances — but they can be expensive over the long term.
           Consider alternatives where appropriate, and always evaluate your overall financial situation before you borrow.

@@ -62,6 +62,7 @@ POLICIES = [
         "subtitle": "निष्पक्ष आचरण संहिता — पारदर्शिता, नैतिक ऋण और ग्राहक संरक्षण।",
         "pdfFile": "fair-practice-code-hindi.pdf",
         "badge": "हिन्दी · RBI Compliant",
+        "lang": "hi",
         "ctaTitle": "Fair Practice Code संबंधी प्रश्न?",
         "ctaBody": "हमसे संपर्क करें — हम संहिता की प्रतिबद्धताओं को समझाने में सहायता करेंगे।",
         "mode": "numbered",
@@ -113,6 +114,7 @@ POLICIES = [
         "subtitle": "भारतीय रिज़र्व बैंक – एकीकृत लोकपाल योजना, 2021 की मुख्य विशेषताएँ और शिकायत निवारण की त्रि-स्तरीय प्रक्रिया।",
         "pdfFile": "rbi-ombudsman-salient-features-hindi.pdf",
         "badge": "हिन्दी · RB-IOS 2021",
+        "lang": "hi",
         "ctaTitle": "शिकायत निवारण में सहायता चाहिए?",
         "ctaBody": "कृपया पहले हमारे शिकायत निवारण तंत्र का उपयोग करें; यदि समाधान न हो, तो RBI के समक्ष शिकायत दर्ज करें।",
         "mode": "numbered",
@@ -425,6 +427,7 @@ def emit_policy_file(meta: dict, sections: list[dict]) -> str:
         )
     sections_ts = ",\n".join(section_parts)
     show_flowchart = "true" if meta.get("showFlowchart") else "false"
+    lang_line = f"\n  lang: {ts_string(meta['lang'])}," if meta.get("lang") else ""
     return f"""import type {{ BoardPolicyDocument }} from "../boardPolicyTypes"
 
 const doc: BoardPolicyDocument = {{
@@ -436,7 +439,7 @@ const doc: BoardPolicyDocument = {{
   badge: {ts_string(meta["badge"])},
   ctaTitle: {ts_string(meta["ctaTitle"])},
   ctaBody: {ts_string(meta["ctaBody"])},
-  showFlowchart: {show_flowchart},
+  showFlowchart: {show_flowchart},{lang_line}
   sections: [
 {sections_ts}
   ],

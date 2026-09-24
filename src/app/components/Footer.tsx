@@ -8,9 +8,9 @@ export default function Footer() {
   return (
     <footer className="bg-secondary text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Company & Legal */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-4">
             <h3 className="font-poppins text-lg font-bold mb-4">Bhawana Capital Private Limited</h3>
             <div className="space-y-3 text-sm text-gray-300">
               <p>
@@ -53,212 +53,248 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="font-poppins font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
+          <div className="lg:col-span-5">
+            <h4 className="font-poppins font-semibold mb-3">Quick Links</h4>
+            {/* Each PDF label keeps its last word and download icon together so the icon never wraps onto a line by itself */}
+            <ul className="text-sm sm:columns-2 md:columns-1 lg:columns-2 gap-x-8">
+              <li className="break-inside-avoid">
                 <Link
                   href={legal.termsHref}
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                  className="inline-flex py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
                   Terms & Conditions
                 </Link>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <Link
                   href={legal.privacyPolicyPage}
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                  className="inline-flex py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
                   Privacy Policy
                 </Link>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <a
                   href={legal.rbiSachetUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                  className="inline-flex py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
                   RBI Sachet Portal
                 </a>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <a
                   href={legal.rbiCmsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                  className="inline-flex py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
                   RBI Complaint Management System (CMS)
                 </a>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <Link
                   href={legal.interestRatesChargesPage}
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                  className="inline-flex py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
                   Interest Rates and Service Charges (Online)
                 </Link>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <a
                   href={legal.interestRatesChargesPdf}
                   target="_blank"
                   rel="noopener noreferrer"
                   download="interest-rates-and-service-charges.pdf"
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                  className="inline-block py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
-                  <span>Interest Rates and Service Charges (PDF)</span>
-                  <Download className="h-3 w-3" />
+                  <span>
+                    Interest Rates and Service Charges{" "}
+                    <span className="whitespace-nowrap">
+                      (PDF)
+                      <Download className="ml-1.5 inline h-3 w-3 align-[-1px]" aria-hidden="true" />
+                    </span>
+                  </span>
                 </a>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <Link
                   href={legal.karmalifePage}
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                  className="inline-flex py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
                   DSA/LSP Partnership (KarmaLife)
                 </Link>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <Link
                   href={legal.grievancePage}
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                  className="inline-flex py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
                   Grievance Redressal (Online)
                 </Link>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <a
                   href={legal.grievancePdf}
                   target="_blank"
                   rel="noopener noreferrer"
                   download="grievance-redressal-mechanism.pdf"
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                  className="inline-block py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
-                  <span>Grievance Redressal (PDF)</span>
-                  <Download className="h-3 w-3" />
+                  <span>
+                    Grievance Redressal{" "}
+                    <span className="whitespace-nowrap">
+                      (PDF)
+                      <Download className="ml-1.5 inline h-3 w-3 align-[-1px]" aria-hidden="true" />
+                    </span>
+                  </span>
                 </a>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <Link
                   href={legal.fpcPage}
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                  className="inline-flex py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
                   Fair Practice Code (English, Online)
                 </Link>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <a
                   href={legal.fpcPdf}
                   target="_blank"
                   rel="noopener noreferrer"
                   download="fair-practice-code.pdf"
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                  className="inline-block py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
-                  <span>Fair Practice Code (English PDF)</span>
-                  <Download className="h-3 w-3" />
+                  <span>
+                    Fair Practice Code (English{" "}
+                    <span className="whitespace-nowrap">
+                      PDF)
+                      <Download className="ml-1.5 inline h-3 w-3 align-[-1px]" aria-hidden="true" />
+                    </span>
+                  </span>
                 </a>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <Link
                   href={legal.fpcHindiPage}
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                  className="inline-flex py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
                   Fair Practice Code (Hindi, Online)
                 </Link>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <a
                   href={legal.fpcHindiPdf}
                   target="_blank"
                   rel="noopener noreferrer"
                   download="fair-practice-code-hindi.pdf"
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                  className="inline-block py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
-                  <span>Fair Practice Code (Hindi PDF)</span>
-                  <Download className="h-3 w-3" />
+                  <span>
+                    Fair Practice Code (Hindi{" "}
+                    <span className="whitespace-nowrap">
+                      PDF)
+                      <Download className="ml-1.5 inline h-3 w-3 align-[-1px]" aria-hidden="true" />
+                    </span>
+                  </span>
                 </a>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <Link
                   href={legal.rbiOmbudsmanPage}
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                  className="inline-flex py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
                   RBI Ombudsman Salient Features (English, Online)
                 </Link>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <a
                   href={legal.rbiOmbudsmanPdf}
                   target="_blank"
                   rel="noopener noreferrer"
                   download="rbi-ombudsman-salient-features.pdf"
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                  className="inline-block py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
-                  <span>RBI Ombudsman Salient Features (English PDF)</span>
-                  <Download className="h-3 w-3" />
+                  <span>
+                    RBI Ombudsman Salient Features (English{" "}
+                    <span className="whitespace-nowrap">
+                      PDF)
+                      <Download className="ml-1.5 inline h-3 w-3 align-[-1px]" aria-hidden="true" />
+                    </span>
+                  </span>
                 </a>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <Link
                   href={legal.rbiOmbudsmanHindiPage}
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                  className="inline-flex py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
                   RBI Ombudsman Salient Features (Hindi, Online)
                 </Link>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <a
                   href={legal.rbiOmbudsmanHindiPdf}
                   target="_blank"
                   rel="noopener noreferrer"
                   download="rbi-ombudsman-salient-features-hindi.pdf"
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                  className="inline-block py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
-                  <span>RBI Ombudsman Salient Features (Hindi PDF)</span>
-                  <Download className="h-3 w-3" />
+                  <span>
+                    RBI Ombudsman Salient Features (Hindi{" "}
+                    <span className="whitespace-nowrap">
+                      PDF)
+                      <Download className="ml-1.5 inline h-3 w-3 align-[-1px]" aria-hidden="true" />
+                    </span>
+                  </span>
                 </a>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <Link
                   href={legal.interestRatePage}
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                  className="inline-flex py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
                   Interest Rate Policy (Online)
                 </Link>
               </li>
-              <li>
+              <li className="break-inside-avoid">
                 <a
                   href={legal.interestRatePdf}
                   target="_blank"
                   rel="noopener noreferrer"
                   download="interest-rate-policy.pdf"
-                  className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                  className="inline-block py-1.5 text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                 >
-                  <span>Interest Rate Policy (PDF)</span>
-                  <Download className="h-3 w-3" />
+                  <span>
+                    Interest Rate Policy{" "}
+                    <span className="whitespace-nowrap">
+                      (PDF)
+                      <Download className="ml-1.5 inline h-3 w-3 align-[-1px]" aria-hidden="true" />
+                    </span>
+                  </span>
                 </a>
               </li>
             </ul>
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="lg:col-span-3">
             <h4 className="font-poppins font-semibold mb-4">Contact</h4>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-1 text-sm">
               <a
                 href={`mailto:${legal.email}`}
-                className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2 py-1.5"
               >
-                <Mail className="h-4 w-4" />
+                <Mail className="h-4 w-4 shrink-0" />
                 <span>{legal.email}</span>
               </a>
               <a
                 href={`tel:${legal.phone}`}
-                className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2"
+                className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2 py-1.5"
               >
-                <Phone className="h-4 w-4" />
+                <Phone className="h-4 w-4 shrink-0" />
                 <span>{legal.phone}</span>
               </a>
             </div>

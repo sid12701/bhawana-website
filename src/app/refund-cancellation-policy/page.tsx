@@ -20,7 +20,7 @@ export default function RefundCancellationPolicyPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="pt-20">
+      <main>
         <RefundCancellationPolicyContent />
       </main>
       <Footer />

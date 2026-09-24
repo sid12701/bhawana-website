@@ -30,11 +30,11 @@ export default function ContactSection() {
   const {
     register,
     handleSubmit,
-    reset,
-    formState: { errors, isSubmitting, isValid },
+    watch,
+    formState: { errors, isSubmitting },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
-    mode: "onChange",
+    mode: "onTouched",
     defaultValues: {
       name: "",
       email: "",
@@ -44,15 +44,20 @@ export default function ContactSection() {
     },
   })
 
+  // Status stays up until the visitor edits the form again, rather than vanishing on a timer.
+  useEffect(() => {
+    const subscription = watch(() => {
+      setIsSubmitted(false)
+      setIsError(false)
+      setErrorMessage("")
+    })
+    return () => subscription.unsubscribe()
+  }, [watch])
+
   const showGenericError = () => {
     setIsSubmitted(false)
     setIsError(true)
     setErrorMessage(GENERIC_ERROR_MESSAGE)
-
-    window.setTimeout(() => {
-      setIsError(false)
-      setErrorMessage("")
-    }, 5000)
   }
 
   const onSubmit = (data: ContactFormData) => {
@@ -81,12 +86,8 @@ export default function ContactSection() {
     try {
       window.location.href = `mailto:${legal.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 
+      // We can't tell whether a mail app actually opened, so keep the visitor's text rather than clearing it.
       setIsSubmitted(true)
-      reset()
-
-      window.setTimeout(() => {
-        setIsSubmitted(false)
-      }, 5000)
     } catch {
       showGenericError()
     }
@@ -123,7 +124,7 @@ export default function ContactSection() {
                     <p className="font-medium text-secondary">Email</p>
                     <a
                       href={`mailto:${legal.email}`}
-                      className="text-neutralText hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                      className="inline-block py-1 text-neutralText hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                     >
                       {legal.email}
                     </a>
@@ -136,7 +137,7 @@ export default function ContactSection() {
                     <p className="font-medium text-secondary">Phone</p>
                     <a
                       href={`tel:${legal.phone}`}
-                      className="text-neutralText hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                      className="inline-block py-1 text-neutralText hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                     >
                       {legal.phone}
                     </a>
@@ -186,7 +187,7 @@ export default function ContactSection() {
                       href={legal.rbiSachetUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary hover:text-primary/80 font-medium underline"
+                      className="font-medium text-primary underline underline-offset-2 transition-colors hover:text-secondary"
                     >
                       RBI Sachet portal
                     </a>
@@ -198,7 +199,7 @@ export default function ContactSection() {
                       href={legal.rbiCmsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary hover:text-primary/80 font-medium underline"
+                      className="font-medium text-primary underline underline-offset-2 transition-colors hover:text-secondary"
                     >
                       RBI Complaint Management System
                     </a>
@@ -214,31 +215,33 @@ export default function ContactSection() {
               <CardTitle className="font-poppins text-xl text-secondary">Request a Call Back</CardTitle>
             </CardHeader>
             <CardContent>
-              {isSubmitted && (
-                <motion.div
-                  {...successMotionProps}
-                  className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-3"
-                >
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
-                  <div>
-                    <p className="text-green-800 font-medium">Email draft prepared.</p>
-                    <p className="text-green-700 text-sm">Please send it from your email app.</p>
-                  </div>
-                </motion.div>
-              )}
+              <div role="status" aria-live="polite" aria-atomic="true">
+                {isSubmitted && (
+                  <motion.div
+                    {...successMotionProps}
+                    className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-3"
+                  >
+                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                    <div>
+                      <p className="text-green-800 font-medium">Email draft prepared.</p>
+                      <p className="text-success text-sm">Please send it from your email app.</p>
+                    </div>
+                  </motion.div>
+                )}
 
-              {isError && (
-                <motion.div
-                  {...successMotionProps}
-                  className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-3"
-                >
-                  <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0" />
-                  <div>
-                    <p className="text-red-800 font-medium">Unable to prepare message</p>
-                    <p className="text-red-700 text-sm">{errorMessage}</p>
-                  </div>
-                </motion.div>
-              )}
+                {isError && (
+                  <motion.div
+                    {...successMotionProps}
+                    className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-3"
+                  >
+                    <AlertCircle className="h-5 w-5 text-error flex-shrink-0" />
+                    <div>
+                      <p className="text-red-800 font-medium">Unable to prepare message</p>
+                      <p className="text-red-700 text-sm">{errorMessage}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
                 <input
@@ -256,13 +259,15 @@ export default function ContactSection() {
                   </label>
                   <Input
                     id="name"
+                    autoComplete="name"
+                    aria-required="true"
                     {...register("name")}
                     placeholder="Enter your full name"
                     aria-invalid={errors.name ? "true" : "false"}
                     aria-describedby={errors.name ? "name-error" : undefined}
                   />
                   {errors.name && (
-                    <p id="name-error" className="mt-1 text-sm text-red-600">
+                    <p id="name-error" className="mt-1 text-sm text-error">
                       {errors.name.message}
                     </p>
                   )}
@@ -275,13 +280,15 @@ export default function ContactSection() {
                   <Input
                     id="email"
                     type="email"
+                    autoComplete="email"
+                    aria-required="true"
                     {...register("email")}
                     placeholder="Enter your email address"
                     aria-invalid={errors.email ? "true" : "false"}
                     aria-describedby={errors.email ? "email-error" : undefined}
                   />
                   {errors.email && (
-                    <p id="email-error" className="mt-1 text-sm text-red-600">
+                    <p id="email-error" className="mt-1 text-sm text-error">
                       {errors.email.message}
                     </p>
                   )}
@@ -294,13 +301,16 @@ export default function ContactSection() {
                   <Input
                     id="phone"
                     type="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
+                    aria-required="true"
                     {...register("phone")}
                     placeholder="Enter your phone number"
                     aria-invalid={errors.phone ? "true" : "false"}
                     aria-describedby={errors.phone ? "phone-error" : undefined}
                   />
                   {errors.phone && (
-                    <p id="phone-error" className="mt-1 text-sm text-red-600">
+                    <p id="phone-error" className="mt-1 text-sm text-error">
                       {errors.phone.message}
                     </p>
                   )}
@@ -312,6 +322,7 @@ export default function ContactSection() {
                   </label>
                   <Textarea
                     id="message"
+                    aria-required="true"
                     {...register("message")}
                     placeholder="Tell us about your requirements..."
                     rows={4}
@@ -319,13 +330,13 @@ export default function ContactSection() {
                     aria-describedby={errors.message ? "message-error" : undefined}
                   />
                   {errors.message && (
-                    <p id="message-error" className="mt-1 text-sm text-red-600">
+                    <p id="message-error" className="mt-1 text-sm text-error">
                       {errors.message.message}
                     </p>
                   )}
                 </div>
 
-                <Button type="submit" size="lg" className="w-full" disabled={!isValid || isSubmitting}>
+                <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                   {isSubmitting ? "Preparing..." : "Open Email Draft"}
                 </Button>
               </form>

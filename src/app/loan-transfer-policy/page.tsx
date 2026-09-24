@@ -15,7 +15,7 @@ export default function LoanTransferPolicyPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="pt-20">
+      <main>
         <BoardPolicyContent document={getBoardPolicy("loan-transfer-policy")} />
       </main>
       <Footer />

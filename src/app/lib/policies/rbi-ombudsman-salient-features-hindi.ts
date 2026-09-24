@@ -12,6 +12,7 @@ const doc: BoardPolicyDocument = {
   ctaBody:
     "कृपया पहले हमारे शिकायत निवारण तंत्र का उपयोग करें; यदि समाधान न हो, तो RBI के समक्ष शिकायत दर्ज करें।",
   showFlowchart: false,
+  lang: "hi",
   sections: [
     {
       id: "parichay",

@@ -1,0 +1,440 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-24T05:37:23+00:00",
+  "title": "Design System: Bhawana Capital",
+  "extensions": {
+    "colorMeta": {
+      "bhawana-blue": {
+        "role": "primary",
+        "displayName": "Bhawana Blue",
+        "canonical": "#164c8a",
+        "tonalRamp": [
+          "#0b2442",
+          "#123f72",
+          "#1a5aa3",
+          "#2274d3",
+          "#4f94e3",
+          "#84b4eb",
+          "#b9d4f4",
+          "#e9f2fb"
+        ]
+      },
+      "midnight-ink": {
+        "role": "secondary",
+        "displayName": "Midnight Ink",
+        "canonical": "#0e2954",
+        "tonalRamp": [
+          "#0b2042",
+          "#133772",
+          "#1b4fa2",
+          "#2366d2",
+          "#5088e2",
+          "#85aceb",
+          "#b9d0f3",
+          "#e9f0fb"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#424242",
+          "#5e5e5e",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "#f5f7fa",
+        "tonalRamp": [
+          "#1a2433",
+          "#2c3e58",
+          "#3f587e",
+          "#5272a3",
+          "#7792bb",
+          "#a0b3cf",
+          "#c9d3e4",
+          "#eef1f7"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e6ecf2",
+        "tonalRamp": [
+          "#1a2632",
+          "#2d4257",
+          "#415e7c",
+          "#547aa1",
+          "#7999b9",
+          "#a1b8ce",
+          "#c9d6e3",
+          "#eef2f6"
+        ]
+      },
+      "slate-text": {
+        "role": "neutral",
+        "displayName": "Slate Text",
+        "canonical": "#4f5b6e",
+        "tonalRamp": [
+          "#20252d",
+          "#37404d",
+          "#4f5b6e",
+          "#66768e",
+          "#8895aa",
+          "#acb5c3",
+          "#d0d5dd",
+          "#f0f2f4"
+        ]
+      },
+      "wash": {
+        "role": "neutral",
+        "displayName": "Wash",
+        "canonical": "#eaf0f7",
+        "tonalRamp": [
+          "#152537",
+          "#254060",
+          "#345b89",
+          "#4476b1",
+          "#6b95c7",
+          "#98b5d8",
+          "#c4d5e8",
+          "#edf2f8"
+        ]
+      },
+      "field-border": {
+        "role": "neutral",
+        "displayName": "Field Border",
+        "canonical": "#e2e8f0",
+        "tonalRamp": [
+          "#1a2532",
+          "#2d3f57",
+          "#405a7c",
+          "#5375a1",
+          "#7994b9",
+          "#a1b4ce",
+          "#c9d4e3",
+          "#eef2f6"
+        ]
+      },
+      "ink-black": {
+        "role": "neutral",
+        "displayName": "Ink Black",
+        "canonical": "#020817",
+        "tonalRamp": [
+          "#061846",
+          "#0b2a7a",
+          "#0f3cae",
+          "#144ee1",
+          "#4374ef",
+          "#7c9ef4",
+          "#b4c8f8",
+          "#e8eefd"
+        ]
+      },
+      "on-blue": {
+        "role": "neutral",
+        "displayName": "On Blue",
+        "canonical": "#f8fafc",
+        "tonalRamp": [
+          "#172636",
+          "#28425d",
+          "#395e84",
+          "#497aab",
+          "#7099c2",
+          "#9bb8d4",
+          "#c6d6e7",
+          "#edf2f7"
+        ]
+      },
+      "footer-text": {
+        "role": "neutral",
+        "displayName": "Footer Text",
+        "canonical": "#d1d5db",
+        "tonalRamp": [
+          "#22252b",
+          "#3a414a",
+          "#535c6a",
+          "#6b7789",
+          "#8d97a5",
+          "#afb6c0",
+          "#d1d5db",
+          "#f1f2f4"
+        ]
+      },
+      "error": {
+        "role": "status",
+        "displayName": "Error",
+        "canonical": "#dc2626",
+        "tonalRamp": [
+          "#420b0b",
+          "#721212",
+          "#a21a1a",
+          "#d32222",
+          "#e34f4f",
+          "#eb8484",
+          "#f4b9b9",
+          "#fbe9e9"
+        ]
+      },
+      "success": {
+        "role": "status",
+        "displayName": "Success",
+        "canonical": "#15803d",
+        "tonalRamp": [
+          "#0b421f",
+          "#137236",
+          "#1ba24d",
+          "#23d264",
+          "#50e287",
+          "#84ebab",
+          "#b9f3cf",
+          "#e9fbf0"
+        ]
+      },
+      "field-stroke": {
+        "role": "neutral",
+        "displayName": "Field Stroke",
+        "canonical": "#7f8a9b",
+        "tonalRamp": [
+          "#22252b",
+          "#3a414a",
+          "#535c6a",
+          "#6b7789",
+          "#8c96a6",
+          "#afb6c0",
+          "#d1d5db",
+          "#f1f2f4"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Homepage hero headline only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page H1 on every non-home page, centred in the page header."
+      },
+      "section": {
+        "displayName": "Section",
+        "purpose": "Centred section headings on marketing pages and the blog index."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card and policy-section titles, often led by a blue line icon."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Hero and page-header subtitles in Slate Text."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Policy text, card copy and lists; left-aligned."
+      },
+      "article": {
+        "displayName": "Article",
+        "purpose": "Blog post body in a 768px column."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, navigation, badges, table headers."
+      },
+      "hindi": {
+        "displayName": "Hindi",
+        "purpose": "Devanagari cut of Poppins, loaded only on pages marked lang=\"hi\"."
+      }
+    },
+    "shadows": [
+      {
+        "name": "rest",
+        "value": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+        "purpose": "Default cards."
+      },
+      {
+        "name": "raised",
+        "value": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+        "purpose": "Policy-section cards; sticky header once scrolled."
+      },
+      {
+        "name": "lifted",
+        "value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+        "purpose": "Hover on clickable cards, PDF card, dropdown menus."
+      },
+      {
+        "name": "floating",
+        "value": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+        "purpose": "Mobile drawer; hover on glass cards in blue CTA bands."
+      }
+    ],
+    "motion": [
+      {
+        "name": "reveal",
+        "value": "opacity + translateY(16px), 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Below-the-fold sections fading up on scroll, after hydration only."
+      },
+      {
+        "name": "menu",
+        "value": "opacity + translateY(-10px), 150ms",
+        "purpose": "Desktop dropdown open/close."
+      },
+      {
+        "name": "drawer",
+        "value": "translateX(100%), 300ms ease-in-out",
+        "purpose": "Mobile menu drawer."
+      },
+      {
+        "name": "slide",
+        "value": "opacity + translateY(8px), 400ms ease-out",
+        "purpose": "Hero carousel slide change; auto-advances every 5s, pausable."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "All of the above are skipped; content is never hidden."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      },
+      {
+        "name": "2xl",
+        "value": "1536px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main action on a page; Apply, Download PDF, Email Us.",
+      "html": "<button class=\"ds-btn-primary\">Download PDF</button>",
+      "css": ".ds-btn-primary { font-family: Inter, sans-serif; display:inline-flex; align-items:center; justify-content:center; height:44px; padding:0 16px; border:none; border-radius:6px; background:var(--color-primary, #164c8a); color:#f8fafc; font-size:14px; font-weight:500; cursor:pointer; transition:background-color .15s; } .ds-btn-primary:hover { background:color-mix(in srgb, var(--color-primary, #164c8a) 90%, white); } .ds-btn-primary:focus-visible { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--color-primary, #164c8a); outline: none; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "The alternative action beside a primary button; Open PDF, Call Us.",
+      "html": "<button class=\"ds-btn-outline\">Open PDF</button>",
+      "css": ".ds-btn-outline { font-family: Inter, sans-serif; display:inline-flex; align-items:center; justify-content:center; height:44px; padding:0 16px; border:1px solid #e2e8f0; border-radius:6px; background:#fff; color:var(--color-secondary, #0e2954); font-size:14px; font-weight:500; cursor:pointer; transition:background-color .15s; } .ds-btn-outline:hover { background:var(--color-accent, #eaf0f7); } .ds-btn-outline:focus-visible { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--color-primary, #164c8a); outline: none; }"
+    },
+    {
+      "name": "On-Blue Button",
+      "kind": "button",
+      "refersTo": "button-on-blue",
+      "description": "The `inverse` Button variant: secondary action inside the Bhawana Blue CTA band; inverts on hover.",
+      "html": "<div class=\"ds-band\"><button class=\"ds-btn-onblue\">Grievance Redressal</button></div>",
+      "css": ".ds-band { background:var(--color-primary, #164c8a); padding:24px; border-radius:8px; } .ds-btn-onblue { font-family: Inter, sans-serif; height:44px; padding:0 32px; border:1px solid #fff; border-radius:6px; background:transparent; color:#fff; font-size:14px; font-weight:600; cursor:pointer; transition:background-color .15s, color .15s; } .ds-btn-onblue:hover { background:#fff; color:var(--color-primary, #164c8a); } .ds-btn-onblue:focus-visible { outline:2px solid #fff; outline-offset:2px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Contact form field with a label and inline error.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Phone</span><input class=\"ds-input\" placeholder=\"98765 43210\" /><span class=\"ds-field-error\">Please enter a valid phone number</span></label>",
+      "css": ".ds-field { font-family: Inter, sans-serif; display:grid; gap:6px; max-width:320px; } .ds-field-label { font-size:16px; font-weight:500; color:var(--color-secondary, #0e2954); } .ds-input { font-family: Inter, sans-serif; height:44px; padding:8px 12px; border:1px solid #7f8a9b; border-radius:6px; background:#fff; color:#020817; font-size:14px; } .ds-input::placeholder { color:#64748b; } .ds-input:focus-visible { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--color-primary, #164c8a); outline: none; } .ds-field-error { font-size:14px; color:#dc2626; } .ds-input[aria-invalid=\"true\"] { border-color:#dc2626; } @media (min-width:768px) { .ds-input { font-size:14px; } }"
+    },
+    {
+      "name": "Desktop Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sticky header labels; Midnight Ink turning Bhawana Blue on hover, 36px hit area.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-logo\">Bhawana Capital</a><div class=\"ds-nav-links\"><a>Home</a><a>Our Loan Products ▾</a><a>Policies &amp; Codes ▾</a><a>Blog</a><a>Contact</a></div></nav>",
+      "css": ".ds-nav { font-family: Inter, sans-serif; display:flex; align-items:center; justify-content:space-between; height:64px; padding:0 16px; background:#fff; border-bottom:1px solid #e2e8f0; } .ds-nav-logo { font-family:Poppins, sans-serif; font-weight:700; font-size:20px; color:var(--color-primary, #164c8a); } .ds-nav-links { display:flex; gap:32px; } .ds-nav-links a { padding:8px 0; font-size:14px; font-weight:500; color:var(--color-secondary, #0e2954); cursor:pointer; transition:color .15s; } .ds-nav-links a:hover { color:var(--color-primary, #164c8a); }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "White card at rest; clickable cards lift on hover (the Soft Lift Rule).",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">Instant Approval</h3><p class=\"ds-card-body\">Quick decisions with a fully digital process.</p></div>",
+      "css": ".ds-card { max-width:320px; padding:24px; border:1px solid #e2e8f0; border-radius:8px; background:#fff; box-shadow:0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1); transition:box-shadow .3s; cursor:pointer; } .ds-card:hover { box-shadow:0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1); } .ds-card-title { margin:0 0 12px; font-family:Poppins, sans-serif; font-size:20px; font-weight:600; color:var(--color-secondary, #0e2954); } .ds-card-body { margin:0; font-family: Inter, sans-serif; font-size:16px; line-height:1.625; color:#4f5b6e; }"
+    },
+    {
+      "name": "Document Header",
+      "kind": "custom",
+      "refersTo": "badge-pill",
+      "description": "Signature opening band of every policy page: tinted wash, icon pair, H1, subtitle, pill badge.",
+      "html": "<header class=\"ds-doc-hero\"><div class=\"ds-doc-icons\"><svg width=\"40\" height=\"40\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#164c8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z\"/><path d=\"M14 2v4a2 2 0 0 0 2 2h4\"/><path d=\"M10 9H8\"/><path d=\"M16 13H8\"/><path d=\"M16 17H8\"/></svg><svg width=\"40\" height=\"40\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#0e2954\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\"/></svg></div><h1 class=\"ds-doc-title\">Fair Practice Code</h1><p class=\"ds-doc-sub\">Board-approved code covering transparency and customer protection.</p><span class=\"ds-badge\">English · RBI Compliant</span></header>",
+      "css": ".ds-doc-hero { padding:48px 16px; text-align:center; background:linear-gradient(to bottom right, color-mix(in srgb, var(--color-primary, #164c8a) 10%, white), color-mix(in srgb, var(--color-secondary, #0e2954) 10%, white)); } .ds-doc-icons { display:flex; justify-content:center; gap:16px; margin-bottom:16px; } .ds-doc-title { margin:0 0 16px; font-family:Poppins, sans-serif; font-size:36px; font-weight:700; color:var(--color-secondary, #0e2954); } .ds-doc-sub { margin:0 0 24px; font-family: Inter, sans-serif; font-size:18px; color:#4f5b6e; } .ds-badge { font-family: Inter, sans-serif; display:inline-flex; padding:8px 20px; border:1px solid color-mix(in srgb, var(--color-primary, #164c8a) 20%, white); border-radius:9999px; background:#fff; font-size:14px; font-weight:500; color:var(--color-secondary, #0e2954); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Public Register",
+    "overview": "This site is the public record of a regulated lender, and it should read like one. The register is calm, orderly and official. It earns trust by laying out facts a reader can check (registration numbers, named officers, board-approved documents, published rates) rather than by selling. Visual quiet is the point: two blues, white paper, a soft grey band, and type that does the work.\n\nDensity is moderate. Marketing pages (home, Personal Loan, Salary Advance, KarmaLife) breathe with generous section spacing and centred headings. Document pages (policies, terms, privacy) tighten up: a short tinted header, then a narrow reading column of cards the reader moves through in order. Decoration is limited to line icons in the brand blue and a faint blue-to-navy wash behind page headers. Nothing on a page should look louder than the facts on it.\n\nMotion is small and optional. Sections fade up 16 px as they scroll into view, menus drop in over 150 ms, and the hero carousel crossfades. Every effect is skipped when the visitor asks for reduced motion, and no content ever starts hidden before JavaScript runs.",
+    "keyCharacteristics": [
+      "Two blues on white: Bhawana Blue for anything you can act on, Midnight Ink for anything you read.",
+      "Poppins for headings and titles only; Inter for everything else; Poppins's own Devanagari cut for Hindi.",
+      "White cards with a faint shadow that deepens on hover when the card is clickable.",
+      "Gently rounded corners (6–8 px) on controls and cards; pills and circles only for badges, icon wells and carousel dots.",
+      "A single centred container with 16 px side gutters; long-form reading columns capped at 640 px (policies) and 768 px (blog)."
+    ],
+    "rules": [
+      {
+        "name": "The Two Blues Rule",
+        "body": "Bhawana Blue marks what you can act on (links, buttons) and the line icons; Midnight Ink carries page and section headings and reading text. The one sanctioned overlap: icon-led card titles on document pages take Bhawana Blue along with their icon. A navy link or a blue section heading breaks the reader's model of the page.",
+        "section": "colors"
+      },
+      {
+        "name": "The Token-Only Rule",
+        "body": "Colours come from the tokens above, never from Tailwind's raw palette (`blue-600`, `indigo-700`, `gray-700`). The footer's light greys and the form's red and green are the only accepted exceptions.",
+        "section": "colors"
+      },
+      {
+        "name": "The Poppins Speaks, Inter Explains Rule",
+        "body": "Poppins is for headings and titles only. Body text, labels, buttons and form fields are always Inter.",
+        "section": "typography"
+      },
+      {
+        "name": "The Left-Edge Rule",
+        "body": "Running text is left-aligned. Only headings, subtitles and short CTA blocks are centred.",
+        "section": "typography"
+      },
+      {
+        "name": "The Soft Lift Rule",
+        "body": "A card deepens its shadow on hover only if it is clickable. A static card that lifts is lying about what it does. A card with one destination (product, blog post) is made clickable by stretching its existing link over the whole card, and its action is pinned to the card bottom so neighbours line up.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** put facts (rates, registration numbers, officer names, dates) in full-strength text colour; never mute a fact to Slate Text at 80%.",
+      "**Do** use Bhawana Blue for links, buttons and icons and Midnight Ink for page and section headings (the Two Blues Rule).",
+      "**Do** keep every interactive element at 24 px or more in both directions, and buttons and fields at 44 px.",
+      "**Do** give every page exactly one H1 and never skip a heading level; card titles take the level the page outline needs.",
+      "**Do** mark Hindi content with `lang=\"hi\"` so it picks up the Devanagari face.",
+      "**Do** let only one of two same-coloured adjacent sections supply the gap between them."
+    ],
+    "donts": [
+      "**Don't** justify text; policy and article text is left-aligned.",
+      "**Don't** use Tailwind's raw palette colours or the old blue-to-indigo gradients (`from-blue-600 to-indigo-700`); use the tokens.",
+      "**Don't** use Poppins for body text, buttons or form fields.",
+      "**Don't** start content hidden until JavaScript runs (`opacity: 0` on first paint); reveal effects apply only below the fold, after hydration.",
+      "**Don't** add a hover lift to a card that isn't clickable.",
+      "**Don't** introduce a third brand colour; accents come from tints of Bhawana Blue."
+    ]
+  }
+}

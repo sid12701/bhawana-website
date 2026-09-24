@@ -40,7 +40,7 @@ export default function ShippingPolicyPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Header />
-      <main className="pt-20">
+      <main>
         <ShippingPolicyContent />
       </main>
       <Footer />

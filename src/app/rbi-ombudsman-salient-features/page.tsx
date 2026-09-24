@@ -15,7 +15,7 @@ export default function RbiOmbudsmanSalientFeaturesPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="pt-20">
+      <main>
         <BoardPolicyContent document={getBoardPolicy("rbi-ombudsman-salient-features")} />
       </main>
       <Footer />

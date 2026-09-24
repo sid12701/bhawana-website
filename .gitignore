@@ -48,3 +48,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Impeccable local state (the design sidecar and critique history are committed)
+.impeccable/hook.cache.json
+.impeccable/live/

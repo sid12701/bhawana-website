@@ -1,31 +1,33 @@
+import BlogCoverImage from "@/app/components/BlogCoverImage"
+
 export const meta = {
     slug: "what-are-the-early-indicators-that-my-financial-situation-is-worsening",
     title: "What Are the Early Indicators That My Financial Situation Is Worsening?",
     description:
       "Spot financial red flags early: overspending, maxed cards, late payments, and more—plus practical steps to course-correct.",
     date: "2024-07-18",
-    coverImage: "/images/blog/my-financial-situation-is-worsening.png",
+    // No cover yet: the referenced file was never added to public/images, so it 404'd (including as the share image)
+    coverImage: undefined as string | undefined,
     readingTime: "7 min read",
   }
   
   export default function Post() {
     return (
-      <div className="text-[15.5px] leading-7 text-neutral-800">
+      <div>
         {/* Cover image */}
-        <figure className="mb-6">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={
-              meta.coverImage || "/placeholder.svg?height=360&width=640&query=financial%20warning%20signs%20illustration"
-            }
-            alt="Illustration showing financial warning signs like bills, cards, and budget"
-            className="w-full max-h-[380px] object-cover rounded-lg"
-            loading="lazy"
-          />
-          <figcaption className="sr-only">
-            Financial warning signs such as rising bills and credit card balances.
-          </figcaption>
-        </figure>
+        {meta.coverImage ? (
+          <figure className="mb-6">
+            <BlogCoverImage
+              src={meta.coverImage}
+              alt="Illustration showing financial warning signs like bills, cards, and budget"
+              className="w-full max-h-[380px] object-cover rounded-lg"
+              loading="lazy"
+            />
+            <figcaption className="sr-only">
+              Financial warning signs such as rising bills and credit card balances.
+            </figcaption>
+          </figure>
+        ) : null}
   
         <p>
           <strong>

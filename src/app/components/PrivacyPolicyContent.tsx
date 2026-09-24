@@ -1,53 +1,25 @@
-"use client"
-
-import { useEffect, useState } from "react"
-import { motion, Variants } from "framer-motion"
 import { Calendar, Shield, FileText } from "lucide-react"
 import { Card, CardContent } from "./ui/card";
-import { getReducedMotion } from "../lib/utils"
+import { Button } from "./ui/button"
+import Reveal from "./Reveal"
+import { legal } from "../lib/content"
 
 export default function PrivacyPolicyContent() {
-  const [reducedMotion, setReducedMotion] = useState(false)
-
-  useEffect(() => {
-    setReducedMotion(getReducedMotion())
-  }, [])
-
-  const pageVariants: Variants | undefined = reducedMotion
-    ? undefined
-    : {
-        hidden: { opacity: 0 },
-        visible: {
-          opacity: 1,
-          transition: { duration: 0.3, ease: "easeOut" },
-        },
-      }
-
-  const sectionVariants: Variants | undefined = reducedMotion
-    ? undefined
-    : {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.4, ease: "easeOut" },
-        },
-      }
 
   return (
-    <motion.div variants={pageVariants} initial="hidden" animate="visible">
+    <div>
       {/* Hero Banner */}
-      <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-16 md:py-24">
+      <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center mb-6">
-              <Shield className="h-12 w-12 text-primary mr-4" />
-              <FileText className="h-12 w-12 text-secondary" />
+            <div className="mb-4 flex items-center justify-center md:mb-6">
+              <Shield className="h-10 w-10 md:h-12 md:w-12 text-primary mr-4" />
+              <FileText className="h-10 w-10 md:h-12 md:w-12 text-secondary" />
             </div>
-            <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-6">
+            <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-4 md:mb-6">
               Privacy Policy
             </h1>
-            <p className="text-lg md:text-xl text-neutralText mb-8">
+            <p className="text-lg md:text-xl text-neutralText mb-6 md:mb-8">
               Bhawana Capital Private Limited Principles of Processing its Clients Personal Data
             </p>
             <div className="flex items-center justify-center text-sm text-neutralText">
@@ -59,11 +31,11 @@ export default function PrivacyPolicyContent() {
       </section>
 
       {/* Content */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* Introduction */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <Reveal>
               <Card className="mb-12">
                 <CardContent className="p-8">
                   <p className="text-lg text-neutralText leading-relaxed">
@@ -79,10 +51,10 @@ export default function PrivacyPolicyContent() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </Reveal>
 
             {/* Section 1: Definitions */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <Reveal>
               <Card className="mb-8">
                 <CardContent className="p-8">
                   <h2 className="font-poppins text-2xl font-bold text-secondary mb-6">1. Definitions</h2>
@@ -104,10 +76,10 @@ export default function PrivacyPolicyContent() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </Reveal>
 
             {/* Section 2: Data Fiduciary */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <Reveal>
               <Card className="mb-8">
                 <CardContent className="p-8">
                   <h2 className="font-poppins text-2xl font-bold text-secondary mb-6">2. Data Fiduciary</h2>
@@ -118,10 +90,10 @@ export default function PrivacyPolicyContent() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </Reveal>
 
             {/* Section 3: Collecting Personal Data */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <Reveal>
               <Card className="mb-8">
                 <CardContent className="p-8">
                   <h2 className="font-poppins text-2xl font-bold text-secondary mb-6">
@@ -144,10 +116,10 @@ export default function PrivacyPolicyContent() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </Reveal>
 
             {/* Section 4: Personal Data Processed */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <Reveal>
               <Card className="mb-8">
                 <CardContent className="p-8">
                   <h2 className="font-poppins text-2xl font-bold text-secondary mb-6">4. Personal Data Processed</h2>
@@ -194,10 +166,10 @@ export default function PrivacyPolicyContent() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </Reveal>
 
             {/* Section 5: Automated Decision-Making */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <Reveal>
               <Card className="mb-8">
                 <CardContent className="p-8">
                   <h2 className="font-poppins text-2xl font-bold text-secondary mb-6">
@@ -218,10 +190,10 @@ export default function PrivacyPolicyContent() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </Reveal>
 
             {/* Section 6: Disclosing Personal Data */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <Reveal>
               <Card className="mb-8">
                 <CardContent className="p-8">
                   <h2 className="font-poppins text-2xl font-bold text-secondary mb-6">
@@ -253,10 +225,10 @@ export default function PrivacyPolicyContent() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </Reveal>
 
             {/* Section 7: Protection of Personal Data */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <Reveal>
               <Card className="mb-8">
                 <CardContent className="p-8">
                   <h2 className="font-poppins text-2xl font-bold text-secondary mb-6">
@@ -272,10 +244,10 @@ export default function PrivacyPolicyContent() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </Reveal>
 
             {/* Section 8: Data Retention */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <Reveal>
               <Card className="mb-8">
                 <CardContent className="p-8">
                   <h2 className="font-poppins text-2xl font-bold text-secondary mb-6">8. Data retention</h2>
@@ -289,10 +261,10 @@ export default function PrivacyPolicyContent() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </Reveal>
 
             {/* Section 9: Your Rights */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <Reveal>
               <Card className="mb-8">
                 <CardContent className="p-8">
                   <h2 className="font-poppins text-2xl font-bold text-secondary mb-6">9. Your rights</h2>
@@ -326,10 +298,10 @@ export default function PrivacyPolicyContent() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </Reveal>
 
             {/* Section 10: Amending Principles */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <Reveal>
               <Card className="mb-8">
                 <CardContent className="p-8">
                   <h2 className="font-poppins text-2xl font-bold text-secondary mb-6">10. Amending these principles</h2>
@@ -341,10 +313,10 @@ export default function PrivacyPolicyContent() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </Reveal>
 
             {/* Section 11: Contact */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <Reveal>
               <Card className="mb-8">
                 <CardContent className="p-8">
                   <h2 className="font-poppins text-2xl font-bold text-secondary mb-6">11. Contact</h2>
@@ -355,10 +327,10 @@ export default function PrivacyPolicyContent() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </Reveal>
 
             {/* Contact Information Card */}
-            <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <Reveal>
               <Card className="bg-gradient-to-br from-primary/5 to-secondary/5">
                 <CardContent className="p-8 text-center">
                   <h3 className="font-poppins text-xl font-bold text-secondary mb-4">
@@ -369,25 +341,19 @@ export default function PrivacyPolicyContent() {
                     please contact us.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a
-                      href="mailto:info@bhawanafinance.com"
-                      className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      Email Us
-                    </a>
-                    <a
-                      href="tel:+91-124-6687879"
-                      className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      Call Us
-                    </a>
+                    <Button asChild size="lg">
+                      <a href={`mailto:${legal.email}`}>Email Us</a>
+                    </Button>
+                    <Button asChild size="lg" variant="outline" className="border-primary text-primary">
+                      <a href={`tel:${legal.phoneTel}`}>Call Us</a>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </Reveal>
           </div>
         </div>
       </section>
-    </motion.div>
+    </div>
   )
 }

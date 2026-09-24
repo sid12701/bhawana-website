@@ -10,6 +10,7 @@ const doc: BoardPolicyDocument = {
   ctaTitle: "Fair Practice Code संबंधी प्रश्न?",
   ctaBody: "हमसे संपर्क करें — हम संहिता की प्रतिबद्धताओं को समझाने में सहायता करेंगे।",
   showFlowchart: false,
+  lang: "hi",
   sections: [
   {
     id: "1-परिचय",

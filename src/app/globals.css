@@ -1,45 +1,18 @@
 @import "tailwindcss";
 
-:root {
-  --color-primary: #164c8a;
-  --color-secondary: #0e2954;
-  --color-background: #ffffff;
-  --color-neutral-bg: #f5f7fa;
-  --color-neutral-divider: #e6ecf2;
-  --color-neutral-text: #6b7280;
-  --color-accent: #1d4ed8;
-
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-  --primary-foreground: 210 40% 98%;
-  --secondary-foreground: 222.2 84% 4.9%;
-  --muted: 210 40% 96%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --accent-foreground: 222.2 84% 4.9%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
-  --radius: 0.5rem;
-}
-
-@theme {
+/* Single source for colour tokens. "static" emits every token as a CSS variable even when no utility uses it,
+   because DESIGN.md's component snippets and a few rules below reference them with var(). Token roles and their
+   DESIGN.md names (Bhawana Blue = primary, Midnight Ink = secondary, Mist = neutralBg, Slate Text = neutralText,
+   Hairline = neutralDivider, Wash = accent) are mapped in DESIGN.md. */
+@theme static {
   --color-primary: #164c8a;
   --color-secondary: #0e2954;
   --color-background: hsl(0 0% 100%);
-  --color-neutral-bg: #f5f7fa;
-  --color-neutral-divider: #e6ecf2;
-  --color-neutral-text: #6b7280;
-  /* alias tokens to match camelCase utilities used in code */
   --color-neutralBg: #f5f7fa;
   --color-neutralDivider: #e6ecf2;
-  --color-neutralText: #6b7280;
-  --color-accent: #1d4ed8;
+  --color-neutralText: #4f5b6e;
+  /* accent = quiet hover/selection surface for outline & ghost controls, not a second brand blue */
+  --color-accent: #eaf0f7;
 
   --color-foreground: hsl(222.2 84% 4.9%);
   --color-card: hsl(0 0% 100%);
@@ -47,15 +20,20 @@
   --color-popover: hsl(0 0% 100%);
   --color-popover-foreground: hsl(222.2 84% 4.9%);
   --color-primary-foreground: hsl(210 40% 98%);
-  --color-secondary-foreground: hsl(222.2 84% 4.9%);
+  --color-secondary-foreground: hsl(0 0% 100%);
   --color-muted: hsl(210 40% 96%);
   --color-muted-foreground: hsl(215.4 16.3% 46.9%);
-  --color-accent-foreground: hsl(222.2 84% 4.9%);
+  --color-accent-foreground: #0e2954;
   --color-destructive: hsl(0 84.2% 60.2%);
   --color-destructive-foreground: hsl(210 40% 98%);
   --color-border: hsl(214.3 31.8% 91.4%);
   --color-input: hsl(214.3 31.8% 91.4%);
-  --color-ring: hsl(222.2 84% 4.9%);
+  --color-ring: #164c8a;
+  /* Text-field outline: 3.5:1 on white so the field edge is visible (WCAG 1.4.11); card/button borders stay light */
+  --color-field-stroke: #7f8a9b;
+  /* Status colours for the contact form's error and success states */
+  --color-error: #dc2626;
+  --color-success: #15803d;
 
   --radius: 0.5rem;
 }
@@ -65,8 +43,30 @@
     @apply border-border;
   }
 
+  /* Keep in-page anchors (e.g. /#contact) clear of the 64px sticky header */
+  html {
+    scroll-padding-top: 5rem;
+  }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-poppins), sans-serif;
+  }
+
+  /* Long unbroken strings (URLs, "Complaints/Grievances/Enquiries") wrap instead of widening the page */
+  main :is(h1, h2, h3, h4, p, li, a, dd),
+  footer :is(p, a, span) {
+    overflow-wrap: anywhere;
+  }
+
+  [lang="hi"] {
+    font-family: var(--font-poppins), sans-serif;
   }
 
   .font-poppins {
@@ -93,6 +93,29 @@
     }
   }
 
+  /* Scroll reveal (see components/Reveal.tsx): only applied to below-the-fold elements after hydration */
+  .reveal-hidden {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  /* Printing or "Save as PDF" must include sections that were never scrolled into view */
+  @media print {
+    .reveal-hidden {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .reveal-shown {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0s);
+  }
+
   /* Line clamp utilities */
   .line-clamp-2 {
     display: -webkit-box;
@@ -109,20 +132,71 @@
   }
 }
 
+/* Blog article typography. The Tailwind typography plugin isn't installed, so `prose` is defined here.
+   :where() keeps these at zero specificity so a post's own utility classes still win. */
+@layer components {
+  .prose {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--color-secondary);
+  }
+
+  :where(.prose) :where(p, ul, ol, blockquote) {
+    margin-block: 0 1.25em;
+  }
+
+  :where(.prose) :where(h2, h3) {
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--color-secondary);
+    text-wrap: balance;
+  }
+
+  :where(.prose) :where(h2) {
+    font-size: 1.25rem;
+    margin-block: 2em 0.6em;
+  }
+
+  :where(.prose) :where(h3) {
+    font-size: 1.125rem;
+    margin-block: 1.75em 0.5em;
+  }
+
+  :where(.prose) :where(ul) {
+    list-style: disc;
+    padding-inline-start: 1.5em;
+  }
+
+  :where(.prose) :where(ol) {
+    list-style: decimal;
+    padding-inline-start: 1.5em;
+  }
+
+  :where(.prose) :where(li + li) {
+    margin-top: 0.4em;
+  }
+
+  :where(.prose) :where(a:not([class])) {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-neutral-bg);
+  background: var(--color-neutralBg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-neutral-divider);
+  background: var(--color-neutralDivider);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-neutral-text);
+  background: var(--color-neutralText);
 }

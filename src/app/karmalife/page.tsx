@@ -23,7 +23,7 @@ export default function KarmaLife() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="pt-20">
+      <main>
         <KarmalifeContent />
       </main>
       <Footer />

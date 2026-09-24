@@ -20,7 +20,7 @@ export default function ReturnPolicyPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="pt-20">
+      <main>
         <ReturnPolicyContent />
       </main>
       <Footer />

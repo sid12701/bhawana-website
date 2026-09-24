@@ -15,7 +15,7 @@ export default function DigitalLendingPolicyPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="pt-20">
+      <main>
         <BoardPolicyContent document={getBoardPolicy("digital-lending-policy")} />
       </main>
       <Footer />

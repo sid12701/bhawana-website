@@ -22,7 +22,7 @@ export default function TerminatedVendorsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="pt-20">
+      <main>
         <TerminatedVendorsContent />
       </main>
       <Footer />
