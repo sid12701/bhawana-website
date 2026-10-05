@@ -136,7 +136,7 @@ export default function ContactSection() {
                   <div>
                     <p className="font-medium text-secondary">Phone</p>
                     <a
-                      href={`tel:${legal.phone}`}
+                      href={`tel:${legal.phoneTel}`}
                       className="inline-block py-1 text-neutralText hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                     >
                       {legal.phone}

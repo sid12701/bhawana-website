@@ -291,7 +291,7 @@ export default function Footer() {
                 <span>{legal.email}</span>
               </a>
               <a
-                href={`tel:${legal.phone}`}
+                href={`tel:${legal.phoneTel}`}
                 className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm flex items-center space-x-2 py-1.5"
               >
                 <Phone className="h-4 w-4 shrink-0" />

@@ -285,7 +285,9 @@ export function SalaryAdvanceContent() {
                   <Phone className="w-6 h-6 text-primary" />
                   <div>
                     <p className="font-semibold">Call Us</p>
-                    <p className="text-neutralText">{legal.phone}</p>
+                    <a href={`tel:${legal.phoneTel}`} className="inline-block py-1 text-neutralText hover:text-primary">
+                      {legal.phone}
+                    </a>
                   </div>
                 </div>
 

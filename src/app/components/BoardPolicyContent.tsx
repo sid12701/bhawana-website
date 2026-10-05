@@ -12,12 +12,31 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { cn } from "../lib/utils"
 import { legal } from "../lib/content"
 
+const PHONE_PATTERN = new RegExp(
+  `(${[legal.phoneLocal, legal.phone].map((value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`,
+  "g",
+)
+
+function withPhoneLinks(text: string) {
+  const parts = text.split(PHONE_PATTERN)
+  if (parts.length === 1) return text
+  return parts.map((part, index) =>
+    part === legal.phoneLocal || part === legal.phone ? (
+      <a key={index} href={`tel:${legal.phoneTel}`} className="text-primary underline-offset-2 hover:underline">
+        {part}
+      </a>
+    ) : (
+      part
+    ),
+  )
+}
+
 function renderBlock(block: BoardPolicyBlock, index: number) {
   switch (block.type) {
     case "paragraph":
       return (
         <p key={index} className="text-neutralText leading-relaxed">
-          {block.text}
+          {withPhoneLinks(block.text)}
         </p>
       )
     case "subheading":
@@ -50,7 +69,7 @@ function renderBlock(block: BoardPolicyBlock, index: number) {
         <ul key={index} className="list-disc list-outside space-y-2 pl-6">
           {block.items.map((item, itemIndex) => (
             <li key={itemIndex} className="text-neutralText leading-relaxed">
-              {item}
+              {withPhoneLinks(item)}
             </li>
           ))}
         </ul>
@@ -64,9 +83,9 @@ function renderBlock(block: BoardPolicyBlock, index: number) {
                 {block.headers.map((header) => (
                   <th
                     key={header}
-                    className="border-b border-neutralDivider px-4 py-3 text-left font-semibold text-secondary"
+                    className="whitespace-pre-line border-b border-neutralDivider px-4 py-3 text-left font-semibold text-secondary"
                   >
-                    {header}
+                    {withPhoneLinks(header)}
                   </th>
                 ))}
               </tr>
@@ -79,7 +98,7 @@ function renderBlock(block: BoardPolicyBlock, index: number) {
                       key={cellIndex}
                       className="whitespace-pre-line px-4 py-3 align-top text-neutralText"
                     >
-                      {cell}
+                      {withPhoneLinks(cell)}
                     </td>
                   ))}
                 </tr>

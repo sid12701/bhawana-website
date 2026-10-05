@@ -144,10 +144,10 @@ export const legal = {
     karmalifePage: "/karmalife/",
     karmalifeAppUrl: "https://play.google.com/store/apps/details?id=in.onionlife.karmalife&hl=en_IN&pli=1",
     email: "info@bhawanafinance.com",
-    phone: "+91-124-6687879",
+    phone: "+91-80-4027-2032",
     // Same number in the local format some pages display, and the one target every tel: link uses
-    phoneLocal: "0124-6687879",
-    phoneTel: "+911246687879",
+    phoneLocal: "080-4027-2032",
+    phoneTel: "+918040272032",
     // KarmaLife's GRO is published with two different numbers (partner table vs "Call Us" card).
     // Both are kept exactly as live until the owner confirms which is correct.
     karmalifeGroPhone: "+91 9355598772",
@@ -166,7 +166,7 @@ export const legal = {
     corporateOfficeVisitNote:
       "For any in-person visit, please come to our Corporate Office: Level 18, One Horizon Centre, DLF Phase 5, Gurugram – 122002. Kindly do not visit the Registered Office; all customer interactions are handled at the Corporate Office.",
     nodalDigitalLendingGro:
-      "Nodal Grievance Redressal Officer (Digital Lending): Mr. Manoj Aggarwal, Bhawana Capital Private Limited — Email: manoj@bhawanafinance.com; Phone: 0124-6687879.",
+      "Nodal Grievance Redressal Officer (Digital Lending): Mr. Manoj Aggarwal, Bhawana Capital Private Limited — Email: manoj@bhawanafinance.com; Phone: 080-4027-2032.",
   }
   
   export const navigation = {

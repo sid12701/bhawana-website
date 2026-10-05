@@ -149,7 +149,7 @@ export default function ReturnPolicyContent() {
                   <h3 className="font-medium mb-1 flex items-center gap-2">
                     <Phone className="w-4 h-4" /> Phone
                   </h3>
-                  <a className="inline-block py-1 text-primary underline-offset-2 transition-colors hover:text-secondary hover:underline" href={`tel:${legal.phone}`}>
+                  <a className="inline-block py-1 text-primary underline-offset-2 transition-colors hover:text-secondary hover:underline" href={`tel:${legal.phoneTel}`}>
                     {legal.phone}
                   </a>
                 </div>

@@ -187,7 +187,16 @@ export function KarmalifeContent() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6 md:p-8">
-                <p className="text-neutralText leading-relaxed">{legal.nodalDigitalLendingGro}</p>
+                <p className="text-neutralText leading-relaxed">
+                  {legal.nodalDigitalLendingGro.split(legal.phoneLocal)[0]}
+                  <a
+                    href={`tel:${legal.phoneTel}`}
+                    className="text-primary underline-offset-2 hover:underline"
+                  >
+                    {legal.phoneLocal}
+                  </a>
+                  {legal.nodalDigitalLendingGro.split(legal.phoneLocal)[1]}
+                </p>
                 <div className="mt-6 space-y-3 text-sm text-neutralText">
                   <p>
                     To report an unauthorised or suspicious digital lending app, use the{" "}
