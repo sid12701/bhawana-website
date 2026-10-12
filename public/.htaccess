@@ -17,10 +17,26 @@ RewriteRule ^personal-loan\.php$ /personal-loan/ [R=301,L]
 # Retired LoanFront DSA/LSP page → public terminated-vendors disclosure
 RewriteRule ^loanfront/?$ /terminated-vendors/ [R=301,L]
 
-# Single-hop canonical host + HTTPS → https://www.bhawanafinance.com/...
+# Canonical URL is https://www.bhawanafinance.com/<path>/
+# Extensionless pages without a trailing slash are a separate cache key. On 7 Oct 2026
+# those URLs were still serving the pre-5-Oct HTML (old grievance number in the body,
+# tel: links, and footer) while the trailing-slash URL was already updated.
+# Match the path only — a query string is not part of the RewriteRule subject, so it is
+# appended to the Location and must not be dropped. Do not match a trailing slash or a
+# dotted filename, or the internal Hindi .html rewrite below will loop.
+# Non-www or http, extensionless, no trailing slash: one hop to https www with the slash.
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} !^www\.bhawanafinance\.com$ [NC]
-RewriteRule ^(.*)$ https://www.bhawanafinance.com/$1 [R=301,L]
+RewriteRule ^([^.]*[^./])$ https://www.bhawanafinance.com/$1/ [R=301,L,E=CANONICAL_REDIRECT:1]
+
+# Non-www or http for everything else (files, and paths that already end in a slash).
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\.bhawanafinance\.com$ [NC]
+RewriteRule ^(.*)$ https://www.bhawanafinance.com/$1 [R=301,L,E=CANONICAL_REDIRECT:1]
+
+# www + https, extensionless, no trailing slash → the same path with a slash.
+RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$
+RewriteRule ^([^.]*[^./])$ /$1/ [R=301,L,E=CANONICAL_REDIRECT:1]
 
 # Legacy KYC URL → current policy (HTTP 301, not client-side)
 RewriteRule ^kyc-aml-policy/?$ /kyc-aml-cft-policy/ [R=301,L]
@@ -62,6 +78,12 @@ RewriteCond %{REQUEST_FILENAME}/index.html -f
 RewriteRule ^(.+?)/?$ $1/index.html [L]
 
 <IfModule mod_headers.c>
+  # The canonical-redirect rules set this env. "always" is required because a 301 is not a 2xx,
+  # and without it a shared cache can keep an old 200 for the slashless URL.
+  Header always set Cache-Control "no-cache, must-revalidate" env=CANONICAL_REDIRECT
+  Header always set Pragma "no-cache" env=CANONICAL_REDIRECT
+  Header always set Expires "0" env=CANONICAL_REDIRECT
+
   # Avoid stale HTML after compliance updates: no-cache makes browsers re-check with the server on every
   # visit (so updates show immediately) while still allowing a 304 and the back/forward cache, which no-store blocked.
   # Hashed /_next/static/ assets get a long cache from _next/static/.htaccess, written by scripts/postbuild-static-fallbacks.mjs.
